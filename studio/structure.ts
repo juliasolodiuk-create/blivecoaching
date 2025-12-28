@@ -160,9 +160,16 @@ export const structure: StructureResolver = (S, context) =>
 
       S.divider(),
       S.listItem()
+        .title('Початкова Секція з Скроллом - Be Live Coaching')
+        .icon(VersionsIcon)
+        .child(
+          S.document().schemaType('heroTitleScroll').documentId('beLiveCoaching_heroTitleScroll'),
+        ),
+      S.listItem()
         .title('Фонова картинка для Be Live Coaching')
         .icon(ImageIcon)
-        .child(S.document().schemaType('img').documentId('be_live_coaching_img')),
+        .child(S.document().schemaType('img').documentId('beLiveCoaching_img')),
+
       S.listItem()
         .title('Про Be Live Coaching')
         .icon(BulbFilledIcon)

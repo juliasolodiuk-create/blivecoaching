@@ -47,7 +47,7 @@ export async function getBenefits(): Promise<BenefitData> {
       title_ua, title_en, title_de, url 
     },
     "imageSelected": *[_id == "benefit_img"][0] { 
-      img_selected,
+      img,
     }
   }`;
   return await client.fetch(query, {}, { next: { revalidate: 0 } });

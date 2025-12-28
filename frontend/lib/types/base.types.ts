@@ -8,6 +8,11 @@ export interface Content {
   desc: string;
 }
 
+export interface ContentList {
+  title?: string;
+  desc?: string[];
+}
+
 export interface BannerContent {
   title: string;
   subTitle: string;

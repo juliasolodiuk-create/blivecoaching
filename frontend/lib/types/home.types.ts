@@ -45,7 +45,7 @@ export interface BenefitData {
   items?: BenefitContentData[];
   sharedLink?: SharedLink;
   imageSelected?: {
-    img_selected?: ImageAsset;
+    img?: ImageAsset;
   };
 }
 

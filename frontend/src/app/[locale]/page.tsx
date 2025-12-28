@@ -47,8 +47,8 @@ export default async function Home() {
     // Обрабатываем конкретное изображение из imageSelected
     imageSelected: {
       ...benefits.imageSelected,
-      imageUrl: benefits.imageSelected?.img_selected
-        ? urlForImage(benefits.imageSelected.img_selected)
+      imageUrl: benefits.imageSelected?.img
+        ? urlForImage(benefits.imageSelected.img)
             .width(900)
             .quality(85)
             .format("webp")

@@ -3,6 +3,12 @@
 import TextEffect from "@/animations/TextEffect";
 import useParallax from "@/hooks/useParallax";
 import { useRef } from "react";
+import {
+  AboutContentData,
+  AboutWithUrls,
+} from "../../../../../../lib/types/aboutBLC.types";
+import { useLocale } from "next-intl";
+import { ContentList } from "../../../../../../lib/types/base.types";
 
 const data = [
   {
@@ -16,33 +22,44 @@ const data = [
   },
 ];
 
-export const AboutSection = () => {
+interface AboutProps {
+  data?: AboutWithUrls;
+}
+
+export const AboutSection = ({ data }: AboutProps) => {
   const smallImageRef = useRef<HTMLDivElement>(null);
 
   useParallax(smallImageRef, 15, "30%");
+  const locale = useLocale();
+
+  const aboutContent = data?.items?.[
+    `content_${locale}` as keyof AboutContentData
+  ] as ContentList | undefined;
+
   return (
-    <section className="px-29 py-28 bg-white flex justify-between text-[#242424]">
+    <section className="px-29 py-28 bg-white flex justify-between gap-6 text-[#242424]">
       <div className="overflow-hidden w-full xl:w-150 h-160 justify-end hidden sm:flex ">
         <div ref={smallImageRef}>
-          <img
-            src="/photo/1.JPG"
-            alt=""
-            className={` scale-130 h-full xl:w-auto object-cover object-right rounded-sm`}
-          />
+          {data?.imageUrl && (
+            <img
+              src={data.imageUrl}
+              alt=""
+              className={` scale-130 h-full xl:w-auto object-cover object-right rounded-sm`}
+            />
+          )}
         </div>
       </div>
       <div className="max-w-150 flex flex-col gap-6">
         <TextEffect>
           <h3 className="tracking-tight text-[40px] font-literata font-bold  leading-[90%]">
-            At BLive Coaching, our philosophy is shaped by three guiding
-            concepts: Being, Living, and Believing.
+            {aboutContent?.title}
           </h3>
         </TextEffect>
         <div className="flex flex-col gap-4">
-          {data.map((index, i) => (
+          {aboutContent?.desc?.map((index, i) => (
             <div key={i}>
               <TextEffect>
-                <p className="font-montserrat">{index.text}</p>
+                <p className="font-montserrat">{index}</p>
               </TextEffect>
             </div>
           ))}

@@ -8,7 +8,7 @@ export const img = defineType({
   icon: ImageIcon,
   fields: [
     defineField({
-      name: 'img_selected',
+      name: 'img',
       type: 'image',
       options: {
         hotspot: true,
@@ -18,7 +18,7 @@ export const img = defineType({
   ],
   preview: {
     select: {
-      image: 'img_selected',
+      image: 'img',
     },
 
     prepare(selection) {

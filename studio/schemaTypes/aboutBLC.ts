@@ -13,26 +13,26 @@ export const aboutBLC = defineType({
   icon: BulbFilledIcon,
   fields: [
     defineField({
-      name: 'guide_ua',
-      title: 'Description',
+      name: 'content_ua',
+      title: 'Контент',
       type: 'object',
       fields: [
         defineField({
           name: 'title',
-          title: 'Title',
+          title: 'Заголовок',
           type: 'string',
         }),
         defineField({
           name: 'desc',
-          title: 'Description',
+          title: 'Опис',
           type: 'array',
-          validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
+          validation: (Rule) => Rule.max(5).error('Можна додати не більше 5 описів'),
           of: [
             defineField({
               name: 'desc',
-              title: 'Description',
+              title: 'Опис',
               type: 'text',
-              validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
+              validation: (Rule) => Rule.max(500).error('Текст не може перевищувати 500 символів'),
             }),
           ],
         }),
@@ -41,8 +41,8 @@ export const aboutBLC = defineType({
     }),
 
     defineField({
-      name: 'guide_en',
-      title: 'Description',
+      name: 'content_en',
+      title: 'Content',
       type: 'object',
       fields: [
         defineField({
@@ -50,18 +50,17 @@ export const aboutBLC = defineType({
           title: 'Title',
           type: 'string',
         }),
-
         defineField({
           name: 'desc',
           title: 'Description',
           type: 'array',
-          validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
+          validation: (Rule) => Rule.max(5).error('Можна додати не більше 5 описів'),
           of: [
             defineField({
               name: 'desc',
               title: 'Description',
               type: 'text',
-              validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
+              validation: (Rule) => Rule.max(500).error('Текст не може перевищувати 500 символів'),
             }),
           ],
         }),
@@ -69,27 +68,26 @@ export const aboutBLC = defineType({
       group: 'en',
     }),
     defineField({
-      name: 'guide_de',
-      title: 'Description',
+      name: 'content_de',
+      title: 'Inhalt',
       type: 'object',
       fields: [
         defineField({
           name: 'title',
-          title: 'Title',
+          title: 'Titel',
           type: 'string',
         }),
-
         defineField({
           name: 'desc',
-          title: 'Description',
+          title: 'Beschreibung',
           type: 'array',
-          validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
+          validation: (Rule) => Rule.max(5).error('Можна додати не більше 5 описів'),
           of: [
             defineField({
               name: 'desc',
-              title: 'Description',
+              title: 'Beschreibung',
               type: 'text',
-              validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
+              validation: (Rule) => Rule.max(500).error('Текст не може перевищувати 500 символів'),
             }),
           ],
         }),
@@ -98,9 +96,15 @@ export const aboutBLC = defineType({
     }),
   ],
   preview: {
-    prepare() {
+    select: {
+      title: 'content_ua.title',
+      subTitle: 'content_ua.desc[0]',
+    },
+    prepare(selection) {
+      const {title, subTitle} = selection
       return {
-        title: 'Про Be Live Coaching',
+        title: title || 'Про Be Live Coaching',
+        subtitle: subTitle,
       }
     },
   },

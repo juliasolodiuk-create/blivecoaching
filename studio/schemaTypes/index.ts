@@ -16,6 +16,7 @@ import {aboutBLC} from './aboutBLC'
 import {howItWorks} from './howItWorks'
 import {blog} from './blog'
 import {highlight} from './highlight'
+import {heroTitleScroll} from './heroTitleScroll'
 
 export const schemaTypes = [
   hero,
@@ -36,4 +37,5 @@ export const schemaTypes = [
   howItWorks,
   blog,
   highlight,
+  heroTitleScroll,
 ]

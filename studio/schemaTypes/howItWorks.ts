@@ -13,22 +13,22 @@ export const howItWorks = defineType({
   icon: RocketIcon,
   fields: [
     defineField({
-      name: 'howItWorks_ua',
+      name: 'content_ua',
       title: 'Опис',
       type: 'array',
       group: 'ua',
       of: [
         defineField({
           name: 'desc',
-          title: 'Description',
+          title: 'Опис',
           type: 'text',
         }),
       ],
     }),
 
     defineField({
-      name: 'howItWorks_en',
-      title: 'Опис',
+      name: 'content_en',
+      title: 'Description',
       type: 'array',
       group: 'en',
       of: [
@@ -40,27 +40,23 @@ export const howItWorks = defineType({
       ],
     }),
     defineField({
-      name: 'howItWorks_de',
-      title: 'Опис',
+      name: 'content_de',
+      title: 'Beschreibung',
       type: 'array',
       group: 'de',
       of: [
         defineField({
           name: 'desc',
-          title: 'Description',
+          title: 'Beschreibung',
           type: 'text',
         }),
       ],
     }),
   ],
   preview: {
-    select: {
-      howItWorks: 'howItWorks_ua',
-    },
-    prepare(selection) {
-      const {howItWorks} = selection
+    prepare() {
       return {
-        title: howItWorks,
+        title: 'Як це працює',
       }
     },
   },

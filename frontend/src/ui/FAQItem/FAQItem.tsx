@@ -3,7 +3,7 @@
 import { X } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useEffect, useRef, useState } from "react";
-import { FAQContentData, FAQData } from "../../../lib/types";
+import { FAQContentData, FAQData } from "../../../lib/types/home.types";
 
 interface FAQItemProps {
   data?: FAQData;

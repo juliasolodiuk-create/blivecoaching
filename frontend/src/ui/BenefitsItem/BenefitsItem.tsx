@@ -3,12 +3,10 @@ import Image from "next/image";
 import dataJson from "../../../db/data.json";
 import TextEffect from "@/animations/TextEffect";
 import BlurAnimation from "@/animations/BlurAnimation";
-import {
-  BenefitContentData,
-  BenefitWithUrls,
-  Content,
-} from "../../../lib/types";
+
 import { useLocale } from "next-intl";
+import { BenefitWithUrls } from "../../../lib/types/home.types";
+import { Content } from "../../../lib/types/base.types";
 
 type BenefitItemData = typeof dataJson.benefits.benefit_one;
 

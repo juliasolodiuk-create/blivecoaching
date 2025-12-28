@@ -1,14 +1,13 @@
 import { groq } from "next-sanity";
-import { client } from "./client";
+import { client } from "../client";
 import {
   BenefitData,
   FAQData,
   FeedbackData,
   HeroData,
-  HighlightData,
   HomeBannerData,
   ProblemData,
-} from "./types";
+} from "../types/home.types";
 
 export async function getHero(): Promise<HeroData> {
   const query = groq`*[_type == "hero"][0]{
@@ -81,24 +80,6 @@ export async function getFAQ(): Promise<FAQData[]> {
      question_ua,
       question_en,
       question_de
-  }`;
-  return await client.fetch(query, {}, { next: { revalidate: 0 } });
-}
-
-export async function getHighlights(): Promise<HighlightData> {
-  const query = groq`*[_type == "highlight"][0]{
-    "highlight": highlight->{
-      img,
-      blog_ua,
-      blog_en,
-      blog_de
-    },
-    "subhighlights": subhighlights[]->{
-      img,
-      blog_ua,
-      blog_en,
-      blog_de
-    }
   }`;
   return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }

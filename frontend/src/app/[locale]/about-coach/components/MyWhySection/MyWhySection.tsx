@@ -3,6 +3,8 @@
 import TextEffect from "@/animations/TextEffect";
 import useParallax from "@/hooks/useParallax";
 import { useRef } from "react";
+import { MyWhyWithUrls } from "../../../../../../lib/types/about.types";
+import { useLocale, useTranslations } from "next-intl";
 
 const data = [
   {
@@ -19,40 +21,51 @@ const data = [
   },
 ];
 
-export const MyWhySection = () => {
+interface MyWhyProps {
+  data?: MyWhyWithUrls;
+}
+
+export const MyWhySection = ({ data }: MyWhyProps) => {
+  const t = useTranslations("myWhy");
+  const locale = useLocale();
   const imageRef = useRef<HTMLDivElement>(null);
   const smallImageRef = useRef<HTMLDivElement>(null);
   useParallax(imageRef, 15, "30%");
   useParallax(smallImageRef, 15, "30%");
+
+  const MyWhyDesc = data?.[`desc_${locale}` as keyof MyWhyWithUrls] as
+    | string[]
+    | undefined;
+
   return (
     <section className="h-full px-29 py-28 flex bg-white justify-between text-[#242424]">
       <div className="overflow-hidden w-full xl:w-lg h-204 justify-end hidden sm:flex ">
         <div ref={imageRef}>
-          <img
-            src="/photo/5.JPG"
-            alt=""
-            className={` scale-130 w-full xl:w-auto object-cover object-center rounded-sm`}
-          />
+          {data?.bigImageUrl && (
+            <img
+              src={data.bigImageUrl}
+              alt=""
+              className={` scale-130 w-full xl:w-auto object-cover object-center rounded-sm`}
+            />
+          )}
         </div>
       </div>
       <div className="w-[384px] flex flex-col gap-20">
         <div>
           <TextEffect>
-            <p className="font-montserrat font-semibold">
-              Why I desiced became coach
-            </p>
+            <p className="font-montserrat font-semibold">{t("subTitle")}</p>
           </TextEffect>
           <TextEffect>
             <h2 className="font-literata text-[64px] font-bold tracking-tight leading-[90%]">
-              My Why
+              {t("title")}
             </h2>
           </TextEffect>
         </div>
         <div className="flex flex-col gap-4">
-          {data.map((index, i) => (
+          {MyWhyDesc?.map((index, i) => (
             <div key={i}>
               <TextEffect>
-                <p className="font-montserrat">{index.text}</p>
+                <p className="font-montserrat">{index}</p>
               </TextEffect>
             </div>
           ))}
@@ -60,11 +73,13 @@ export const MyWhySection = () => {
       </div>
       <div className="overflow-hidden w-full xl:w-64 h-64 justify-end hidden sm:flex ">
         <div ref={smallImageRef}>
-          <img
-            src="/photo/7.JPG"
-            alt=""
-            className={` scale-130 w-full xl:w-auto object-cover object-center rounded-sm`}
-          />
+          {data?.smallImageUrl && (
+            <img
+              src={data.smallImageUrl}
+              alt=""
+              className={` scale-130 w-full xl:w-auto object-cover object-center rounded-sm`}
+            />
+          )}
         </div>
       </div>
     </section>

@@ -13,5 +13,12 @@
     "bottomTitle": "Haben Sie weitere Fragen?",
     "bottomSubTitle": "Melden Sie sich, und wir besprechen Ihre konkrete Situation.",
     "link": "Kontakt"
+  },
+  "aboutMe": {
+    "title": "Über mich"
+  },
+  "myWhy": {
+    "title": "Mein Warum",
+    "subTitle": "Warum ich mich entschieden habe, Trainer zu werden"
   }
 }

@@ -1,12 +1,12 @@
 import TextEffect from "@/animations/TextEffect";
 import { Star } from "lucide-react";
 import Image from "next/image";
+
+import { useLocale } from "next-intl";
 import {
   FeedbackContentData,
-  FeedbackData,
   FeedbackWithUrls,
-} from "../../../lib/types";
-import { useLocale } from "next-intl";
+} from "../../../lib/types/home.types";
 
 interface FeedbackItemProps {
   data: FeedbackWithUrls;
@@ -18,7 +18,7 @@ export const FeedbackItem = ({ data }: FeedbackItemProps) => {
     `feedback_${locale}` as keyof FeedbackWithUrls
   ] as FeedbackContentData | undefined;
   return (
-    <div className="min-w-full flex justify-center text-[#242424] ">
+    <div className="min-w-full flex justify-center text-[#242424]">
       <div className="max-w-200 flex-col flex items-center gap-8">
         <div className="flex">
           {[...Array(5)].map((_, i) => (
@@ -31,7 +31,7 @@ export const FeedbackItem = ({ data }: FeedbackItemProps) => {
           ))}
         </div>
         <TextEffect>
-          <p className="font-montserrat font-bold text-[24px] text-center">
+          <p className="font-montserrat font-bold text-[16px] md:text-[24px] text-center">
             {feedbackContent?.text}
           </p>
         </TextEffect>

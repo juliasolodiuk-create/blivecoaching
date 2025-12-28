@@ -28,8 +28,9 @@ export const myWhy = defineType({
       },
       title: 'Маленька Картинка',
     }),
+
     defineField({
-      name: 'title_ua',
+      name: 'desc_ua',
       title: 'Опис',
       type: 'array',
       group: 'ua',
@@ -44,7 +45,7 @@ export const myWhy = defineType({
       ],
     }),
     defineField({
-      name: 'title_en',
+      name: 'desc_en',
       title: 'Description',
       type: 'array',
       group: 'en',
@@ -59,7 +60,7 @@ export const myWhy = defineType({
       ],
     }),
     defineField({
-      name: 'title_de',
+      name: 'desc_de',
       title: 'Beschreibung',
       type: 'array',
       group: 'de',
@@ -77,7 +78,7 @@ export const myWhy = defineType({
   preview: {
     prepare() {
       return {
-        title: 'Про Коуча',
+        title: 'Моє Чому',
       }
     },
   },

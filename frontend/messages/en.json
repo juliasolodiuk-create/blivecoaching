@@ -13,5 +13,12 @@
     "bottomTitle": "Have more questions?",
     "bottomSubTitle": "Reach out and let's talk about your specific situation.",
     "link": "Contact"
+  },
+  "aboutMe": {
+    "title": "About me"
+  },
+  "myWhy": {
+    "title": "My Why",
+    "subTitle": "Why I desiced became coach"
   }
 }

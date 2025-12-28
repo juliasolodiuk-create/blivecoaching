@@ -1,8 +1,9 @@
 import BlurAnimation from "@/animations/BlurAnimation";
 import DrawAnimation from "@/animations/DrawAnimation";
 import TextEffect from "@/animations/TextEffect";
-import { Content, ProblemContentData, ProblemData } from "../../../lib/types";
 import { useLocale } from "next-intl";
+import { ProblemContentData } from "../../../lib/types/home.types";
+import { Content } from "../../../lib/types/base.types";
 
 interface ProblemItemProps {
   data?: ProblemContentData;
@@ -18,7 +19,7 @@ export const ProblemsItems = ({ data }: ProblemItemProps) => {
     `solution_content_${locale}` as keyof ProblemContentData
   ] as Content | undefined;
   return (
-    <div className="flex flex-col w-1/4 gap-4 justify-between h-120 ">
+    <div className="flex flex-col w-full max-w-125 gap-4 justify-between h-120  mx-auto">
       <div className="font-montserrat gap-5 flex flex-col items-center  text-center">
         <div className="h-15 flex items-center">
           <BlurAnimation>
@@ -56,7 +57,9 @@ export const ProblemsItems = ({ data }: ProblemItemProps) => {
           <TextEffect>
             <h6 className="font-bold">{solutionContent?.title}</h6>
           </TextEffect>
-          <p className="whitespace-pre-line">{solutionContent?.desc}</p>
+          <TextEffect>
+            <p className="whitespace-pre-line">{solutionContent?.desc}</p>
+          </TextEffect>
         </div>
       </div>
     </div>

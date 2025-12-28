@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-import {UserIcon} from '@sanity/icons'
+import {BookIcon} from '@sanity/icons'
 
 export const aboutICA = defineType({
   name: 'aboutICA',
@@ -10,62 +10,77 @@ export const aboutICA = defineType({
     {name: 'en', title: 'English'},
     {name: 'de', title: 'Deutsch'},
   ],
-  icon: UserIcon,
+  icon: BookIcon,
   fields: [
     defineField({
-      name: 'title_ua',
-      title: 'Заголовок',
-      type: 'array',
+      name: 'text_ua',
+      title: 'Текст',
+      type: 'object',
       group: 'ua',
-      validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
-      of: [
-        defineField({
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Заголовок',
+        },
+        {
           name: 'desc',
-          title: 'Description',
+          title: 'Опис',
           type: 'text',
-          validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
-        }),
+          validation: (Rule) => Rule.max(700).error('Текст не може перевищувати 700 символів'),
+        },
       ],
     }),
+
     defineField({
-      name: 'title_en',
-      title: 'Заголовок',
-      type: 'array',
+      name: 'text_en',
+      title: 'Text',
+      type: 'object',
       group: 'en',
-      validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
-      of: [
-        defineField({
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Title',
+        },
+        {
           name: 'desc',
-          title: 'Description',
+          title: 'Опис',
           type: 'text',
-          validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
-        }),
+          validation: (Rule) => Rule.max(700).error('Текст не може перевищувати 700 символів'),
+        },
       ],
     }),
     defineField({
-      name: 'title_de',
-      title: 'Заголовок',
-      type: 'array',
+      name: 'text_de',
+      title: 'Text',
+      type: 'object',
       group: 'de',
-      validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
-      of: [
-        defineField({
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Titel',
+        },
+        {
           name: 'desc',
-          title: 'Description',
+          title: 'Опис',
           type: 'text',
-          validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
-        }),
+          validation: (Rule) => Rule.max(700).error('Текст не може перевищувати 700 символів'),
+        },
       ],
     }),
   ],
   preview: {
     select: {
-      title: 'title_ua',
+      title: 'text_ua.title',
+      subTitle: 'text_ua.desc',
     },
     prepare(selection) {
-      const {title} = selection
+      const {title, subTitle} = selection
       return {
-        title: 'Про Коуча',
+        title: title,
+        subtitle: subTitle,
       }
     },
   },

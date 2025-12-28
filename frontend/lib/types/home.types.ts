@@ -1,29 +1,11 @@
-export interface ImageAsset {
-  asset: { _ref: string; _type: "reference" };
-  alt?: string;
-}
-
-export interface Content {
-  title: string;
-  desc: string;
-}
-
-export interface BannerContent {
-  title: string;
-  semiTitle: string;
-}
-
-export interface SharedLink {
-  title_ua?: string;
-  title_en?: string;
-  title_de?: string;
-  url?: string;
-}
-
-export interface SVGContent {
-  name: string;
-  svgPath: string;
-}
+import {
+  BannerContent,
+  BannerContentData,
+  Content,
+  ImageAsset,
+  SharedLink,
+  SVGContent,
+} from "./base.types";
 
 export interface HeroData {
   title_ua?: string;
@@ -74,13 +56,6 @@ export type BenefitWithUrls = Omit<BenefitData, "items" | "imageSelected"> & {
   items: (Omit<BenefitContentData, "img"> & { imageUrl: string | null })[];
 };
 
-export interface BannerContentData {
-  icon?: SVGContent;
-  banner_content_ua?: BannerContent;
-  banner_content_en?: BannerContent;
-  banner_content_de?: BannerContent;
-}
-
 export interface HomeBannerData {
   item?: BannerContentData;
   sharedLink?: SharedLink;
@@ -112,35 +87,4 @@ export interface FAQData {
   question_ua?: FAQContentData;
   question_en?: FAQContentData;
   question_de?: FAQContentData;
-}
-
-export interface BlogContentData {
-  title?: string;
-  subTitle?: string;
-  text?: string;
-}
-
-export interface BlogData {
-  blog_ua?: BlogContentData;
-  blog_en?: BlogContentData;
-  blog_de?: BlogContentData;
-  img?: ImageAsset;
-}
-
-export type BlogWithUrl = Omit<BlogData, "img"> & {
-  imageUrl: string | null;
-};
-
-export interface HighlightContentData {
-  highlight?: BlogData;
-}
-
-export interface HighlightData {
-  highlight?: BlogData;
-  subhighlights?: BlogData[];
-}
-
-export interface HighlightWithUrls {
-  highlight: BlogWithUrl | null;
-  subhighlights: BlogWithUrl[];
 }

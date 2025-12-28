@@ -31,7 +31,7 @@ export const banner = defineType({
           type: 'string',
         }),
         defineField({
-          name: 'semiTitle',
+          name: 'subTitle',
           title: 'Підзаголовок',
           type: 'string',
         }),
@@ -49,7 +49,7 @@ export const banner = defineType({
           type: 'string',
         }),
         defineField({
-          name: 'semiTitle',
+          name: 'subTitle',
           title: 'Subtitle',
           type: 'string',
         }),
@@ -67,7 +67,7 @@ export const banner = defineType({
           type: 'string',
         }),
         defineField({
-          name: 'semiTitle',
+          name: 'subTitle',
           title: 'Untertitel',
           type: 'string',
         }),

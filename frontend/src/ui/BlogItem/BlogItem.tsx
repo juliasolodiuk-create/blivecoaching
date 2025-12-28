@@ -1,12 +1,8 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
-import {
-  BlogContentData,
-  BlogData,
-  BlogWithUrl,
-  HighlightContentData,
-} from "../../../lib/types";
+
 import { useLocale } from "next-intl";
+import { BlogContentData, BlogWithUrl } from "../../../lib/types/blog.types";
 
 interface BlogItemProps {
   data?: BlogWithUrl | null;

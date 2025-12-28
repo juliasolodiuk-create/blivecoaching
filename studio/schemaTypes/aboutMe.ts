@@ -21,23 +21,24 @@ export const aboutMe = defineType({
       title: 'Картинка',
     }),
     defineField({
-      name: 'title_ua',
-      title: 'Заголовок',
+      name: 'desc_ua',
+      title: 'Опис',
       type: 'array',
       group: 'ua',
       validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
       of: [
         defineField({
           name: 'desc',
-          title: 'Description',
+          title: 'Опис',
           type: 'text',
           validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
         }),
       ],
     }),
+
     defineField({
-      name: 'title_en',
-      title: 'Заголовок',
+      name: 'desc_en',
+      title: 'Description',
       type: 'array',
       group: 'en',
       validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
@@ -51,15 +52,15 @@ export const aboutMe = defineType({
       ],
     }),
     defineField({
-      name: 'title_de',
-      title: 'Заголовок',
+      name: 'desc_de',
+      title: 'Beschreibung',
       type: 'array',
       group: 'de',
       validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
       of: [
         defineField({
           name: 'desc',
-          title: 'Description',
+          title: 'Beschreibung',
           type: 'text',
           validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
         }),
@@ -68,12 +69,12 @@ export const aboutMe = defineType({
   ],
   preview: {
     select: {
-      title: 'title_ua',
+      title: 'desc_ua',
     },
     prepare(selection) {
       const {title} = selection
       return {
-        title: 'Про Коуча',
+        title: 'Про Мене',
       }
     },
   },

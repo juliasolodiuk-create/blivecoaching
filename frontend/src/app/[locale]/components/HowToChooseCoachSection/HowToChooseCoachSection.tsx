@@ -2,13 +2,10 @@ import BlurAnimation from "@/animations/BlurAnimation";
 import TextEffect from "@/animations/TextEffect";
 import { Button } from "@/ui/Button/Button";
 import { ChevronRight, ScrollText } from "lucide-react";
-import {
-  BannerContent,
-  BannerContentData,
-  HomeBannerData,
-  SharedLink,
-} from "../../../../../lib/types";
+
 import { useLocale } from "next-intl";
+import { HomeBannerData } from "../../../../../lib/types/home.types";
+import { BannerContent, SharedLink } from "../../../../../lib/types/base.types";
 
 interface HowToChooseCoachSectionProps {
   data?: HomeBannerData;
@@ -47,7 +44,7 @@ export const HowToChooseCoachSection = ({
       </TextEffect>
       <TextEffect>
         <p className="font-montserrat text-center max-w-200">
-          {bannerContent?.semiTitle}
+          {bannerContent?.subTitle}
         </p>
       </TextEffect>
       <Button

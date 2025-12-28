@@ -6,35 +6,11 @@ import gsap from "gsap";
 import { Observer } from "gsap/all";
 import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
 import { useCallback, useRef, useState } from "react";
-import { FeedbackData, FeedbackWithUrls } from "../../../../../lib/types";
+import { FeedbackWithUrls } from "../../../../../lib/types/home.types";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(Observer);
 }
-
-const data = [
-  {
-    stars: 5,
-    text: "For a long time, I felt like I was living on 'autopilot.' My life was stable, but completely devoid of momentum. We used some very unexpected, creative exercises (coaching cards and diagrams) that helped me see where I was setting my own limits. I didn't just break free from routine—I started truly living my life, with purpose and genuine engagement in every single day. Huge thanks for this breakthrough!",
-    name: "Dmytro N.",
-    position: "Art Director",
-    image: "/feedback/face.jpg",
-  },
-  {
-    stars: 3,
-    text: "For a long time, I felt like I was living on 'autopilot.' My life was stable, but completely devoid of momentum. We used some very unexpected, creative exercises (coaching cards and diagrams) that helped me see where I was setting my own limits. I didn't just break free from routine—I started truly living my life, with purpose and genuine engagement in every single day. Huge thanks for this breakthrough!",
-    name: "Dmytro N.",
-    position: "Art Director",
-    image: "/feedback/face.jpg",
-  },
-  {
-    stars: 5,
-    text: "For a long time, I felt like I was living on 'autopilot.' My life was stable, but completely devoid of momentum. We used some very unexpected, creative exercises (coaching cards and diagrams) that helped me see where I was setting my own limits. I didn't just break free from routine—I started truly living my life, with purpose and genuine engagement in every single day. Huge thanks for this breakthrough!",
-    name: "Dmytro N.",
-    position: "Art Director",
-    image: "/feedback/face.jpg",
-  },
-];
 
 interface FeedbacksSectionProps {
   data?: FeedbackWithUrls[];
@@ -92,11 +68,11 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
   return (
     <section
       ref={wrapperRef}
-      className="h-full bg-[#ffffff] py-28 px-16 relative"
+      className="h-full bg-[#ffffff] py-28 px-16 relative "
     >
       <div
         ref={containerRef}
-        className="slider-inner "
+        className="slider-inner"
         style={{ display: "flex" }}
       >
         {data.map((item, i) => (
@@ -125,7 +101,7 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
           )}
         </div>
       </div>
-      <div className="flex w-[90vw] gap-10 my-16 mx-auto max-w-100">
+      <div className="flex w-[60vw] gap-10 my-16 mx-auto max-w-100">
         {data.map((item, i) => (
           <div
             key={i}

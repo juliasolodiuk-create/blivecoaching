@@ -7,36 +7,7 @@ import { FAQItem } from "@/ui/FAQItem/FAQItem";
 import { ChevronRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRef } from "react";
-import { FAQData } from "../../../../../lib/types";
-
-const data = [
-  {
-    title:
-      "What is Coaching, and How Is It Different from Therapy or Consulting?",
-    description:
-      "Coaching is a future-focused partnership that helps clients clarify goals, overcome challenges, and achieve personal or professional growth. Unlike therapy, which addresses past experiences and emotional healing, coaching centers on the present and future, empowering clients to move forward. Consulting involves providing expert advice and solutions, while coaching creates a space for trust and inquiry—encouraging clients to reflect deeply and discover their own answers.",
-  },
-  {
-    title: "Do I need any kind of preparation before a coaching session?",
-    description:
-      "No specific preparation is required prior to your coaching session. It is beneficial, however, to choose a comfortable and private space where you feel at ease and able to speak openly about any topic. This helps create the right environment for meaningful conversation and personal growth.",
-  },
-  {
-    title: "How does the coaching process work?",
-    description:
-      "The coaching journey typically begins with a complimentary introductory session, allowing us to get acquainted, discuss your current situation, and clarify your expectations. Most clients choose to meet for one or two coaching sessions per week, with the overall engagement lasting anywhere from two to six months, depending on individual preferences and recommendations. Each session is tailored to your unique goals, ensuring a personalized and impactful experience.",
-  },
-  {
-    title: "What topics or challenges can I bring to coaching?",
-    description: "You can bring any topic to a coaching session. ",
-  },
-  {
-    title:
-      "How do you ensure confidentiality and trust in the coaching relationship?",
-    description:
-      "Confidentiality is a fundamental principle of my coaching practice. A formal coaching agreement is established with each client, outlining the terms of confidentiality and ethical standards from the outset of our work together. As an ICA-certified Professional Coach, I adhere to the guidelines set by the International Coach Academy  and the International Coaching Federation . Clients have the right to contact these organizations should any concerns about confidentiality arise. This commitment ensures a safe, trustworthy environment where you can engage openly and confidently in the coaching process.",
-  },
-];
+import { FAQData } from "../../../../../lib/types/home.types";
 
 interface FAQSectionProps {
   data: FAQData[];

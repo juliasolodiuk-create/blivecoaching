@@ -31,7 +31,7 @@ export const highlight = defineType({
   preview: {
     prepare() {
       return {
-        title: 'Нова проблема (пусто)',
+        title: 'Highlights',
       }
     },
   },

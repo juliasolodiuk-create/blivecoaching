@@ -3,31 +3,7 @@ import TextEffect from "@/animations/TextEffect";
 import { BlogItem } from "@/ui/BlogItem/BlogItem";
 import { Button } from "@/ui/Button/Button";
 import { ChevronRight } from "lucide-react";
-import { HighlightData, HighlightWithUrls } from "../../../../../lib/types";
-
-const data = [
-  {
-    title: "Find direction amid confusion",
-    semiTitle: "Clarity",
-    text: "Understanding emerges in the stillness between thoughts. Learn how to slow down so you can see your true path and take the next step with renewed confidence.",
-    img: "/blog/1.jpg",
-    link: "",
-  },
-  {
-    title: "Stand firm when tested",
-    semiTitle: "Resilience",
-    text: "Difficulties are inevitable, but your ability to bounce back is a skill you can cultivate. Explore three core practices that will help strengthen your inner capacity for growth.",
-    img: "/blog/2.jpg",
-    link: "",
-  },
-  {
-    title: "Break through what holds you",
-    semiTitle: "Momentum",
-    text: "Being stuck in a routine is not a final destination. Discover the hidden blocks preventing your growth and start transforming your potential into decisive, real-world action.",
-    img: "/blog/3.jpg",
-    link: "",
-  },
-];
+import { HighlightWithUrls } from "../../../../../lib/types/blog.types";
 
 interface BlogSectionProps {
   data?: HighlightWithUrls;

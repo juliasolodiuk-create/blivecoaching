@@ -8,21 +8,19 @@ import { FeedbacksSection } from "./components/FeedbacksSection/FeedbacksSection
 import { FAQSection } from "./components/FAQSection/FAQSection";
 import { BlogSection } from "./components/BlogSection/BlogSection";
 import { Header } from "@/ui/Header/Header";
+
+import { urlForImage } from "../../../lib/urlForImage";
 import {
   getBannerHowToChooseCoach,
   getBenefits,
   getFAQ,
   getFeedbacks,
   getHero,
-  getHighlights,
   getProblems,
-} from "../../../lib/api";
-import { urlForImage } from "../../../lib/urlForImage";
-import {
-  BenefitWithUrls,
-  BlogWithUrl,
-  HighlightWithUrls,
-} from "../../../lib/types";
+} from "../../../lib/api/home.api";
+import { getHighlights } from "../../../lib/api/blog.api";
+import { BenefitWithUrls } from "../../../lib/types/home.types";
+import { BlogWithUrl, HighlightWithUrls } from "../../../lib/types/blog.types";
 
 export default async function Home() {
   const [hero, problems, benefits, banner, feedbacks, faq, highlight] =
@@ -103,11 +101,11 @@ export default async function Home() {
       {/* <Header /> */}
       <HeroSection data={heroWithUrls} link="" />
       <ProblemsSection data={problems} />
-      {/* <BenefitsSection data={benefitsWithUrl} />
+      <BenefitsSection data={benefitsWithUrl} />
       <HowToChooseCoachSection data={banner} />
       <FeedbacksSection data={feedbackWithUrls.items} />
       <FAQSection data={faq} />
-      <BlogSection data={highlightsWithUrls} /> */}
+      {/* <BlogSection data={highlightsWithUrls} /> */}
     </>
   );
 }

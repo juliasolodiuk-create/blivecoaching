@@ -8,7 +8,7 @@ import { MessagesSquare } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { HeroData, HeroWithUrls } from "../../../../../lib/types";
+import { HeroWithUrls } from "../../../../../lib/types/home.types";
 
 interface HeroSectionProps {
   data: HeroWithUrls;

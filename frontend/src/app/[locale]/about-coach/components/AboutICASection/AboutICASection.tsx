@@ -1,4 +1,7 @@
 import TextEffect from "@/animations/TextEffect";
+import { AboutICAData } from "../../../../../../lib/types/about.types";
+import { useLocale } from "next-intl";
+import { Content } from "../../../../../../lib/types/base.types";
 
 const data = [
   {
@@ -11,7 +14,13 @@ const data = [
   },
 ];
 
-export const AboutICASection = () => {
+interface AboutICAProps {
+  data?: AboutICAData[];
+}
+
+export const AboutICASection = ({ data }: AboutICAProps) => {
+  const locale = useLocale();
+
   return (
     <section className="h-full bg-white px-29 py-29 text-[#242424] flex justify-between">
       <TextEffect>
@@ -19,17 +28,25 @@ export const AboutICASection = () => {
           About International Coach Academy
         </h3>
       </TextEffect>
-      <div className="flex flex-col gap-6 max-w-175">
-        {data.map((index, i) => (
-          <div key={i}>
-            <TextEffect>
-              <p className="font-montserrat font-semibold">{index.title}</p>
-            </TextEffect>
-            <TextEffect>
-              <p className="font-montserrat">{index.text}</p>
-            </TextEffect>
-          </div>
-        ))}
+      <div className="flex flex-col gap-10 max-w-175">
+        {data?.map((item, i) => {
+          const content = item[`text_${locale}` as keyof AboutICAData] as any;
+
+          return (
+            <div key={i} className="flex flex-col gap-3">
+              <TextEffect>
+                <p className="font-montserrat font-bold text-xl">
+                  {content?.title}
+                </p>
+              </TextEffect>
+              <TextEffect>
+                <p className="font-montserrat text-gray-700 leading-relaxed">
+                  {content?.desc}
+                </p>
+              </TextEffect>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

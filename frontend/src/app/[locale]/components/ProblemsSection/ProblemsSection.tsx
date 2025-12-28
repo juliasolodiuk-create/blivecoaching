@@ -5,12 +5,10 @@ import dataJson from "../../../../../db/data.json";
 import { Button } from "@/ui/Button/Button";
 import TextEffect from "@/animations/TextEffect";
 import { ProblemsItems } from "@/ui/ProblemsItem/ProblemsItem";
-import {
-  ProblemContentData,
-  ProblemData,
-  SharedLink,
-} from "../../../../../lib/types";
+
 import { useLocale, useTranslations } from "next-intl";
+import { ProblemData } from "../../../../../lib/types/home.types";
+import { SharedLink } from "../../../../../lib/types/base.types";
 
 type DataStructure = typeof dataJson;
 
@@ -28,7 +26,7 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
     data?.sharedLink?.[`title_${locale}` as keyof SharedLink] ||
     "Discover more";
   return (
-    <section className="h-full w-full px-28 py-16  bg-[#E7EBFA] text-[#242424] flex flex-col items-center">
+    <section className="h-full w-full  px-28 py-16  bg-[#E7EBFA] text-[#242424] flex flex-col items-center">
       <div>
         <TextEffect>
           <h2 className="tracking-tight text-[64px] font-literata font-bold text-center ">
@@ -40,7 +38,7 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
         </TextEffect>
       </div>
 
-      <div className="flex justify-between mt-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3  gap-8 w-full mb-12 mt-16">
         {data?.items?.map((item, index) => (
           <ProblemsItems data={item} key={index} />
         ))}

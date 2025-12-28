@@ -1,6 +1,6 @@
 import BlurAnimation from "@/animations/BlurAnimation";
 import TextEffect from "@/animations/TextEffect";
-import { AboutBannerData } from "../../../../../../lib/types/about.types";
+import { AboutBannerData } from "../../../../../../lib/types/aboutMe.types";
 import { useLocale } from "next-intl";
 import { BannerContent } from "../../../../../../lib/types/base.types";
 

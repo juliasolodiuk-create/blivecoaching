@@ -6,7 +6,7 @@ import {
   AboutICAData,
   AboutMeData,
   MyWhyData,
-} from "../types/about.types";
+} from "../types/aboutMe.types";
 
 export async function getAboutMe(): Promise<AboutMeData> {
   const query = groq`*[_type == "aboutMe"][0]{

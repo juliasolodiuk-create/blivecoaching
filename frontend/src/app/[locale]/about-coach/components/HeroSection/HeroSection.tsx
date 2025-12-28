@@ -4,22 +4,7 @@ import TextEffect from "@/animations/TextEffect";
 import useParallax from "@/hooks/useParallax";
 import { useLocale, useTranslations } from "next-intl";
 import { useRef } from "react";
-import { AboutMeWithUrls } from "../../../../../../lib/types/about.types";
-
-const data = [
-  {
-    text: "With a foundation as a philologist and language educator, my lifelong passion for psychology began with supporting children in educational settings as a teacher.",
-  },
-  {
-    text: "This passion evolved as I transitioned into the business world, where I spent over 15 years supporting organizations and teams in corporate and retail HR, training, and development.",
-  },
-  {
-    text: "My professional journey also includes interpreter experience in clinics in Germany and Finland, working closely with severely ill patients and their families to provide compassionate support during challenging times.My professional journey also includes interpreter experience in clinics in Germany and Finland, working closely with severely ill patients and their families to provide compassionate support during challenging times.",
-  },
-  {
-    text: "My approach is further enriched by advanced studies in Gestalt Therapy and professional coaching with the International Coach Academy, allowing me to integrate diverse methodologies and perspectives into my practice.",
-  },
-];
+import { AboutMeWithUrls } from "../../../../../../lib/types/aboutMe.types";
 
 interface HeroSectionProps {
   data?: AboutMeWithUrls;

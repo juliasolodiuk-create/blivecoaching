@@ -7,7 +7,7 @@ import {
   BannerContent,
   SharedLink,
 } from "../../../../../../lib/types/base.types";
-import { AboutBannerCTAData } from "../../../../../../lib/types/about.types";
+import { AboutBannerCTAData } from "../../../../../../lib/types/aboutMe.types";
 
 interface CTAProps {
   data?: AboutBannerCTAData;

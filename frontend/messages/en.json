@@ -20,5 +20,9 @@
   "myWhy": {
     "title": "My Why",
     "subTitle": "Why I desiced became coach"
+  },
+  "howToChooseCoach": {
+    "title": "How To Choose Coach?",
+    "link": "Scroll to read more"
   }
 }

@@ -10,7 +10,7 @@ import {
   getAboutICA,
   getAboutMe,
   getMyWhy,
-} from "../../../../lib/api/about.api";
+} from "../../../../lib/api/aboutMe.api";
 import { urlForImage } from "../../../../lib/urlForImage";
 
 export default async function Page() {

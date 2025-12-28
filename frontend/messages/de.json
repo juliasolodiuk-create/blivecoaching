@@ -20,5 +20,9 @@
   "myWhy": {
     "title": "Mein Warum",
     "subTitle": "Warum ich mich entschieden habe, Trainer zu werden"
+  },
+  "howToChooseCoach": {
+    "title": "Wie wähle ich einen Coach aus?",
+    "link": "Scrollen Sie, um mehr zu lesen"
   }
 }

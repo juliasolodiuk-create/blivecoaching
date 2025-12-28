@@ -3,7 +3,7 @@
 import TextEffect from "@/animations/TextEffect";
 import useParallax from "@/hooks/useParallax";
 import { useRef } from "react";
-import { MyWhyWithUrls } from "../../../../../../lib/types/about.types";
+import { MyWhyWithUrls } from "../../../../../../lib/types/aboutMe.types";
 import { useLocale, useTranslations } from "next-intl";
 
 const data = [

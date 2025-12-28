@@ -1,5 +1,5 @@
 import TextEffect from "@/animations/TextEffect";
-import { AboutICAData } from "../../../../../../lib/types/about.types";
+import { AboutICAData } from "../../../../../../lib/types/aboutMe.types";
 import { useLocale } from "next-intl";
 import { Content } from "../../../../../../lib/types/base.types";
 

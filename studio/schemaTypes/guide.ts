@@ -14,30 +14,30 @@ export const guide = defineType({
   fields: [
     defineField({
       name: 'guide_ua',
-      title: 'Description',
+      title: 'Опис',
       type: 'object',
       fields: [
         defineField({
           name: 'title',
-          title: 'Title',
+          title: 'Заголовок',
           type: 'string',
         }),
         defineField({
-          name: 'semiTitle',
-          title: 'Semi Title',
+          name: 'subTitle',
+          title: 'Підзаголовок',
           type: 'string',
         }),
         defineField({
           name: 'desc',
-          title: 'Description',
+          title: 'Опис',
           type: 'array',
-          validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
+          validation: (Rule) => Rule.max(5).error('Можна додати не більше 5 описів'),
           of: [
             defineField({
               name: 'desc',
-              title: 'Description',
+              title: 'Опис',
               type: 'text',
-              validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
+              validation: (Rule) => Rule.max(500).error('Текст не може перевищувати 500 символів'),
             }),
           ],
         }),
@@ -56,21 +56,21 @@ export const guide = defineType({
           type: 'string',
         }),
         defineField({
-          name: 'semiTitle',
-          title: 'Semi Title',
+          name: 'subTitle',
+          title: 'Sub Title',
           type: 'string',
         }),
         defineField({
           name: 'desc',
           title: 'Description',
           type: 'array',
-          validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
+          validation: (Rule) => Rule.max(5).error('Можна додати не більше 5 описів'),
           of: [
             defineField({
               name: 'desc',
               title: 'Description',
               type: 'text',
-              validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
+              validation: (Rule) => Rule.max(500).error('Текст не може перевищувати 500 символів'),
             }),
           ],
         }),
@@ -79,30 +79,30 @@ export const guide = defineType({
     }),
     defineField({
       name: 'guide_de',
-      title: 'Description',
+      title: 'Beschreibung',
       type: 'object',
       fields: [
         defineField({
           name: 'title',
-          title: 'Title',
+          title: 'Titel',
           type: 'string',
         }),
         defineField({
-          name: 'semiTitle',
-          title: 'Semi Title',
+          name: 'subTitle',
+          title: 'Halbtitel',
           type: 'string',
         }),
         defineField({
           name: 'desc',
-          title: 'Description',
+          title: 'Beschreibung',
           type: 'array',
-          validation: (Rule) => Rule.max(4).error('Можна додати не більше 4 описів'),
+          validation: (Rule) => Rule.max(5).error('Можна додати не більше 5 описів'),
           of: [
             defineField({
               name: 'desc',
-              title: 'Description',
+              title: 'Beschreibung',
               type: 'text',
-              validation: (Rule) => Rule.max(450).error('Текст не може перевищувати 450 символів'),
+              validation: (Rule) => Rule.max(500).error('Текст не може перевищувати 500 символів'),
             }),
           ],
         }),

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { literata, montserrat } from "@/styles/fonts";
 import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
@@ -31,9 +30,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body
-        className={`${montserrat.variable} ${literata.variable} antialiased`}
-      >
+      <body className={`antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

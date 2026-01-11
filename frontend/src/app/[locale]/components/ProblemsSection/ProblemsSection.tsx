@@ -29,12 +29,12 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
     <section className="h-full w-full  px-28 py-16  bg-[#E7EBFA] text-[#242424] flex flex-col items-center">
       <div>
         <TextEffect>
-          <h2 className="tracking-tight text-[64px] font-literata font-bold text-center ">
+          <h2 className="tracking-tight text-[64px] font-header font-medium text-center ">
             {t("title")}
           </h2>
         </TextEffect>
         <TextEffect>
-          <p className="font-montserrat text-center ">{t("subTitle")}</p>
+          <p className="font-body text-center font-normal ">{t("subTitle")}</p>
         </TextEffect>
       </div>
 

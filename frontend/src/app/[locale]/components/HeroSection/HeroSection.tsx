@@ -42,7 +42,6 @@ export const HeroSection = ({ data, link }: HeroSectionProps) => {
       px-4 py-29 
       sm:px-10
       lg:px-16
-      xl:px-29
       "
       >
         <div
@@ -51,18 +50,18 @@ export const HeroSection = ({ data, link }: HeroSectionProps) => {
         lg:w-4/7 lg:items-start
         "
         >
-          <TextEffectBlur>
-            <h1
-              className="tracking-tight font-literata font-bold leading-[90%] 
-            text-center text-[36px]
-            sm:text-[52px] 
+          {/* <TextEffectBlur> */}
+          <h1
+            className="tracking-tighter font-header font-medium leading-[80%] 
+            text-center text-[54px]
+            sm:text-[80px] 
             md:text-[100px]
             lg:text-left
             "
-            >
-              {heroTitle}
-            </h1>
-          </TextEffectBlur>
+          >
+            {heroTitle}
+          </h1>
+          {/* </TextEffectBlur> */}
           <div>
             <Button
               children={<MessagesSquare size={20} />}

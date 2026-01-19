@@ -13,6 +13,16 @@ export const problems = defineType({
   icon: BugIcon,
   fields: [
     defineField({
+      name: 'img',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      title: 'Картинка',
+      group: ['ua', 'en', 'de'],
+      validation: (Rule) => Rule.required().error('Виберіть фотографію, це поле є обов’язковим'),
+    }),
+    defineField({
       name: 'problemIcon',
       title: 'Іконка Проблеми',
       type: 'reference',

@@ -22,6 +22,7 @@ export async function getHero(): Promise<HeroData> {
 export async function getProblems(): Promise<ProblemData> {
   const query = groq`{
     "items": *[_type == "problems"] {
+       img,
        "problemIcon": problemIcon-> { name, svgPath },
        "arrowIcon": arrowIcon-> { name, svgPath },
        problem_content_ua, solution_content_ua,

@@ -30,7 +30,7 @@ export const FAQItem = ({ data }: FAQItemProps) => {
     | FAQContentData
     | undefined;
   return (
-    <div className="flex flex-col max-x-200 items-center border-[0.5px] p-6 mx-auto">
+    <div className="flex flex-col max-x-200 items-center border-[0.5px] p-6 mx-auto rounded-xl">
       <div
         className=" px-4 md:px-0 w-full cursor-pointer"
         onClick={toggleDescription}

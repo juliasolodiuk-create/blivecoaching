@@ -21,7 +21,7 @@ export const FAQSection = ({ data }: FAQSectionProps) => {
     <section className="text-[#242424] min-h-screen gap-8 py-28 px-16 bg-[#E7EBFA] flex flex-col items-center">
       <div>
         <TextEffect>
-          <h2 className=" tracking-tight text-[48px] font-literata font-bold text-center ">
+          <h2 className=" tracking-tight text-[54px] font-header font-bold text-center leading-[110%]">
             {t("title")}
           </h2>
         </TextEffect>

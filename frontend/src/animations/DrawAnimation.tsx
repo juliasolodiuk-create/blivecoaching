@@ -14,6 +14,7 @@ interface DrawAnimationProps {
   start?: string;
   selector?: string;
   duration?: number;
+  direction?: "start" | "end";
 }
 
 const DrawAnimation = ({
@@ -23,6 +24,7 @@ const DrawAnimation = ({
   start = "top 80%",
   selector = "path, circle, rect, polyline",
   duration = 2,
+  direction = "start",
 }: DrawAnimationProps) => {
   const containerRef = useRef<SVGSVGElement | null>(null);
 
@@ -38,10 +40,12 @@ const DrawAnimation = ({
           const element = target as SVGGeometryElement;
           const length = element.getTotalLength();
 
+          const initialOffset = direction === "start" ? length : -length;
+
           // Устанавливаем начальное состояние: линия полностью "спрятана"
           gsap.set(element, {
             strokeDasharray: length,
-            strokeDashoffset: length,
+            strokeDashoffset: initialOffset,
           });
         });
 
@@ -52,16 +56,17 @@ const DrawAnimation = ({
           duration: duration,
           ease: "power2.inOut",
           delay,
-          stagger: 0.2, // Рисуем детали по очереди
+          stagger: 0.2,
           scrollTrigger: {
             trigger: containerRef.current,
             start: start,
             once: true,
+            // markers: true,
           },
         });
       }
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return cloneElement(children, {

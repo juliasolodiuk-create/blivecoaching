@@ -4,17 +4,20 @@ import { ChevronRight } from "lucide-react";
 import dataJson from "../../../../../db/data.json";
 import { Button } from "@/ui/Button/Button";
 import TextEffect from "@/animations/TextEffect";
-import { ProblemsItems } from "@/ui/ProblemsItem/ProblemsItem";
 
 import { useLocale, useTranslations } from "next-intl";
-import { ProblemData } from "../../../../../lib/types/home.types";
+import {
+  ProblemData,
+  ProblemWithUrls,
+} from "../../../../../lib/types/home.types";
 import { SharedLink } from "../../../../../lib/types/base.types";
+import { ProblemItems } from "@/ui/ProblemsItem/ProblemItem";
 
 type DataStructure = typeof dataJson;
 
 interface ProblemsSectionProps {
   // Теперь data — это объект, а не массив
-  data?: ProblemData;
+  data?: ProblemWithUrls;
 }
 
 export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
@@ -26,10 +29,10 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
     data?.sharedLink?.[`title_${locale}` as keyof SharedLink] ||
     "Discover more";
   return (
-    <section className="h-full w-full  px-28 py-16  bg-[#E7EBFA] text-[#242424] flex flex-col items-center">
+    <section className="z-1 h-full w-full  px-16 py-16  bg-[#E7EBFA] text-[#242424] flex flex-col items-center">
       <div>
         <TextEffect>
-          <h2 className="tracking-tight text-[64px] font-header font-medium text-center ">
+          <h2 className="tracking-tight text-[54px] font-header font-bold text-center leading-[110%]">
             {t("title")}
           </h2>
         </TextEffect>
@@ -40,7 +43,7 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3  gap-8 w-full mb-12 mt-16">
         {data?.items?.map((item, index) => (
-          <ProblemsItems data={item} key={index} />
+          <ProblemItems data={item} key={index} />
         ))}
       </div>
 

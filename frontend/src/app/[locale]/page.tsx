@@ -19,7 +19,10 @@ import {
   getProblems,
 } from "../../../lib/api/home.api";
 import { getHighlights } from "../../../lib/api/blog.api";
-import { BenefitWithUrls } from "../../../lib/types/home.types";
+import {
+  BenefitWithUrls,
+  ProblemWithUrls,
+} from "../../../lib/types/home.types";
 import { BlogWithUrl, HighlightWithUrls } from "../../../lib/types/blog.types";
 
 export default async function Home() {
@@ -37,9 +40,22 @@ export default async function Home() {
   const heroWithUrls = {
     ...hero,
     imageUrl: hero.img
-      ? urlForImage(hero.img)?.width(1440).quality(85).format("webp").url() ??
-        null
+      ? (urlForImage(hero.img)?.width(1440).quality(85).format("webp").url() ??
+        null)
       : null,
+  };
+
+  const problemsWithUrl: ProblemWithUrls = {
+    ...problems,
+    // Обрабатываем конкретное изображение из imageSelected
+
+    // Если вам нужно также обработать массив картинок в "items"
+    items: (problems.items || []).map((item) => ({
+      ...item,
+      imageUrl: item.img
+        ? urlForImage(item.img).width(500).quality(80).format("webp").url()
+        : null,
+    })),
   };
 
   const benefitsWithUrl: BenefitWithUrls = {
@@ -100,7 +116,7 @@ export default async function Home() {
     <>
       {/* <Header /> */}
       <HeroSection data={heroWithUrls} link="" />
-      <ProblemsSection data={problems} />
+      <ProblemsSection data={problemsWithUrl} />
       <BenefitsSection data={benefitsWithUrl} />
       <HowToChooseCoachSection data={banner} />
       <FeedbacksSection data={feedbackWithUrls.items} />

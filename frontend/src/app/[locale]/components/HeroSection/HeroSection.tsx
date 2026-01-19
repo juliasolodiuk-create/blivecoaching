@@ -52,7 +52,7 @@ export const HeroSection = ({ data, link }: HeroSectionProps) => {
         >
           {/* <TextEffectBlur> */}
           <h1
-            className="tracking-tighter font-header font-medium leading-[80%] 
+            className="tracking-tighter font-header font-bold leading-[80%] 
             text-center text-[54px]
             sm:text-[80px] 
             md:text-[100px]

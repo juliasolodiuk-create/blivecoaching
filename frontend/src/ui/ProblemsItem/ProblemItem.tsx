@@ -2,36 +2,38 @@ import BlurAnimation from "@/animations/BlurAnimation";
 import DrawAnimation from "@/animations/DrawAnimation";
 import TextEffect from "@/animations/TextEffect";
 import { useLocale } from "next-intl";
-import { ProblemContentData } from "../../../lib/types/home.types";
+import {
+  ProblemContentData,
+  ProblemWithUrls,
+} from "../../../lib/types/home.types";
 import { Content } from "../../../lib/types/base.types";
 
 interface ProblemItemProps {
-  data?: ProblemContentData;
+  data?: ProblemWithUrls["items"][number];
 }
 
-export const ProblemsItems = ({ data }: ProblemItemProps) => {
+export const ProblemItems = ({ data }: ProblemItemProps) => {
   // console.log("DATA", data);
   const locale = useLocale();
   const problemContent = data?.[
-    `problem_content_${locale}` as keyof ProblemContentData
+    `problem_content_${locale}` as keyof ProblemWithUrls["items"][number]
   ] as Content | undefined;
   const solutionContent = data?.[
-    `solution_content_${locale}` as keyof ProblemContentData
+    `solution_content_${locale}` as keyof ProblemWithUrls["items"][number]
   ] as Content | undefined;
   return (
-    <div className="flex flex-col w-full max-w-125 gap-4 justify-between h-120  mx-auto">
+    <div
+      className={`p-2 flex flex-col w-full max-w-125 rounded-lg gap-4 justify-between h-full  mx-auto bg-[#F5F7FF]`}
+    >
       <div className="font-montserrat gap-5 flex flex-col items-center  text-center">
-        <div className="h-15 flex items-center">
-          <BlurAnimation>
-            <svg
-              role="img"
-              viewBox="0 0 300 279.48"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 sm:w-15 fill-[#D3C3E0]  "
-            >
-              <path d={data?.problemIcon?.svgPath} />
-            </svg>
-          </BlurAnimation>
+        <div className=" flex items-center overflow-clip rounded-sm">
+          {data?.imageUrl && (
+            <img
+              src={data?.imageUrl}
+              alt=""
+              className=" inset-0 w-full h-full object-cover object-right scale-110 "
+            />
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <TextEffect>

@@ -24,36 +24,29 @@ export const HowToChooseCoachSection = ({
     data?.sharedLink?.[`title_${locale}` as keyof SharedLink] ||
     "Discover more";
   return (
-    <section className="flex bg-[#E7EBFA] gap-8 text-[#242424] flex-col justify-center items-center px-16 py-28">
-      <div className="h-15 flex items-center">
-        <BlurAnimation>
-          <svg
-            role="img"
-            viewBox="0 0 703.52 701.25"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 sm:w-15 fill-[#D3C3E0]"
-          >
-            <path d={data?.item?.icon?.svgPath} />
-          </svg>
-        </BlurAnimation>
+    <section className=" px-16 z-1 bg-white">
+      <div className="flex bg-[#E7EBFA] gap-8 text-[#242424] flex-col justify-center items-center px-16 py-8 rounded-xl">
+        <div className="flex gap-2 flex-col justify-center items-center">
+          {/* <TextEffect> */}
+          <h2 className="tracking-tight text-[54px] font-header font-bold text-center leading-[110%]">
+            {bannerContent?.title}
+          </h2>
+          {/* </TextEffect> */}
+          <TextEffect>
+            <p className="font-body text-center max-w-200">
+              {bannerContent?.subTitle}
+            </p>
+          </TextEffect>
+        </div>
+
+        <Button
+          title={buttonTitle}
+          children={<ChevronRight size={20} />}
+          secondary={true}
+          width="w-90"
+          link="/how-to-choose-coach"
+        />
       </div>
-      <TextEffect>
-        <h2 className="tracking-tight text-[48px] font-literata font-bold text-center ">
-          {bannerContent?.title}
-        </h2>
-      </TextEffect>
-      <TextEffect>
-        <p className="font-montserrat text-center max-w-200">
-          {bannerContent?.subTitle}
-        </p>
-      </TextEffect>
-      <Button
-        title={buttonTitle}
-        children={<ChevronRight size={20} />}
-        secondary={true}
-        width="w-90"
-        link="/how-to-choose-coach"
-      />
     </section>
   );
 };

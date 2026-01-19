@@ -19,6 +19,7 @@ export type HeroWithUrls = Omit<HeroData, "img"> & {
 };
 
 export interface ProblemContentData {
+  img: ImageAsset;
   problemIcon?: SVGContent;
   arrowIcon?: SVGContent;
   problem_content_ua?: Content;
@@ -33,6 +34,10 @@ export interface ProblemData {
   items?: ProblemContentData[];
   sharedLink?: SharedLink;
 }
+
+export type ProblemWithUrls = Omit<ProblemData, "items"> & {
+  items: (Omit<ProblemContentData, "img"> & { imageUrl: string | null })[];
+};
 
 export interface BenefitContentData {
   img: ImageAsset;

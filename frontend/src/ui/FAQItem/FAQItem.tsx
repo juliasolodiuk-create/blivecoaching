@@ -30,13 +30,13 @@ export const FAQItem = ({ data }: FAQItemProps) => {
     | FAQContentData
     | undefined;
   return (
-    <div className="flex flex-col max-x-200 items-center border-[0.5px] p-6 mx-auto rounded-xl">
+    <div className="flex flex-col max-x-200 items-center border-[0.5px] p-4 mx-auto rounded-xl border-[#938FAC]">
       <div
         className=" px-4 md:px-0 w-full cursor-pointer"
         onClick={toggleDescription}
       >
         <div className="flex justify-between items-center w-full">
-          <h3 className="font-montserrat block text-[18px] font-semibold w-full">
+          <h3 className="font-body block text-[16px] font-semibold w-full">
             {FAQContent?.question}
           </h3>
           <div

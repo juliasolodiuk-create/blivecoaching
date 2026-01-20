@@ -18,8 +18,8 @@ export const FAQSection = ({ data }: FAQSectionProps) => {
   const t = useTranslations("faq");
   const locale = useLocale();
   return (
-    <section className="text-[#242424] min-h-screen gap-8 py-28 px-16 bg-[#E7EBFA] flex flex-col items-center">
-      <div>
+    <section className="text-[#242424] min-h-screen gap-8 p-16 bg-[#E7EBFA] flex flex-col items-center">
+      <div className="flex flex-col gap-2">
         <TextEffect>
           <h2 className=" tracking-tight text-[54px] font-header font-bold text-center leading-[110%]">
             {t("title")}
@@ -32,7 +32,7 @@ export const FAQSection = ({ data }: FAQSectionProps) => {
         </TextEffect>
       </div>
 
-      <div className="w-full sm:w-[80%] gap-4 flex flex-col">
+      <div className="w-full sm:w-[80%] gap-6 flex flex-col">
         {data.map((item, index) => (
           <div key={index}>
             <BlurAnimation>
@@ -45,7 +45,7 @@ export const FAQSection = ({ data }: FAQSectionProps) => {
       </div>
       <div className="flex flex-col justify-center items-center">
         <TextEffect>
-          <h3 className="font-montserrat font-bold text-[32px]">
+          <h3 className="font-body text-[36px] font-bold leading-[110%]">
             {t("bottomTitle")}
           </h3>
         </TextEffect>

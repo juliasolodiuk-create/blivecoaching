@@ -24,6 +24,7 @@ import {
   ProblemWithUrls,
 } from "../../../lib/types/home.types";
 import { BlogWithUrl, HighlightWithUrls } from "../../../lib/types/blog.types";
+import { ContactSection } from "./components/ContactSection/ContactSection";
 
 export default async function Home() {
   const [hero, problems, benefits, banner, feedbacks, faq, highlight] =
@@ -121,7 +122,8 @@ export default async function Home() {
       <HowToChooseCoachSection data={banner} />
       <FeedbacksSection data={feedbackWithUrls.items} />
       <FAQSection data={faq} />
-      {/* <BlogSection data={highlightsWithUrls} /> */}
+      <BlogSection data={highlightsWithUrls} />
+      <ContactSection />
     </>
   );
 }

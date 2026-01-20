@@ -12,12 +12,12 @@ interface BlogSectionProps {
 export const BlogSection = ({ data }: BlogSectionProps) => {
   return (
     <section className="min-h-screen bg-white text-[#242424] py-28 px-16 flex flex-col gap-20 items-center">
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-2">
         <TextEffect>
-          <p className="font-montserrat text-center max-w-200">Blog</p>
+          <p className="font-body text-center max-w-200">Blog</p>
         </TextEffect>
         <TextEffect>
-          <h2 className="tracking-tight text-[48px] font-literata font-bold text-center leading-[90%]">
+          <h2 className="tracking-tight text-[54px] font-header font-bold text-center leading-[110%]">
             Some my thoughts that I want to share with you
           </h2>
         </TextEffect>

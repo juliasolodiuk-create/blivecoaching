@@ -25,6 +25,7 @@ import {
 } from "../../../lib/types/home.types";
 import { BlogWithUrl, HighlightWithUrls } from "../../../lib/types/blog.types";
 import { ContactSection } from "./components/ContactSection/ContactSection";
+import { Footer } from "@/ui/Footer/Footer";
 
 export default async function Home() {
   const [hero, problems, benefits, banner, feedbacks, faq, highlight] =
@@ -124,6 +125,7 @@ export default async function Home() {
       <FAQSection data={faq} />
       <BlogSection data={highlightsWithUrls} />
       <ContactSection />
+      <Footer />
     </>
   );
 }

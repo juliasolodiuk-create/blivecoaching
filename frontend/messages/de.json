@@ -1,31 +1,31 @@
 {
-  "Homepage": {
-    "title": "Willkommen auf der Startseite",
-    "content": "Dies ist der Inhalt der Startseite"
-  },
-  "problems": {
-    "title": "Ist das Ihre aktuelle Realität?",
-    "subTitle": "Wenn Sie sich in diesen Herausforderungen wiedererkennen, ist die BLive Coaching-Methode Ihr Weg zu Klarheit und persönlichem Wachstum."
-  },
-  "faq": {
-    "title": "FAQ",
-    "subTitle": "Häufig gestellte Fragen zum Coaching und seiner Funktionsweise",
-    "bottomTitle": "Haben Sie weitere Fragen?",
-    "bottomSubTitle": "Melden Sie sich, und wir besprechen Ihre konkrete Situation.",
-    "link": "Kontakt"
-  },
-  "aboutMe": {
-    "title": "Über mich"
-  },
-  "myWhy": {
-    "title": "Mein Warum",
-    "subTitle": "Warum ich mich entschieden habe, Trainer zu werden"
-  },
-  "howToChooseCoach": {
-    "title": "Wie wähle ich einen Coach aus?",
-    "link": "Scrollen Sie, um mehr zu lesen"
-  },
-  "howItWorks": {
-    "title": "Wie funktioniert es?"
-  }
+	"Homepage": {
+		"title": "Willkommen auf der Startseite",
+		"content": "Dies ist der Inhalt der Startseite"
+	},
+	"problems": {
+		"title": "Ist das Ihre aktuelle Realität?",
+		"subTitle": "Wenn Sie sich in diesen Herausforderungen wiedererkennen, ist die BLive Coaching-Methode Ihr Weg zu Klarheit und persönlichem Wachstum."
+	},
+	"faq": {
+		"title": "FAQ",
+		"subTitle": "Häufig gestellte Fragen zum Coaching und seiner Funktionsweise",
+		"bottomTitle": "Haben Sie weitere Fragen?",
+		"bottomSubTitle": "Melden Sie sich, und wir besprechen Ihre konkrete Situation.",
+		"link": "Kontakt"
+	},
+	"aboutMe": {
+		"title": "Über mich"
+	},
+	"myWhy": {
+		"title": "Mein Warum",
+		"subTitle": "Warum ich mich entschieden habe, Trainer zu werden"
+	},
+	"howToChooseCoach": {
+		"title": "Wie wähle ich einen Coach aus?",
+		"link": "Scrollen Sie, um mehr zu lesen"
+	},
+	"howItWorks": {
+		"title": "Wie funktioniert es?"
+	}
 }

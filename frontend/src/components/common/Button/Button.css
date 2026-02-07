@@ -1,0 +1,8 @@
+a:hover {
+	transform: skewY(-5deg);
+	transition: 0.8s;
+}
+
+a {
+	transition: 0.8s;
+}

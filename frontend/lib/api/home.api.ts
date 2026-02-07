@@ -1,26 +1,26 @@
 import { groq } from "next-sanity";
 import { client } from "../client";
-import {
-  BenefitData,
-  FAQData,
-  FeedbackData,
-  HeroData,
-  HomeBannerData,
-  ProblemData,
+import type {
+	BenefitData,
+	FAQData,
+	FeedbackData,
+	HeroData,
+	HomeBannerData,
+	ProblemData,
 } from "../types/home.types";
 
 export async function getHero(): Promise<HeroData> {
-  const query = groq`*[_type == "hero"][0]{
+	const query = groq`*[_type == "hero"][0]{
     title_ua,
     title_en,
     title_de,
     img
   }`;
-  return await client.fetch(query, {}, { next: { revalidate: 0 } });
+	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }
 
 export async function getProblems(): Promise<ProblemData> {
-  const query = groq`{
+	const query = groq`{
     "items": *[_type == "problems"] {
        img,
        "problemIcon": problemIcon-> { name, svgPath },
@@ -33,11 +33,11 @@ export async function getProblems(): Promise<ProblemData> {
       title_ua, title_en, title_de, url 
     }
   }`;
-  return await client.fetch(query, {}, { next: { revalidate: 0 } });
+	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }
 
 export async function getBenefits(): Promise<BenefitData> {
-  const query = groq`{
+	const query = groq`{
     "items": *[_type == "benefits"] {
        img,
        benefit_content_ua, 
@@ -51,11 +51,11 @@ export async function getBenefits(): Promise<BenefitData> {
       img,
     }
   }`;
-  return await client.fetch(query, {}, { next: { revalidate: 0 } });
+	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }
 
 export async function getBannerHowToChooseCoach(): Promise<HomeBannerData> {
-  const query = groq`{"item": *[_type == "banner" && _id == "home_bannerCTA"][0]{
+	const query = groq`{"item": *[_type == "banner" && _id == "home_bannerCTA"][0]{
     banner_content_ua,
     banner_content_en,
     banner_content_de,
@@ -63,24 +63,24 @@ export async function getBannerHowToChooseCoach(): Promise<HomeBannerData> {
   }, "sharedLink": *[_id == "home_bannerCTA_link"][0] { 
       title_ua, title_en, title_de, url 
     }}`;
-  return await client.fetch(query, {}, { next: { revalidate: 0 } });
+	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }
 
 export async function getFeedbacks(): Promise<FeedbackData[]> {
-  const query = groq`*[_type == "feedback"]{
+	const query = groq`*[_type == "feedback"]{
     feedback_ua,
       feedback_en,
       feedback_de,
     img
   }`;
-  return await client.fetch(query, {}, { next: { revalidate: 0 } });
+	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }
 
 export async function getFAQ(): Promise<FAQData[]> {
-  const query = groq`*[_type == "faq"]{
+	const query = groq`*[_type == "faq"]{
      question_ua,
       question_en,
       question_de
   }`;
-  return await client.fetch(query, {}, { next: { revalidate: 0 } });
+	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }

@@ -1,32 +1,32 @@
-import { ImageAsset } from "./base.types";
+import type { ImageAsset } from "./base.types";
 
 export interface BlogContentData {
-  title?: string;
-  subTitle?: string;
-  text?: string;
+	title?: string;
+	subTitle?: string;
+	text?: string;
 }
 
 export interface BlogData {
-  blog_ua?: BlogContentData;
-  blog_en?: BlogContentData;
-  blog_de?: BlogContentData;
-  img?: ImageAsset;
+	blog_ua?: BlogContentData;
+	blog_en?: BlogContentData;
+	blog_de?: BlogContentData;
+	img?: ImageAsset;
 }
 
 export type BlogWithUrl = Omit<BlogData, "img"> & {
-  imageUrl: string | null;
+	imageUrl: string | null;
 };
 
 export interface HighlightContentData {
-  highlight?: BlogData;
+	highlight?: BlogData;
 }
 
 export interface HighlightData {
-  highlight?: BlogData;
-  subhighlights?: BlogData[];
+	highlight?: BlogData;
+	subhighlights?: BlogData[];
 }
 
 export interface HighlightWithUrls {
-  highlight: BlogWithUrl | null;
-  subhighlights: BlogWithUrl[];
+	highlight: BlogWithUrl | null;
+	subhighlights: BlogWithUrl[];
 }

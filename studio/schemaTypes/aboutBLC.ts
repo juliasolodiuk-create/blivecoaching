@@ -1,5 +1,5 @@
-import {defineField, defineType} from 'sanity'
 import {BulbFilledIcon} from '@sanity/icons'
+import {defineField, defineType} from 'sanity'
 
 export const aboutBLC = defineType({
   name: 'aboutBLC',

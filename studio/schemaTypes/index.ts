@@ -1,41 +1,41 @@
-import {hero} from './hero'
-import {seo} from './seo'
-import {icons} from './icons'
-import {faq} from './faq'
-import {problems} from './problems'
-import {link} from './link'
-import {feedbacks} from './feedbacks'
-import {benefits} from './benefits'
-import {img} from './img'
-import {aboutMe} from './aboutMe'
-import {myWhy} from './myWhy'
-import {aboutICA} from './aboutICA'
-import {banner} from './banner'
-import {guide} from './guide'
-import {aboutBLC} from './aboutBLC'
-import {howItWorks} from './howItWorks'
-import {blog} from './blog'
-import {highlight} from './highlight'
-import {heroTitleScroll} from './heroTitleScroll'
+import { aboutBLC } from "./aboutBLC";
+import { aboutICA } from "./aboutICA";
+import { aboutMe } from "./aboutMe";
+import { banner } from "./banner";
+import { benefits } from "./benefits";
+import { blog } from "./blog";
+import { faq } from "./faq";
+import { feedbacks } from "./feedbacks";
+import { guide } from "./guide";
+import { hero } from "./hero";
+import { heroTitleScroll } from "./heroTitleScroll";
+import { highlight } from "./highlight";
+import { howItWorks } from "./howItWorks";
+import { icons } from "./icons";
+import { img } from "./img";
+import { link } from "./link";
+import { myWhy } from "./myWhy";
+import { problems } from "./problems";
+import { seo } from "./seo";
 
 export const schemaTypes = [
-  hero,
-  seo,
-  icons,
-  faq,
-  problems,
-  link,
-  feedbacks,
-  benefits,
-  img,
-  aboutMe,
-  myWhy,
-  aboutICA,
-  banner,
-  guide,
-  aboutBLC,
-  howItWorks,
-  blog,
-  highlight,
-  heroTitleScroll,
-]
+	hero,
+	seo,
+	icons,
+	faq,
+	problems,
+	link,
+	feedbacks,
+	benefits,
+	img,
+	aboutMe,
+	myWhy,
+	aboutICA,
+	banner,
+	guide,
+	aboutBLC,
+	howItWorks,
+	blog,
+	highlight,
+	heroTitleScroll,
+];

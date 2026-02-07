@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 import type {
 	BlogContentData,
 	BlogWithUrl,
-} from "../../../lib/types/blog.types";
+} from "../../../../lib/types/blog.types";
 
 interface BlogItemProps {
 	data?: BlogWithUrl | null;
@@ -30,8 +30,8 @@ export const BlogItem = ({
 		| undefined;
 
 	// const blogContent = data ? (data as any)[`blog_${locale}`] : null;
-	console.log("HIGHLIGHT1", blogContent);
-	console.log("HIGHLIGHT2", data);
+	// console.log("HIGHLIGHT1", blogContent);
+	// console.log("HIGHLIGHT2", data);
 	return (
 		<div
 			className={`rounded-2xl overflow-clip max-w-160 ${flex} ${height} border-[#B8BDD2] border`}
@@ -57,7 +57,7 @@ export const BlogItem = ({
 					</h5>
 					<p className="font-montserrat">{blogContent?.text}</p>
 				</div>
-				<a className="flex items-center gap-2">
+				<a className="flex items-center gap-2" href="/">
 					Explore <ChevronRight size={20} />
 				</a>
 			</div>

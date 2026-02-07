@@ -14,9 +14,9 @@ interface FAQSectionProps {
 }
 
 export const FAQSection = ({ data }: FAQSectionProps) => {
-	const faqRefs = useRef<HTMLDivElement[]>([]);
+	const _faqRefs = useRef<HTMLDivElement[]>([]);
 	const t = useTranslations("faq");
-	const locale = useLocale();
+	const _locale = useLocale();
 	return (
 		<section className="text-[#242424] min-h-screen gap-8 p-16 bg-[#E7EBFA] flex flex-col items-center">
 			<div className="flex flex-col gap-2">
@@ -34,6 +34,7 @@ export const FAQSection = ({ data }: FAQSectionProps) => {
 
 			<div className="w-full sm:w-[80%] gap-6 flex flex-col">
 				{data.map((item, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
 					<div key={index}>
 						<BlurAnimation>
 							<div>
@@ -56,10 +57,11 @@ export const FAQSection = ({ data }: FAQSectionProps) => {
 				</TextEffect>
 				<Button
 					title={t("link")}
-					children={<ChevronRight size={20} />}
 					secondary={true}
 					// width="w-40"
-				/>
+				>
+					<ChevronRight size={20} />
+				</Button>
 			</div>
 		</section>
 	);

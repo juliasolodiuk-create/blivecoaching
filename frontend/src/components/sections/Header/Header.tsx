@@ -1,7 +1,6 @@
 import { MessagesSquare } from "lucide-react";
-import Image from "next/image";
-import { Button } from "../Button/Button";
-import LocaleSwitcher from "../LocaleSwitcher";
+import { Button } from "@/components/common/Button/Button";
+import LocaleSwitcher from "@/ui/LocaleSwitcher";
 
 export const Header = () => {
 	return (
@@ -38,11 +37,9 @@ export const Header = () => {
 						Menu
 					</div>
 				</div>
-				<Button
-					children={<MessagesSquare size={20} />}
-					title="Connect"
-					primary={true}
-				/>
+				<Button title="Connect" primary={true}>
+					<MessagesSquare size={20} />
+				</Button>
 			</div>
 		</section>
 	);

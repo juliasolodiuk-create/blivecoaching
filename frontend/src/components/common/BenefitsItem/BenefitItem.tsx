@@ -1,9 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useRef } from "react";
-import BlurAnimation from "@/components/animations/BlurAnimation";
 import TextEffect from "@/components/animations/TextEffect";
 import type dataJson from "../../../db/data.json";
 import type { Content } from "../../../lib/types/base.types";

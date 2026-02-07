@@ -1,0 +1,35 @@
+{
+	"name": "be-live-coaching",
+	"version": "1.0.0",
+	"description": "```sh npm run dev ```",
+	"main": "index.js",
+	"scripts": {
+		"dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix studio\"",
+		"check-all": "biome check --write . && cd frontend && npm run typecheck && cd ../studio && npm run typecheck",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint:format": "biome check --write",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"*.{js,ts,jsx,tsx,json,css}": [
+			"biome check --write --no-errors-on-unmatched"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Pashatishinin/be-live-coaching.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/Pashatishinin/be-live-coaching/issues"
+	},
+	"homepage": "https://github.com/Pashatishinin/be-live-coaching#readme",
+	"devDependencies": {
+		"@biomejs/biome": "2.3.14",
+		"concurrently": "^9.2.1",
+		"husky": "^9.1.7"
+	}
+}

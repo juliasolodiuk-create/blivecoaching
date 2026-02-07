@@ -1,11 +1,8 @@
 "use client";
 
 import { MessagesSquare } from "lucide-react";
-import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { useRef } from "react";
-import TextEffect from "@/components/animations/TextEffect";
-import TextEffectBlur from "@/components/animations/TextEffectBlur";
 import { Button } from "@/components/common/Button/Button";
 import useParallax from "@/hooks/useParallax";
 import type { HeroWithUrls } from "../../../../lib/types/home.types";
@@ -15,8 +12,8 @@ interface HeroSectionProps {
 	link: string;
 }
 
-export const HeroSection = ({ data, link }: HeroSectionProps) => {
-	const t = useTranslations("Homepage");
+export const HeroSection = ({ data }: HeroSectionProps) => {
+	// const t = useTranslations("Homepage");
 	const locale = useLocale();
 	const imgRef = useRef<HTMLDivElement>(null);
 	// console.log("DATA", data);
@@ -63,11 +60,9 @@ export const HeroSection = ({ data, link }: HeroSectionProps) => {
 					</h1>
 					{/* </TextEffectBlur> */}
 					<div>
-						<Button
-							children={<MessagesSquare size={20} />}
-							title="Connect"
-							primary={true}
-						/>
+						<Button title="Connect" primary={true}>
+							<MessagesSquare size={20} />
+						</Button>
 					</div>
 				</div>
 			</div>

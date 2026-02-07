@@ -5,7 +5,7 @@ import TextEffect from "@/components/animations/TextEffect";
 import type {
 	FeedbackContentData,
 	FeedbackWithUrls,
-} from "../../../lib/types/home.types";
+} from "../../../../lib/types/home.types";
 
 interface FeedbackItemProps {
 	data: FeedbackWithUrls;
@@ -22,6 +22,7 @@ export const FeedbackItem = ({ data }: FeedbackItemProps) => {
 				<div className="flex">
 					{[...Array(5)].map((_, i) => (
 						<Star
+							// biome-ignore lint/suspicious/noArrayIndexKey: These stars are purely decorative and static
 							key={i}
 							// Красим звезду, если ее индекс меньше, чем рейтинг
 							fill="#242424"

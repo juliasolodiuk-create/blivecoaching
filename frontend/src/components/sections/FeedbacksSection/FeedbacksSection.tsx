@@ -35,13 +35,11 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 
 	const next = useCallback(() => {
 		if (gsap.isTweening(containerRef.current)) return;
-
-		setIndex((prev) => Math.min(prev + 1, data?.length - 1));
-	}, []);
+		setIndex((prev) => Math.min(prev + 1, data.length - 1));
+	}, [data.length]);
 
 	const prev = useCallback(() => {
 		if (gsap.isTweening(containerRef.current)) return;
-
 		setIndex((prev) => Math.max(prev - 1, 0));
 	}, []);
 
@@ -76,6 +74,7 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 				style={{ display: "flex" }}
 			>
 				{data.map((item, i) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
 					<FeedbackItem key={i} data={item} />
 				))}
 			</div>
@@ -83,6 +82,7 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 				<div className="w-12 h-12">
 					{index > 0 && (
 						<button
+							type="button"
 							onClick={prev}
 							className="px-4 py-2 text-[#242424] cursor-pointer pointer-events-auto"
 						>
@@ -93,6 +93,7 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 				<div className="w-12 h-12">
 					{index < data.length - 1 && (
 						<button
+							type="button"
 							onClick={next}
 							className="px-4 py-2 text-[#242424] cursor-pointer pointer-events-auto"
 						>
@@ -102,8 +103,9 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 				</div>
 			</div>
 			<div className="flex w-[60vw] gap-10 my-16 mx-auto max-w-100">
-				{data.map((item, i) => (
+				{data.map((_item, i) => (
 					<div
+						// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
 						key={i}
 						className={`
         w-full h-1 transition-colors duration-300 rounded-2xl

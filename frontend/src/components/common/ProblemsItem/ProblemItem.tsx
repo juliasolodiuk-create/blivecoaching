@@ -1,12 +1,8 @@
 import { useLocale } from "next-intl";
-import BlurAnimation from "@/components/animations/BlurAnimation";
 import DrawAnimation from "@/components/animations/DrawAnimation";
 import TextEffect from "@/components/animations/TextEffect";
-import type { Content } from "../../../lib/types/base.types";
-import {
-	ProblemContentData,
-	type ProblemWithUrls,
-} from "../../../lib/types/home.types";
+import type { Content } from "../../../../lib/types/base.types";
+import type { ProblemWithUrls } from "../../../../lib/types/home.types";
 
 interface ProblemItemProps {
 	data?: ProblemWithUrls["items"][number];
@@ -52,6 +48,7 @@ export const ProblemItems = ({ data }: ProblemItemProps) => {
 						xmlns="http://www.w3.org/2000/svg"
 						className="h-20 w-full fill-none stroke-[#D3C3E0] stroke-[40px] "
 					>
+						<title>Arrow decoration</title>
 						<path d={data?.arrowIcon?.svgPath} />
 					</svg>
 				</DrawAnimation>

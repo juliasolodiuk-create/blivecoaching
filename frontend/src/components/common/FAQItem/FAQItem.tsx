@@ -3,7 +3,7 @@
 import { X } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useEffect, useRef, useState } from "react";
-import type { FAQContentData, FAQData } from "../../../lib/types/home.types";
+import type { FAQContentData, FAQData } from "../../../../lib/types/home.types";
 
 interface FAQItemProps {
 	data?: FAQData;
@@ -21,8 +21,11 @@ export const FAQItem = ({ data }: FAQItemProps) => {
 	};
 
 	useEffect(() => {
-		if (contentRef.current) {
+		if (isOpen && contentRef.current) {
+			// Тепер isOpen використовується!
 			setHeight(contentRef.current.scrollHeight);
+		} else {
+			setHeight(0);
 		}
 	}, [isOpen]);
 
@@ -31,9 +34,11 @@ export const FAQItem = ({ data }: FAQItemProps) => {
 		| undefined;
 	return (
 		<div className="flex flex-col max-x-200 items-center border-[0.5px] p-4 mx-auto rounded-xl border-[#938FAC]">
-			<div
-				className=" px-4 md:px-0 w-full cursor-pointer"
+			<button
+				type="button"
+				className="px-4 md:px-0 w-full cursor-pointer bg-transparent border-none text-left focus:outline-none"
 				onClick={toggleDescription}
+				aria-expanded={isOpen}
 			>
 				<div className="flex justify-between items-center w-full">
 					<h3 className="font-body block text-[16px] font-semibold w-full">
@@ -47,7 +52,7 @@ export const FAQItem = ({ data }: FAQItemProps) => {
 						<X />
 					</div>
 				</div>
-			</div>
+			</button>
 
 			<div
 				ref={contentRef}

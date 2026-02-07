@@ -1,6 +1,5 @@
-import { ChevronRight, ScrollText } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
-import BlurAnimation from "@/components/animations/BlurAnimation";
 import TextEffect from "@/components/animations/TextEffect";
 import { Button } from "@/components/common/Button/Button";
 import type {
@@ -43,11 +42,12 @@ export const HowToChooseCoachSection = ({
 
 				<Button
 					title={buttonTitle}
-					children={<ChevronRight size={20} />}
 					secondary={true}
 					width="w-90"
 					link="/how-to-choose-coach"
-				/>
+				>
+					<ChevronRight size={20} />
+				</Button>
 			</div>
 		</section>
 	);

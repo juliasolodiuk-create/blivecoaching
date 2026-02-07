@@ -28,6 +28,7 @@ export const BlogSection = ({ data }: BlogSectionProps) => {
 				</BlurAnimation>
 				<div className="flex flex-col gap-8">
 					{data?.subhighlights.map((item, index) => (
+						// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
 						<BlurAnimation key={index}>
 							<BlogItem
 								data={item}
@@ -39,12 +40,9 @@ export const BlogSection = ({ data }: BlogSectionProps) => {
 						</BlurAnimation>
 					))}
 
-					<Button
-						children={<ChevronRight size={20} />}
-						title="View More Posts"
-						primary={true}
-						width="w-50"
-					/>
+					<Button title="View More Posts" primary={true} width="w-50">
+						<ChevronRight size={20} />
+					</Button>
 				</div>
 			</div>
 		</section>

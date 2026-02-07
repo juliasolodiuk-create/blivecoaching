@@ -1,38 +1,37 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import { type RefObject, useEffect } from "react";
+// import { ScrollTrigger } from "gsap/all";
+import type { RefObject } from "react";
 
 const useParallax = <T extends HTMLElement>(
 	elementRef: RefObject<T | null>,
 	yPercent: number = 50,
 	top: string = "top",
 ) => {
-	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger);
+	useGSAP(
+		() => {
+			const target = elementRef.current;
+			if (!target || !target.parentElement) return;
 
-		const target = elementRef?.current;
-		if (!target) return;
-
-		const animation = gsap.fromTo(
-			target,
-			{ yPercent: 0 },
-			{
-				yPercent: yPercent,
-				ease: "none",
-				scrollTrigger: {
-					trigger: target.parentElement,
-					start: `top ${top}`,
-					end: "bottom top",
-					scrub: true,
-					//   markers: true,
+			gsap.fromTo(
+				target,
+				{ yPercent: 0 },
+				{
+					yPercent: yPercent,
+					ease: "none",
+					scrollTrigger: {
+						trigger: target.parentElement,
+						start: `top ${top}`,
+						end: "bottom top",
+						scrub: true,
+					},
 				},
-			},
-		);
-
-		return () => {
-			animation.kill();
-		};
-	}, [elementRef, yPercent]);
+			);
+		},
+		{
+			dependencies: [yPercent, top],
+			scope: elementRef,
+		},
+	);
 };
-
 export default useParallax;

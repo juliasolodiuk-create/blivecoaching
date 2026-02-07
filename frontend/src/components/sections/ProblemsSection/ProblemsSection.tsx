@@ -7,10 +7,7 @@ import { Button } from "@/components/common/Button/Button";
 import { ProblemItems } from "@/components/common/ProblemsItem/ProblemItem";
 import type dataJson from "../../../../db/data.json";
 import type { SharedLink } from "../../../../lib/types/base.types";
-import {
-	ProblemData,
-	type ProblemWithUrls,
-} from "../../../../lib/types/home.types";
+import type { ProblemWithUrls } from "../../../../lib/types/home.types";
 
 type DataStructure = typeof dataJson;
 
@@ -42,16 +39,14 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
 
 			<div className="grid grid-cols-1 lg:grid-cols-3  gap-8 w-full mb-12 mt-16">
 				{data?.items?.map((item, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
 					<ProblemItems data={item} key={index} />
 				))}
 			</div>
 
-			<Button
-				title={buttonTitle}
-				children={<ChevronRight size={20} />}
-				secondary={true}
-				link="/about-be-live-coach"
-			/>
+			<Button title={buttonTitle} secondary={true} link="/about-be-live-coach">
+				<ChevronRight size={20} />
+			</Button>
 		</section>
 	);
 };

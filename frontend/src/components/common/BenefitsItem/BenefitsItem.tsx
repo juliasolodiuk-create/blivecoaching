@@ -2,11 +2,11 @@ import Image from "next/image";
 import { useLocale } from "next-intl";
 import BlurAnimation from "@/components/animations/BlurAnimation";
 import TextEffect from "@/components/animations/TextEffect";
-import type dataJson from "../../../db/data.json";
-import type { Content } from "../../../lib/types/base.types";
-import type { BenefitWithUrls } from "../../../lib/types/home.types";
+// import type dataJson from "../../../../db/data.json";
+import type { Content } from "../../../../lib/types/base.types";
+import type { BenefitWithUrls } from "../../../../lib/types/home.types";
 
-type BenefitItemData = typeof dataJson.benefits.benefit_one;
+// type BenefitItemData = typeof dataJson.benefits.benefit_one;
 
 interface PositionProps {
 	bottom?: string;

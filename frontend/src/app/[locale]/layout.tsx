@@ -16,17 +16,19 @@ interface RootLayoutProps {
 export default async function RootLayout({
 	children,
 	params,
-}: RootLayoutProps) {
+}: RootLayoutProps): Promise<React.ReactNode> {
 	const { locale } = await params;
 	if (locale === "favicon.ico") return null;
 
 	let messages = {};
 	try {
 		messages = (await import(`../../../messages/${locale}.json`)).default;
-	} catch (error) {
-		console.error(`No messages for locale "${locale}"`);
+	} catch (error: unknown) {
+		console.error(`No messages for locale "${locale}"`, error);
+		// 2. В случае ошибки возвращаем пустой объект сообщений или
+		// рендерим запасной вариант, но НЕ саму ошибку.
 		messages = {};
-		return error;
+		// return error;
 	}
 
 	return (

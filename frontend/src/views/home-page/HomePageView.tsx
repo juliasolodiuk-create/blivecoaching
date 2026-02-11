@@ -1,20 +1,23 @@
-import { BenefitsSection } from "@/components/sections/BenefitsSection/BenefitsSection";
-import { BlogSection } from "@/components/sections/BlogSection/BlogSection";
-import { ContactSection } from "@/components/sections/ContactSection/ContactSection";
-import { FAQSection } from "@/components/sections/FAQSection/FAQSection";
-import { FeedbacksSection } from "@/components/sections/FeedbacksSection/FeedbacksSection";
-import { Footer } from "@/components/sections/Footer/Footer";
-import { HeroSection } from "@/components/sections/HeroSection/HeroSection";
-import { HowToChooseCoachSection } from "@/components/sections/HowToChooseCoachSection/HowToChooseCoachSection";
-import { ProblemsSection } from "@/components/sections/ProblemsSection/ProblemsSection";
-import { fetchHomeData } from "../../../lib/services/fetchHomeData";
+import { fetchHomeData } from "@/entities/home/api/home.fetch";
+import { Footer } from "@/widgets/footer";
+import { Header } from "@/widgets/header";
+import {
+	BenefitsSection,
+	BlogSection,
+	ContactSection,
+	FAQSection,
+	FeedbacksSection,
+	HeroSection,
+	HowToChooseCoachSection,
+	ProblemsSection,
+} from "@/widgets/home";
 
 export default async function HomePageView() {
 	const data = await fetchHomeData();
 
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			<HeroSection data={data.hero} link="" />
 			<ProblemsSection data={data.problems} />
 			<BenefitsSection data={data.benefits} />

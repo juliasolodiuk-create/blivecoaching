@@ -1,0 +1,9 @@
+.btnWrapper {
+    transition: transform 0.8s ease-in-out;
+    display: inline-flex; // Важно для корректного отображения трансформации
+    text-decoration: none;
+
+    &:hover {
+        transform: skewY(-5deg);
+    }
+}

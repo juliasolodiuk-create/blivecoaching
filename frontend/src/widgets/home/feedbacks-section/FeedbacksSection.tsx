@@ -65,6 +65,7 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 	}, [index, next, prev]);
 	return (
 		<section
+			id="feedbacks"
 			ref={wrapperRef}
 			className="h-full bg-[#ffffff] py-28 px-16 relative "
 		>

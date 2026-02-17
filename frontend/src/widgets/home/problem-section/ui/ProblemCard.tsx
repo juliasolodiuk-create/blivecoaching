@@ -1,7 +1,6 @@
 import { useLocale } from "next-intl";
 import DrawAnimation from "@/shared/ui/animations/DrawAnimation";
-import TextEffect from "@/shared/ui/animations/TextEffect";
-import TextEffectBlur from "@/shared/ui/animations/TextEffectBlur";
+import { TextBlock } from "@/widgets/home/problem-section/ui/TextBlock";
 import type { Content } from "../../../../../lib/types/base.types";
 import type { ProblemWithUrls } from "../../../../entities/home/model/home.types";
 
@@ -10,7 +9,6 @@ interface ProblemItemProps {
 }
 
 export const ProblemItems = ({ data }: ProblemItemProps) => {
-	// console.log("DATA", data);
 	const locale = useLocale();
 	const problemContent = data?.[
 		`problem_content_${locale}` as keyof ProblemWithUrls["items"][number]
@@ -32,14 +30,12 @@ export const ProblemItems = ({ data }: ProblemItemProps) => {
 						/>
 					)}
 				</div>
-				<div className="flex flex-col gap-2">
-					<TextEffect>
-						<h6 className="font-bold">{problemContent?.title}</h6>
-					</TextEffect>
-					<TextEffect>
-						<p>{problemContent?.desc}</p>
-					</TextEffect>
-				</div>
+
+				<TextBlock
+					title={problemContent?.title}
+					description={problemContent?.desc}
+					animation
+				/>
 			</div>
 			<div className="font-montserrat gap-6 flex flex-col items-center  text-center min-h-60 ">
 				<DrawAnimation>
@@ -53,14 +49,12 @@ export const ProblemItems = ({ data }: ProblemItemProps) => {
 						<path d={data?.arrowIcon?.svgPath} />
 					</svg>
 				</DrawAnimation>
-				<div className="flex flex-col gap-2 ">
-					<TextEffect>
-						<h6 className="font-bold">{solutionContent?.title}</h6>
-					</TextEffect>
-					<TextEffect>
-						<p className="whitespace-pre-line">{solutionContent?.desc}</p>
-					</TextEffect>
-				</div>
+
+				<TextBlock
+					title={solutionContent?.title}
+					description={solutionContent?.desc}
+					animation
+				/>
 			</div>
 		</div>
 	);

@@ -1,11 +1,15 @@
 "use client";
 
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Section } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRef } from "react";
 import BlurAnimation from "@/shared/ui/animations/BlurAnimation";
+import ButtonShow from "@/shared/ui/animations/ButtonShow";
+import DivEffect from "@/shared/ui/animations/DivEffects";
 import TextEffect from "@/shared/ui/animations/TextEffect";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
+import { SecondaryTitle } from "@/shared/ui/components/titles/SecondaryTItle/SecondaryTitle";
+import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
 import type { FAQData } from "../../../entities/home/model/home.types";
 import { FAQItem } from "./ui/FAQItem";
 
@@ -18,50 +22,44 @@ export const FAQSection = ({ data }: FAQSectionProps) => {
 	const t = useTranslations("faq");
 	const _locale = useLocale();
 	return (
-		<section className="text-[#242424] min-h-screen gap-8 p-16 bg-[#E7EBFA] flex flex-col items-center">
-			<div className="flex flex-col gap-2">
-				<TextEffect>
-					<h2 className=" tracking-tight text-[54px] font-header font-bold text-center leading-[110%]">
-						{t("title")}
-					</h2>
-				</TextEffect>
-				<TextEffect>
-					<p className="font-montserrat text-center max-w-200">
-						{t("subTitle")}
-					</p>
-				</TextEffect>
-			</div>
+		<section
+			id="faq"
+			className="text-[#242424] min-h-screen gap-8 p-16 bg-[#E7EBFA] flex flex-col items-center"
+		>
+			<SectionTitle
+				title={t("title")}
+				description={t("subTitle")}
+				className="items-center text-center"
+			/>
 
 			<div className="w-full sm:w-[80%] gap-6 flex flex-col">
 				{data.map((item, index) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
 					<div key={index}>
-						<BlurAnimation>
+						<DivEffect>
 							<div>
 								<FAQItem data={item} />
 							</div>
-						</BlurAnimation>
+						</DivEffect>
 					</div>
 				))}
 			</div>
 			<div className="flex flex-col justify-center items-center">
-				<TextEffect>
-					<h3 className="font-body text-[36px] font-bold leading-[110%]">
-						{t("bottomTitle")}
-					</h3>
-				</TextEffect>
-				<TextEffect>
-					<p className="font-montserrat text-center max-w-200">
-						{t("bottomSubTitle")}
-					</p>
-				</TextEffect>
-				<Button
-					title={t("link")}
-					secondary={true}
-					// width="w-40"
-				>
-					<ChevronRight size={20} />
-				</Button>
+				<SecondaryTitle
+					title={t("bottomTitle")}
+					description={t("bottomSubTitle")}
+					className="items-center text-center"
+				/>
+
+				<ButtonShow>
+					<Button
+						title={t("link")}
+						secondary={true}
+						// width="w-40"
+					>
+						<ChevronRight size={20} />
+					</Button>
+				</ButtonShow>
 			</div>
 		</section>
 	);

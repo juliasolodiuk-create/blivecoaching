@@ -1,7 +1,10 @@
 import { ChevronRight } from "lucide-react";
 import BlurAnimation from "@/shared/ui/animations/BlurAnimation";
+import ButtonShow from "@/shared/ui/animations/ButtonShow";
+import DivEffect from "@/shared/ui/animations/DivEffects";
 import TextEffect from "@/shared/ui/animations/TextEffect";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
+import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
 import type { HighlightWithUrls } from "../../../../lib/types/blog.types";
 import { BlogItem } from "./ui/BlogItem";
 
@@ -11,8 +14,11 @@ interface BlogSectionProps {
 
 export const BlogSection = ({ data }: BlogSectionProps) => {
 	return (
-		<section className="min-h-screen bg-white text-[#242424] py-28 px-16 flex flex-col gap-20 items-center">
-			<div className="flex flex-col items-center gap-2">
+		<section
+			id="highlights"
+			className="min-h-screen bg-white text-[#242424] py-28 px-16 flex flex-col gap-20 items-center"
+		>
+			{/* <div className="flex flex-col items-center gap-2">
 				<TextEffect>
 					<p className="font-body text-center max-w-200">Blog</p>
 				</TextEffect>
@@ -21,15 +27,20 @@ export const BlogSection = ({ data }: BlogSectionProps) => {
 						Some my thoughts that I want to share with you
 					</h2>
 				</TextEffect>
-			</div>
+			</div> */}
+			<SectionTitle
+				title="Some my thoughts that I want to share with you"
+				subTitle="Blog"
+				className="items-center text-center"
+			/>
 			<div className="flex gap-8 min-h-190">
-				<BlurAnimation>
+				<DivEffect>
 					<BlogItem data={data?.highlight} />
-				</BlurAnimation>
+				</DivEffect>
 				<div className="flex flex-col gap-8">
 					{data?.subhighlights.map((item, index) => (
 						// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
-						<BlurAnimation key={index}>
+						<DivEffect key={index}>
 							<BlogItem
 								data={item}
 								flex="flex"
@@ -37,12 +48,14 @@ export const BlogSection = ({ data }: BlogSectionProps) => {
 								padding="p-[24px]"
 								text="text-[24px]"
 							/>
-						</BlurAnimation>
+						</DivEffect>
 					))}
 
-					<Button title="View More Posts" primary={true} width="w-50">
-						<ChevronRight size={20} />
-					</Button>
+					<ButtonShow>
+						<Button title="View More Posts" primary={true} width="w-50">
+							<ChevronRight size={20} />
+						</Button>
+					</ButtonShow>
 				</div>
 			</div>
 		</section>

@@ -22,7 +22,7 @@ export const MenuPopUp = ({ isOpen, onClose }: Props) => {
 				{
 					scale: 0,
 					opacity: 0,
-					display: "none",
+					display: "hidden",
 					transformOrigin: "top right", // Точка роста
 				},
 				{
@@ -48,7 +48,7 @@ export const MenuPopUp = ({ isOpen, onClose }: Props) => {
 	return (
 		<div
 			ref={container}
-			className="fixed justify-center items-center h-screen max-h-[600px] w-screen max-w-[500px]  flex bg-white flex-col right-0 rounded-2xl m-2 p-8"
+			className="fixed justify-center items-center h-screen max-h-150 w-screen max-w-125 opacity-0 scale-0 flex bg-white flex-col right-0 rounded-2xl m-2 p-8 border-2"
 		>
 			<div className="flex justify-end w-full">
 				<MenuButton title="CLOSE" onClick={onClose} fontSize="12px" />
@@ -57,13 +57,18 @@ export const MenuPopUp = ({ isOpen, onClose }: Props) => {
 			<div className="flex  justify-center h-full flex-col w-full gap-4 ">
 				<div className="border-b border-[#D3C3E0]/30 pb-4">
 					<div className="flex flex-wrap">
-						<MenuButton title="Home" onClick={onClose} />
-						<MenuButton title="Problems" onClick={onClose} />
-						<MenuButton title="Benefits" onClick={onClose} />
-						<MenuButton title="Highlights" onClick={onClose} />
-						<MenuButton title="FAQ" onClick={onClose} />
-						<MenuButton title="Feedbacks" onClick={onClose} />
-						<MenuButton title="Contacts" onClick={onClose} />
+						<MenuButton title="Home" onClick={onClose} href="#hero" />
+						<MenuButton title="Problems" onClick={onClose} href="#problems" />
+						<MenuButton title="Benefits" onClick={onClose} href="#benefits" />
+						<MenuButton title="Feedbacks" onClick={onClose} href="#feedbacks" />
+						<MenuButton title="FAQ" onClick={onClose} href="#faq" />
+						<MenuButton
+							title="Highlights"
+							onClick={onClose}
+							href="#highlights"
+						/>
+
+						<MenuButton title="Contacts" onClick={onClose} href="#contacts" />
 					</div>
 				</div>
 				<div className="border-b border-[#D3C3E0]/30 pb-4">

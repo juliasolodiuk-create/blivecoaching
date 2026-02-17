@@ -16,6 +16,7 @@ interface TextEffectProps {
 	delay?: number;
 	start?: string;
 	className?: string;
+	active?: boolean;
 }
 
 const TextEffect = ({
@@ -24,6 +25,7 @@ const TextEffect = ({
 	delay = 0,
 	start = "top 80%",
 	className = "",
+	active = true,
 }: TextEffectProps) => {
 	const containerRef = useRef<HTMLDivElement | null>(null);
 	const splitRef = useRef<SplitText | null>(null);
@@ -77,8 +79,7 @@ const TextEffect = ({
 
 	useGSAP(
 		() => {
-			// Больше не обращаемся к children.props.children!
-			if (!children) return;
+			if (!active || !children) return;
 
 			document.fonts.ready.then(() => {
 				runSplitAndAnim();
@@ -90,6 +91,9 @@ const TextEffect = ({
 		},
 		{ scope: containerRef, dependencies: [children] },
 	);
+	if (!active) {
+		return <>{children}</>;
+	}
 
 	return (
 		<div

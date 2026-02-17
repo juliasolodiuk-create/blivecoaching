@@ -3,18 +3,16 @@
 import { ChevronRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
-import TextEffect from "@/shared/ui/animations/TextEffect";
-import TextEffectBlur from "@/shared/ui/animations/TextEffectBlur";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
+import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
 import type dataJson from "../../../../db/data.json";
 import type { SharedLink } from "../../../../lib/types/base.types";
 import type { ProblemWithUrls } from "../../../entities/home/model/home.types";
-import { ProblemItems } from "./ui/ProblemItem";
+import { ProblemItems } from "./ui/ProblemCard";
 
 type DataStructure = typeof dataJson;
 
 interface ProblemsSectionProps {
-	// Теперь data — это объект, а не массив
 	data?: ProblemWithUrls;
 }
 
@@ -27,21 +25,19 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
 		data?.sharedLink?.[`title_${locale}` as keyof SharedLink] ||
 		"Discover more";
 	return (
-		<section className="z-1 h-full w-full  px-16 py-16  bg-[#E7EBFA] text-[#242424] flex flex-col items-center">
-			<div>
-				<TextEffect>
-					<h2 className="tracking-tight text-[54px] font-header font-bold text-center leading-[110%]">
-						{t("title")}
-					</h2>
-				</TextEffect>
-				<TextEffect>
-					<p className="font-body text-center font-normal ">{t("subTitle")}</p>
-				</TextEffect>
-			</div>
+		<section
+			id="problems"
+			className="z-1 h-full w-full  px-16 py-16  bg-[#E7EBFA] text-[#242424] flex flex-col items-center"
+		>
+			<SectionTitle
+				title={t("title")}
+				description={t("subTitle")}
+				className="items-center text-center"
+			/>
 
 			<div className="grid grid-cols-1 lg:grid-cols-3  gap-8 w-full mb-12 mt-16">
 				{data?.items?.map((item, index) => (
-					// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
+					// biome-ignore lint/suspicious/noArrayIndexKey: <>
 					<ProblemItems data={item} key={index} />
 				))}
 			</div>

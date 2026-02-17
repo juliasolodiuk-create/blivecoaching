@@ -6,10 +6,8 @@ import { useRef } from "react";
 import useParallax from "@/shared/lib/hooks/useParallax";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import TextEffect from "@/shared/ui/animations/TextEffect";
-import TextEffectBlur from "@/shared/ui/animations/TextEffectBlur";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
-import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
-import { ImageContainer } from "@/shared/ui/components/ImageContainer/ImageContainer";
+import { ImageBackground } from "@/shared/ui/components/images/ImageBackground/ImageBackground";
 import type { HeroWithUrls } from "../../../entities/home/model/home.types";
 import { HeroTitle } from "./ui/HeroTitle";
 
@@ -37,7 +35,10 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
 
 	if (!data) return null;
 	return (
-		<section className="relative h-screen w-full overflow-x-clip max-h-225  ">
+		<section
+			id="hero"
+			className="relative h-screen w-full overflow-x-clip max-h-225  "
+		>
 			<div
 				className="w-full h-screen max-h-225 flex flex-col justify-end max-w-[1440px] m-auto
       px-4 py-29 
@@ -64,7 +65,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
 				</div>
 			</div>
 
-			<ImageContainer
+			<ImageBackground
 				objectPosition="object-right"
 				inset="inset-0"
 				ref={imgRef}

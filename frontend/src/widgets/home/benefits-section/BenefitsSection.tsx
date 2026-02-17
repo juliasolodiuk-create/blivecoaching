@@ -54,7 +54,7 @@ export const BenefitsSection = ({ data }: BenefitsSectionProps) => {
 			></div>
 
 			<div className="flex flex-col lg:flex-row items-start gap-10 z-1">
-				<div className="w-full lg:w-161 lg:sticky lg:top-16 block">
+				<div className="w-full lg:w-161 lg:sticky lg:top-16 hidden lg:block">
 					{data?.imageSelected.imageUrl && (
 						<ImageContainer
 							objectPosition="object-center"
@@ -66,7 +66,7 @@ export const BenefitsSection = ({ data }: BenefitsSectionProps) => {
 					)}
 				</div>
 
-				<div className=" flex flex-col gap-8 justify-between w-full lg:w-3/5 z-1 ">
+				<div className=" flex flex-col gap-8 justify-between items-center lg:items-start w-full lg:w-3/5 z-1 ">
 					<div className="flex flex-col gap-8 md:gap-6">
 						{data?.items?.map((item, index) => (
 							// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>

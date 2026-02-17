@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLocale } from "next-intl";
 import DrawAnimation from "@/shared/ui/animations/DrawAnimation";
 import { TextBlock } from "@/widgets/home/problem-section/ui/TextBlock";
@@ -21,12 +22,15 @@ export const ProblemItems = ({ data }: ProblemItemProps) => {
 			className={`p-2 flex flex-col w-full max-w-125 rounded-lg gap-4 justify-between h-full  mx-auto bg-[#F5F7FF]`}
 		>
 			<div className="font-montserrat gap-5 flex flex-col items-center  text-center">
-				<div className=" flex items-center overflow-clip rounded-sm">
+				<div className="relative flex items-center overflow-clip rounded-sm w-full h-64">
 					{data?.imageUrl && (
-						<img
+						<Image
 							src={data?.imageUrl}
 							alt=""
-							className=" inset-0 w-full h-full object-cover object-right scale-110 "
+							unoptimized
+							fill
+							className="object-cover "
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						/>
 					)}
 				</div>

@@ -7,7 +7,7 @@ interface ImageContainerProps {
 	rounded?: string;
 	image: string;
 	alt?: string;
-	position?: string; // Например, "object-right" или "object-center"
+	position?: string;
 }
 
 export const ImageContainer = forwardRef<HTMLDivElement, ImageContainerProps>(
@@ -23,17 +23,10 @@ export const ImageContainer = forwardRef<HTMLDivElement, ImageContainerProps>(
 		ref,
 	) => {
 		return (
-			/* 1. Добавляем flex и items-end как в старом коде.
-               2. Добавляем aspect-[4/5] sm:aspect-square (или auto), 
-                  чтобы у контейнера была высота для работы Image fill 
-            */
 			<div
-				className={`overflow-hidden w-full flex items-end ${rounded} ${position} relative aspect-[4/5] sm:aspect-auto sm:h-[600px]`}
+				className={`overflow-hidden w-full flex items-end ${rounded} ${position} relative aspect-4/5 sm:aspect-auto sm:h-[600px]`}
 			>
-				{/* Этот div получает ref для параллакса. 
-                   Он должен быть relative и занимать 100% высоты.
-                */}
-				<div ref={ref} className="relative w-full h-full">
+				<div ref={ref} className="relative w-full h-full ">
 					{image && (
 						<Image
 							src={image}

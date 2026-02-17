@@ -5,19 +5,15 @@ import { useLocale, useTranslations } from "next-intl";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
-import type dataJson from "../../../../db/data.json";
 import type { SharedLink } from "../../../../lib/types/base.types";
 import type { ProblemWithUrls } from "../../../entities/home/model/home.types";
 import { ProblemItems } from "./ui/ProblemCard";
-
-type DataStructure = typeof dataJson;
 
 interface ProblemsSectionProps {
 	data?: ProblemWithUrls;
 }
 
 export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
-	// console.log("DATA", data);
 	const t = useTranslations("problems");
 	const locale = useLocale();
 

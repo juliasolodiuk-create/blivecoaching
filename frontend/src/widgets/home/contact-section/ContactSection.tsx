@@ -7,6 +7,7 @@ import { useSvgDraw } from "@/shared/hooks/animation/useSvgDraw";
 import useParallax from "@/shared/lib/hooks/useParallax";
 import DrawAnimation from "@/shared/ui/animations/DrawAnimation";
 import TextEffect from "@/shared/ui/animations/TextEffect";
+import { ImageContainer } from "@/shared/ui/components/images/ImageContainer/ImageContainer";
 import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
 
 export const ContactSection = () => {
@@ -43,7 +44,14 @@ export const ContactSection = () => {
 				</div>
 			</div>
 			<div className="w-full block mt-16">
-				<div className="overflow-hidden w-full flex items-top rounded-xl h-150">
+				<ImageContainer
+					objectPosition="object-top"
+					rounded="rounded-xl"
+					ref={imgRef}
+					alt="Benefits Picture"
+					image="/photo/03.JPG"
+				/>
+				{/* <div className="overflow-hidden w-full flex items-top rounded-xl h-150">
 					<div ref={imgRef}>
 						<img
 							src="/photo/03.JPG"
@@ -51,7 +59,7 @@ export const ContactSection = () => {
 							className={` scale-130 w-full xl:w-auto object-cover object-center rounded-sm`}
 						/>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);

@@ -47,15 +47,6 @@ export const ContactSection = () => {
 					alt="Benefits Picture"
 					image="/photo/03.JPG"
 				/>
-				{/* <div className="overflow-hidden w-full flex items-top rounded-xl h-150">
-					<div ref={imgRef}>
-						<img
-							src="/photo/03.JPG"
-							alt=""
-							className={` scale-130 w-full xl:w-auto object-cover object-center rounded-sm`}
-						/>
-					</div>
-				</div> */}
 			</div>
 		</section>
 	);

@@ -24,7 +24,6 @@ export const FeedbackItem = ({ data }: FeedbackItemProps) => {
 						<Star
 							// biome-ignore lint/suspicious/noArrayIndexKey: These stars are purely decorative and static
 							key={i}
-							// Красим звезду, если ее индекс меньше, чем рейтинг
 							fill="#242424"
 							color="#242424"
 						/>

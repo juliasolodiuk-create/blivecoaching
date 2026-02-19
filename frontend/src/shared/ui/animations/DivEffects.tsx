@@ -32,7 +32,6 @@ const DivEffect = ({
 				containerRef.current,
 
 				{
-					// autoAlpha: 1,
 					y: 150,
 					opacity: 0.4,
 					duration: 1,
@@ -42,7 +41,7 @@ const DivEffect = ({
 						? {
 								trigger: containerRef.current,
 								start: start,
-								once: true, // Сработает один раз
+								once: true,
 								// markers: true,
 							}
 						: null,
@@ -53,11 +52,7 @@ const DivEffect = ({
 	);
 
 	return (
-		<div
-			ref={containerRef}
-			className={className}
-			// style={{ willChange: "filter, opacity, transform" }}
-		>
+		<div ref={containerRef} className={className}>
 			{children}
 		</div>
 	);

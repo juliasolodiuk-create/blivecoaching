@@ -22,7 +22,6 @@ export const MenuButton = ({
 	const tl = useRef<gsap.core.Timeline | null>(null);
 	useGSAP(
 		() => {
-			// Создаем таймлайн: верхний слой уходит вверх, нижний поднимается за ним
 			tl.current = gsap
 				.timeline({ paused: true })
 				.from(".layer-top", {
@@ -46,7 +45,6 @@ export const MenuButton = ({
 		{ scope: container },
 	);
 
-	// Обработчики событий
 	const toggleMenu = (play: boolean) => {
 		play ? tl.current?.play() : tl.current?.reverse();
 	};
@@ -54,12 +52,11 @@ export const MenuButton = ({
 	const className =
 		"bg-white text-black h-10 relative overflow-hidden cursor-pointer flex items-center justify-center p-4 rounded-lg border-none outline-none";
 
-	// 2. Рендерим в зависимости от наличия href
 	if (href) {
 		return (
 			<Link
 				href={href}
-				ref={container as React.RefObject<HTMLAnchorElement>} // Принудительное приведение для TS
+				ref={container as React.RefObject<HTMLAnchorElement>}
 				onMouseEnter={() => toggleMenu(true)}
 				onMouseLeave={() => toggleMenu(false)}
 				onFocus={() => toggleMenu(true)}

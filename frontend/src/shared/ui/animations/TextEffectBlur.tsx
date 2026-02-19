@@ -48,7 +48,7 @@ const TextEffectBlur = ({
 						? {
 								trigger: containerRef.current,
 								start: start,
-								once: true, // Сработает один раз
+								once: true,
 							}
 						: null,
 				},

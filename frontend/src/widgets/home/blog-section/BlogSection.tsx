@@ -1,12 +1,10 @@
 import { ChevronRight } from "lucide-react";
-import BlurAnimation from "@/shared/ui/animations/BlurAnimation";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import DivEffect from "@/shared/ui/animations/DivEffects";
-import TextEffect from "@/shared/ui/animations/TextEffect";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
 import type { HighlightWithUrls } from "../../../../lib/types/blog.types";
-import { BlogItem } from "./ui/BlogItem";
+import { BlogCard } from "./ui";
 
 interface BlogSectionProps {
 	data?: HighlightWithUrls;
@@ -16,38 +14,22 @@ export const BlogSection = ({ data }: BlogSectionProps) => {
 	return (
 		<section
 			id="highlights"
-			className="min-h-screen bg-white text-[#242424] py-28 px-16 flex flex-col gap-20 items-center"
+			className="min-h-screen bg-white text-[#242424] p-4 md:py-28 md:px-16 flex flex-col gap-20 items-center"
 		>
-			{/* <div className="flex flex-col items-center gap-2">
-				<TextEffect>
-					<p className="font-body text-center max-w-200">Blog</p>
-				</TextEffect>
-				<TextEffect>
-					<h2 className="tracking-tight text-[54px] font-header font-bold text-center leading-[110%]">
-						Some my thoughts that I want to share with you
-					</h2>
-				</TextEffect>
-			</div> */}
 			<SectionTitle
 				title="Some my thoughts that I want to share with you"
 				subTitle="Blog"
 				className="items-center text-center"
 			/>
-			<div className="flex gap-8 min-h-190">
+			<div className="flex gap-8 min-h-190 flex-col xl:flex-row">
 				<DivEffect>
-					<BlogItem data={data?.highlight} />
+					<BlogCard data={data?.highlight} variant="main" />
 				</DivEffect>
 				<div className="flex flex-col gap-8">
 					{data?.subhighlights.map((item, index) => (
 						// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
 						<DivEffect key={index}>
-							<BlogItem
-								data={item}
-								flex="flex"
-								height="h-[325px]"
-								padding="p-[24px]"
-								text="text-[24px]"
-							/>
+							<BlogCard data={item} variant="sub" />
 						</DivEffect>
 					))}
 

@@ -6,10 +6,8 @@ import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { MessagesSquare } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
-import DrawAnimation from "@/shared/ui/animations/DrawAnimation";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
-import FooterIcon from "../../../assets/footer.svg";
 
 if (typeof window !== "undefined") {
 	gsap.registerPlugin(DrawSVGPlugin);
@@ -17,7 +15,7 @@ if (typeof window !== "undefined") {
 
 export const Footer = () => {
 	const svgContainerRef = useRef<HTMLDivElement>(null);
-	const sectionRef = useRef<HTMLDivElement>(null); // Реф для всей секции
+	const sectionRef = useRef<HTMLDivElement>(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	useEffect(() => {
 		fetch("/assets/footer.svg")
@@ -28,13 +26,12 @@ export const Footer = () => {
 			.then((svgText) => {
 				if (svgContainerRef.current) {
 					svgContainerRef.current.innerHTML = svgText;
-					setIsLoaded(true); // Сигнализируем о готовности для useGSAP
+					setIsLoaded(true);
 				}
 			})
 			.catch((err) => console.error(err));
 	}, []);
 
-	// 2. Анимируем, когда контент готов
 	useGSAP(
 		() => {
 			if (!isLoaded) return;
@@ -49,13 +46,12 @@ export const Footer = () => {
 				opacity: 1,
 			});
 
-			// Создаем таймлайн с триггером
 			const tl = gsap.timeline({
 				scrollTrigger: {
-					trigger: sectionRef.current, // Анимация начнется, когда в поле зрения появится секция
-					start: "top 80%", // "верх секции пересекает 80% высоты экрана"
-					toggleActions: "play none none none", // проигрывать при входе, возвращать при скролле вверх (по желанию)
-					// markers: true, // Раскомментируйте для отладки позиций
+					trigger: sectionRef.current,
+					start: "top 80%",
+					toggleActions: "play none none none",
+					// markers: true,
 				},
 			});
 
@@ -87,7 +83,6 @@ export const Footer = () => {
 		>
 			<div className="flex justify-between p-24">
 				<div className="relative z-10 flex flex-col gap-8">
-					{/* Лого и кнопка здесь */}
 					<div className="w-40 h-30 overflow-hidden">
 						<img src="/logo.png" alt="" className="object-cover w-full" />
 					</div>

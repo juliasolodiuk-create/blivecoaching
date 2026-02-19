@@ -4,7 +4,7 @@ import type {
 	ImageAsset,
 	SharedLink,
 	SVGContent,
-} from "../../../../lib/types/base.types";
+} from "../../../shared/lib/types/base.types";
 
 export interface HeroData {
 	title_ua?: string;

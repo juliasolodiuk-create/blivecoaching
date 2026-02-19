@@ -19,7 +19,7 @@ const ButtonShow = ({
 	children,
 	animateOnScroll = true,
 	delay = 0,
-	// Изменили на "top 95%", чтобы кнопка не стреляла слишком рано в футере
+
 	start = "top 95%",
 	className = "",
 }: ButtonShowProps) => {
@@ -29,25 +29,23 @@ const ButtonShow = ({
 		() => {
 			if (!containerRef.current) return;
 
-			// 1. Принудительно ставим в начальную позицию (внизу)
 			gsap.set(containerRef.current, {
 				y: 150,
 				opacity: 0,
 				rotateZ: "15deg",
 			});
 
-			// 2. Анимируем к "родному" состоянию
 			gsap.to(containerRef.current, {
 				y: 0,
 				opacity: 1,
 				rotateZ: 0,
 				duration: 1.2,
 				delay,
-				ease: "back.out(1.7)", // Back эффект заметнее и приятнее bounce
+				ease: "back.out(1.7)",
 				scrollTrigger: animateOnScroll
 					? {
 							trigger: containerRef.current,
-							start: "top 95%", // Срабатывает, когда кнопка почти влетела в экран
+							start: "top 95%",
 							once: true,
 						}
 					: null,

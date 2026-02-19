@@ -19,7 +19,7 @@ export const SecondaryTitle = ({
 				<p className="font-body  max-w-200">{subTitle}</p>
 			</TextEffect>
 			<TextEffect>
-				<h3 className="font-body text-[36px] font-bold leading-[110%]">
+				<h3 className="font-body text-[24px]  xl:text-[36px] font-bold leading-[110%]">
 					{title}
 				</h3>
 			</TextEffect>

@@ -5,14 +5,15 @@ import { ScrollTrigger } from "gsap/all";
 import { ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useMemo, useRef, useState } from "react";
-import { useSvgDraw } from "@/shared/hooks/animation/useSvgDraw";
-import useParallax from "@/shared/lib/hooks/useParallax";
+import { getButtonContent } from "@/entities/home/helper/button-utils";
+import useParallax from "@/shared/hooks/useParallax";
+import { useSvgDraw } from "@/shared/hooks/useSvgDraw";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import DivEffect from "@/shared/ui/animations/DivEffects";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { ImageContainer } from "@/shared/ui/components/images/ImageContainer/ImageContainer";
-import type { SharedLink } from "../../../../lib/types/base.types";
 import type { BenefitWithUrls } from "../../../entities/home/model/home.types";
+import type { SharedLink } from "../../../shared/lib/types/base.types";
 import { BenefitItem } from "./ui/BenefitItem";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -35,12 +36,7 @@ export const BenefitsSection = ({ data }: BenefitsSectionProps) => {
 		scope: sectionRef,
 	});
 
-	const buttonTitle = useMemo(
-		() =>
-			data?.sharedLink?.[`title_${locale}` as keyof SharedLink] ||
-			"Discover more",
-		[data, locale],
-	);
+	const buttonContent = getButtonContent<BenefitWithUrls>(data, locale);
 
 	return (
 		<section
@@ -84,7 +80,7 @@ export const BenefitsSection = ({ data }: BenefitsSectionProps) => {
 					<div className="pt-4">
 						<ButtonShow>
 							<Button
-								title={buttonTitle}
+								title={buttonContent}
 								secondary={true}
 								border={true}
 								width="w-90"

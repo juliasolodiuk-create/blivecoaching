@@ -35,11 +35,10 @@ export const structure: StructureResolver = (S) =>
 					S.list()
 						.title("Розділи")
 						.items([
-							// Используем documentListItem вместо listItem
 							S.documentListItem()
 								.schemaType("problems")
 								.id("problem_one_id")
-								.title("Проблема №1"), // Это заголовок по умолчанию, пока поле пустое
+								.title("Проблема №1"),
 
 							S.documentListItem()
 								.schemaType("problems")
@@ -67,7 +66,6 @@ export const structure: StructureResolver = (S) =>
 					S.list()
 						.title("Розділи")
 						.items([
-							// Используем documentListItem вместо listItem
 							S.documentListItem().schemaType("benefits").id("benefit_one_id"),
 
 							S.documentListItem().schemaType("benefits").id("benefit_two_id"),
@@ -95,7 +93,6 @@ export const structure: StructureResolver = (S) =>
 					S.list()
 						.title("Розділи")
 						.items([
-							// Используем documentListItem вместо listItem
 							S.documentListItem().schemaType("banner").id("home_bannerCTA"),
 							S.divider(),
 							S.documentListItem()
@@ -147,7 +144,6 @@ export const structure: StructureResolver = (S) =>
 					S.list()
 						.title("Розділи")
 						.items([
-							// Используем documentListItem вместо listItem
 							S.documentListItem().schemaType("banner").id("about_banner"),
 						]),
 				),
@@ -162,7 +158,6 @@ export const structure: StructureResolver = (S) =>
 					S.list()
 						.title("Розділи")
 						.items([
-							// Используем documentListItem вместо listItem
 							S.documentListItem().schemaType("banner").id("about_bannerCTA"),
 							S.divider(),
 							S.documentListItem()
@@ -198,7 +193,6 @@ export const structure: StructureResolver = (S) =>
 					S.list()
 						.title("Розділи")
 						.items([
-							// Используем documentListItem вместо listItem
 							S.documentListItem().schemaType("aboutBLC").id("aboutBLC"),
 							S.divider(),
 							S.documentListItem()

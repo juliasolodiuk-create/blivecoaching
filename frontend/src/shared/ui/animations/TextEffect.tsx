@@ -11,7 +11,7 @@ import { type ReactNode, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 interface TextEffectProps {
-	children: ReactNode; // Используем ReactNode вместо ReactElement
+	children: ReactNode;
 	animateOnScroll?: boolean;
 	delay?: number;
 	start?: string;
@@ -34,12 +34,11 @@ const TextEffect = ({
 	const { contextSafe } = useGSAP({ scope: containerRef });
 
 	const runSplitAndAnim = contextSafe(() => {
-		// Безопасная проверка наличия текста
 		if (!containerRef.current || !containerRef.current.textContent?.trim())
 			return;
 
 		const el = containerRef.current;
-		// Ищем внутри любой текстовый тег или берем сам контейнер
+
 		const target = el.querySelector("h1, h2, h3, p, span") || el;
 
 		if (splitRef.current) splitRef.current.revert();

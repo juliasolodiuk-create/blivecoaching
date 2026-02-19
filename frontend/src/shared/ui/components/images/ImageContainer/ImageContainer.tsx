@@ -31,11 +31,10 @@ export const ImageContainer = forwardRef<HTMLDivElement, ImageContainerProps>(
 						<Image
 							src={image}
 							alt={alt}
-							quality={100} // Максимальное качество
+							quality={100}
 							priority
 							unoptimized
 							fill
-							// scale-130 как в старом коде
 							className={`object-cover ${objectPosition} scale-130 w-full xl:w-auto ${inset}`}
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						/>

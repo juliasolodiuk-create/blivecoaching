@@ -7,7 +7,7 @@ interface ImageBackgroundProps {
 	rounded?: string;
 	image: string;
 	alt?: string;
-	position?: string; // Например, "object-right" или "object-center"
+	position?: string;
 }
 
 export const ImageBackground = forwardRef<HTMLDivElement, ImageBackgroundProps>(
@@ -16,7 +16,6 @@ export const ImageBackground = forwardRef<HTMLDivElement, ImageBackgroundProps>(
 			<div
 				className={`${position} top-0 -z-1 overflow-hidden aspect-[4/5] sm:aspect-auto w-full h-full sm:flex ${rounded}`}
 			>
-				{/* Привязываем переданный ref к этому div, так как хук useParallax работает с ним */}
 				<div ref={ref} className="relative w-full h-full">
 					{image && (
 						<Image
@@ -25,7 +24,7 @@ export const ImageBackground = forwardRef<HTMLDivElement, ImageBackgroundProps>(
 							quality={95}
 							priority
 							unoptimized
-							fill // Заменяет absolute inset-0 w-full h-full
+							fill
 							className={`object-cover ${objectPosition} scale-110`}
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw"
 						/>

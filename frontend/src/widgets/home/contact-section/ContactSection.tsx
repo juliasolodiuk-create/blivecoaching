@@ -1,12 +1,8 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
-import { useSvgDraw } from "@/shared/hooks/animation/useSvgDraw";
-import useParallax from "@/shared/lib/hooks/useParallax";
-import DrawAnimation from "@/shared/ui/animations/DrawAnimation";
-import TextEffect from "@/shared/ui/animations/TextEffect";
+import { useRef } from "react";
+import useParallax from "@/shared/hooks/useParallax";
+import { useSvgDraw } from "@/shared/hooks/useSvgDraw";
 import { ImageContainer } from "@/shared/ui/components/images/ImageContainer/ImageContainer";
 import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
 

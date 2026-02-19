@@ -1,22 +1,31 @@
 import Image from "next/image";
 import { useLocale } from "next-intl";
-import DrawAnimation from "@/shared/ui/animations/DrawAnimation";
-import { TextBlock } from "@/widgets/home/problem-section/ui/TextBlock";
-import type { Content } from "../../../../../lib/types/base.types";
+import { useRef } from "react";
+import {
+	getProblemContent,
+	getSolutionContent,
+} from "@/entities/home/helper/problem-utils";
+import { useDrawArrow } from "@/shared/hooks/useDrawArrow";
 import type { ProblemWithUrls } from "../../../../entities/home/model/home.types";
+import { TextBlock } from "./";
 
 interface ProblemItemProps {
 	data?: ProblemWithUrls["items"][number];
 }
 
-export const ProblemItems = ({ data }: ProblemItemProps) => {
+export const ProblemCard = ({ data }: ProblemItemProps) => {
+	const cardRef = useRef<HTMLDivElement>(null);
 	const locale = useLocale();
-	const problemContent = data?.[
-		`problem_content_${locale}` as keyof ProblemWithUrls["items"][number]
-	] as Content | undefined;
-	const solutionContent = data?.[
-		`solution_content_${locale}` as keyof ProblemWithUrls["items"][number]
-	] as Content | undefined;
+
+	const problemContent = getProblemContent(data, locale);
+	const solutionContent = getSolutionContent(data, locale);
+
+	useDrawArrow({
+		scope: cardRef,
+		selector: "path",
+		duration: 1.5,
+		start: "top 85%",
+	});
 	return (
 		<div
 			className={`p-2 flex flex-col w-full max-w-125 rounded-lg gap-4 justify-between h-full  mx-auto bg-[#F5F7FF]`}
@@ -41,18 +50,19 @@ export const ProblemItems = ({ data }: ProblemItemProps) => {
 					animation
 				/>
 			</div>
-			<div className="font-montserrat gap-6 flex flex-col items-center  text-center min-h-60 ">
-				<DrawAnimation>
-					<svg
-						role="img"
-						viewBox="0 0 399.05 733.13"
-						xmlns="http://www.w3.org/2000/svg"
-						className="h-20 w-full fill-none stroke-[#D3C3E0] stroke-[40px] "
-					>
-						<title>Arrow decoration</title>
-						<path d={data?.arrowIcon?.svgPath} />
-					</svg>
-				</DrawAnimation>
+			<div
+				ref={cardRef}
+				className="font-montserrat gap-6 flex flex-col items-center  text-center min-h-60 "
+			>
+				<svg
+					role="img"
+					viewBox="0 0 399.05 733.13"
+					xmlns="http://www.w3.org/2000/svg"
+					className="h-20 w-full fill-none stroke-[#D3C3E0] stroke-[40px] "
+				>
+					<title>Arrow decoration</title>
+					<path d={data?.arrowIcon?.svgPath} />
+				</svg>
 
 				<TextBlock
 					title={solutionContent?.title}

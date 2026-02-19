@@ -42,7 +42,7 @@ export const Button = ({
 			className={`${borderSet} ${bGColor} ${width} ${styles.btnWrapper} z-1 my-5 cursor-pointer p-1.25 inline-flex items-center justify-between h-11.5   rounded-xl`}
 			href={link}
 		>
-			<div className="px-2 font-montserrat font-bold tracking-tight text-[#242424]">
+			<div className="px-2 font-montserrat font-bold tracking-tight leading-4.5  text-[#242424]">
 				{title}
 			</div>
 			<div

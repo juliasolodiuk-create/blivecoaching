@@ -1,21 +1,29 @@
 "use client";
 
 import { MessagesSquare } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import LocaleSwitcher from "@/features/locale-switcher/LocaleSwitcher";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
-import { MenuPopUp } from "./ui/MenuPopUp";
+import { MenuPopUp } from "./ui";
 
 export const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 	return (
 		<section className="z-9999">
-			<div className="py-4 px-29 fixed w-screen top-0 h-20   flex justify-between max-w-[1920px]">
+			<div className="p-4 md:py-4 md:px-29 fixed w-screen top-0 h-20   flex justify-between max-w-[1920px]">
 				<div className="flex gap-2">
 					<div className="relative w-12 h-12 overflow-hidden rounded-xl ">
-						<img src="/logo.jpg" alt="" className="object-cover" />
+						<Image
+							src="/logo.jpg"
+							alt="Logo"
+							fill
+							priority
+							className="object-cover"
+							sizes="48px"
+						/>
 					</div>
 					<div className=" items-center rounded-xl overflow-hidden bg-white h-full hidden lg:flex">
 						<MenuButton title="Home" />
@@ -35,9 +43,11 @@ export const Header = () => {
 							<MenuButton title="Menu" onClick={toggleMenu} />
 						</div>
 					</div>
-					<Button title="Connect" primary={true}>
-						<MessagesSquare size={20} />
-					</Button>
+					<div className="hidden sm:block">
+						<Button title="Connect" primary={true}>
+							<MessagesSquare size={20} />
+						</Button>
+					</div>
 				</div>
 			</div>
 			<MenuPopUp isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />

@@ -1,13 +1,11 @@
 import { ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
+import { getBannerContent } from "@/entities/home/helper/banner-utils";
+import { getButtonContent } from "@/entities/home/helper/button-utils";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
-import TextEffect from "@/shared/ui/animations/TextEffect";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
-import type {
-	BannerContent,
-	SharedLink,
-} from "../../../../lib/types/base.types";
+
 import type { HomeBannerData } from "../../../entities/home/model/home.types";
 
 interface HowToChooseCoachSectionProps {
@@ -17,30 +15,12 @@ interface HowToChooseCoachSectionProps {
 export const HowToChooseCoachSection = ({
 	data,
 }: HowToChooseCoachSectionProps) => {
-	// console.log("DATA", data);
 	const locale = useLocale();
-	const bannerContent = data?.item?.[
-		`banner_content_${locale}` as keyof typeof data.item
-	] as BannerContent | undefined;
-
-	const buttonTitle =
-		data?.sharedLink?.[`title_${locale}` as keyof SharedLink] ||
-		"Discover more";
+	const bannerContent = getBannerContent<HomeBannerData>(data, locale);
+	const buttonContent = getButtonContent<HomeBannerData>(data, locale);
 	return (
 		<section id="how" className=" px-16 z-1 bg-white">
 			<div className="flex bg-[#E7EBFA] gap-8 text-[#242424] flex-col justify-center items-center px-16 py-8 rounded-xl">
-				{/* <div className="flex gap-2 flex-col justify-center items-center">
-					<TextEffect>
-						<h2 className="tracking-tight text-[54px] font-header font-bold text-center leading-[110%]">
-							{bannerContent?.title}
-						</h2>
-					</TextEffect>
-					<TextEffect>
-						<p className="font-body text-center max-w-200">
-							{bannerContent?.subTitle}
-						</p>
-					</TextEffect>
-				</div> */}
 				<SectionTitle
 					title={bannerContent?.title}
 					description={bannerContent?.subTitle}
@@ -49,7 +29,7 @@ export const HowToChooseCoachSection = ({
 
 				<ButtonShow>
 					<Button
-						title={buttonTitle}
+						title={buttonContent}
 						secondary={true}
 						width="w-90"
 						link="/how-to-choose-coach"

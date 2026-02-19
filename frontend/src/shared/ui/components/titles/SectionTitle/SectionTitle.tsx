@@ -19,7 +19,7 @@ export const SectionTitle = ({
 				<p className="font-body  max-w-200">{subTitle}</p>
 			</TextEffect>
 			<TextEffect>
-				<h2 className="tracking-tight text-[54px] font-header font-bold  leading-[110%]">
+				<h2 className="tracking-tight text-[36px]  xl:text-[54px] font-header font-bold  leading-[110%]">
 					{title}
 				</h2>
 			</TextEffect>

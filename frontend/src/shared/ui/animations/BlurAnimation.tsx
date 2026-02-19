@@ -8,12 +8,12 @@ import { type ReactNode, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 interface BlurAnimationProps {
-	children: ReactNode; // Изменено на ReactNode для гибкости
+	children: ReactNode;
 	animateOnScroll?: boolean;
 	delay?: number;
 	start?: string;
 	selector?: string;
-	className?: string; // Добавляем className для внешнего контейнера
+	className?: string;
 }
 
 const BlurAnimation = ({
@@ -28,24 +28,20 @@ const BlurAnimation = ({
 
 	const { contextSafe } = useGSAP({ scope: containerRef });
 
-	// Основная функция анимации с защитой через contextSafe
 	const runAnimation = contextSafe(() => {
 		if (!containerRef.current || !animateOnScroll) return;
 
 		const el = containerRef.current;
 
-		// Определяем цели: либо по селектору, либо прямые дочерние элементы
 		let targets: any;
 		if (selector) {
 			targets = el.querySelectorAll(selector);
 		} else {
-			// Если селектор не задан, анимируем всех детей первого уровня
 			targets = el.children;
 		}
 
 		if (!targets || targets.length === 0) return;
 
-		// Сбрасываем предыдущие анимации, если они были (для безопасности при resize/re-render)
 		gsap.killTweensOf(targets);
 
 		gsap.from(targets, {
@@ -61,7 +57,6 @@ const BlurAnimation = ({
 				trigger: el,
 				start: start,
 				once: true,
-				// invalidateOnRefresh: true, // Полезно при resize страницы
 			},
 		});
 	});
@@ -70,16 +65,11 @@ const BlurAnimation = ({
 		() => {
 			if (!children) return;
 
-			// Защита: ждем отрисовку и шрифты (важно для корректного расчета позиций ScrollTrigger)
 			document.fonts.ready.then(() => {
 				runAnimation();
 			});
 
-			// Защита: перезапуск при изменении размера окна
-			const handleResize = () => {
-				// ScrollTrigger.refresh() обычно достаточно, но если макет меняется радикально:
-				// runAnimation();
-			};
+			const handleResize = () => {};
 
 			window.addEventListener("resize", handleResize);
 			return () => window.removeEventListener("resize", handleResize);
@@ -94,8 +84,6 @@ const BlurAnimation = ({
 			style={{
 				visibility: "visible",
 				position: "relative",
-				// Убираем overflow: hidden, чтобы блюр не обрезался по краям,
-				// если это не мешает верстке
 			}}
 		>
 			{children}

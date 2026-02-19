@@ -3,7 +3,7 @@ import type {
 	Content,
 	ImageAsset,
 	SharedLink,
-} from "./base.types";
+} from "../../src/shared/lib/types/base.types";
 
 export interface AboutMeData {
 	desc_ua?: string[];

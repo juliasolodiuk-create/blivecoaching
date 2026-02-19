@@ -1,4 +1,7 @@
-import type { ContentList, ImageAsset } from "./base.types";
+import type {
+	ContentList,
+	ImageAsset,
+} from "../../src/shared/lib/types/base.types";
 
 export interface HeroContentData {
 	title?: string;

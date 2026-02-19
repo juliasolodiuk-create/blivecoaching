@@ -20,7 +20,6 @@ export const useSvgDraw = ({
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
 
-	// 1. Загрузка SVG
 	useEffect(() => {
 		if (!containerRef) return;
 
@@ -36,7 +35,6 @@ export const useSvgDraw = ({
 			.catch((err) => console.error("SVG Loading Error:", err));
 	}, [url, containerRef]);
 
-	// 2. Анимация
 	useGSAP(
 		() => {
 			if (!isLoaded || !containerRef) return;

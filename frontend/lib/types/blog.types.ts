@@ -1,4 +1,4 @@
-import type { ImageAsset } from "./base.types";
+import type { ImageAsset } from "../../src/shared/lib/types/base.types";
 
 export interface BlogContentData {
 	title?: string;

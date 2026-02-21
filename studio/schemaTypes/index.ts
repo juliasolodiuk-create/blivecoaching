@@ -4,6 +4,7 @@ import { aboutMe } from "./aboutMe";
 import { banner } from "./banner";
 import { benefits } from "./benefits";
 import { blog } from "./blog";
+import { contact } from "./contact";
 import { faq } from "./faq";
 import { feedbacks } from "./feedbacks";
 import { guide } from "./guide";
@@ -38,4 +39,5 @@ export const schemaTypes = [
 	blog,
 	highlight,
 	heroTitleScroll,
+	contact,
 ];

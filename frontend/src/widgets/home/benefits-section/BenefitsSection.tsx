@@ -1,7 +1,5 @@
 "use client";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useMemo, useRef, useState } from "react";
@@ -13,10 +11,7 @@ import DivEffect from "@/shared/ui/animations/DivEffects";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { ImageContainer } from "@/shared/ui/components/images/ImageContainer/ImageContainer";
 import type { BenefitWithUrls } from "../../../entities/home/model/home.types";
-import type { SharedLink } from "../../../shared/lib/types/base.types";
 import { BenefitItem } from "./ui/BenefitItem";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface BenefitsSectionProps {
 	data?: BenefitWithUrls;
@@ -42,11 +37,11 @@ export const BenefitsSection = ({ data }: BenefitsSectionProps) => {
 		<section
 			ref={sectionRef}
 			id="benefits"
-			className="relative min-h-screen p-16 bg-white "
+			className="relative min-h-screen  p-4 md:p-16 bg-white "
 		>
 			<div
 				ref={setContainerRef}
-				className="absolute inset-0 flex items-center justify-center w-screen opacity-20"
+				className="absolute inset-0 flex  items-center justify-center min-w-360 h-screen w-screen opacity-20"
 			></div>
 
 			<div className="flex flex-col lg:flex-row items-start gap-10 z-1">
@@ -77,19 +72,17 @@ export const BenefitsSection = ({ data }: BenefitsSectionProps) => {
 							</DivEffect>
 						))}
 					</div>
-					<div className="pt-4">
-						<ButtonShow>
-							<Button
-								title={buttonContent}
-								secondary={true}
-								border={true}
-								width="w-90"
-								link="/about-be-live-coach"
-							>
-								<ChevronRight size={20} />
-							</Button>
-						</ButtonShow>
-					</div>
+					<ButtonShow>
+						<Button
+							title={buttonContent}
+							secondary={true}
+							border={true}
+							width="max-w-90"
+							link="/about-be-live-coach"
+						>
+							<ChevronRight size={20} />
+						</Button>
+					</ButtonShow>
 				</div>
 			</div>
 		</section>

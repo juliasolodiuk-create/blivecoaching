@@ -2,6 +2,7 @@ import { groq } from "next-sanity";
 import { client } from "../../../../lib/client";
 import type {
 	BenefitData,
+	ContactData,
 	FAQData,
 	FeedbackData,
 	HeroData,
@@ -101,5 +102,15 @@ export async function getHighlights(): Promise<HighlightData> {
       blog_de
     }
   }`;
+	return await client.fetch(query, {}, { next: { revalidate: 0 } });
+}
+
+export async function getContacts(): Promise<ContactData> {
+	const query = groq`{"items": *[_type == "contact"][0]{
+  content
+  },
+  "imageSelected": *[_id == "contact_img"][0] { 
+      img,
+    }}`;
 	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }

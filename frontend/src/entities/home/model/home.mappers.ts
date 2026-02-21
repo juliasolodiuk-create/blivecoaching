@@ -3,6 +3,8 @@ import type {
 	BenefitData,
 	BenefitWithUrls,
 	BlogWithUrl,
+	ContactData,
+	ContactWithUrls,
 	FeedbackData,
 	FeedbacksSectionData,
 	FeedbackWithUrls,
@@ -86,4 +88,19 @@ export const mapHighlightsWithUrls = (
 				: null,
 		} as BlogWithUrl;
 	}),
+});
+
+export const mapContactsWithUrl = (contact: ContactData): ContactWithUrls => ({
+	...contact,
+
+	imageSelected: {
+		...contact.imageSelected,
+		imageUrl: contact.imageSelected?.img
+			? urlForImage(contact.imageSelected.img)
+					.width(1440)
+					.quality(85)
+					.format("webp")
+					.url()
+			: null,
+	},
 });

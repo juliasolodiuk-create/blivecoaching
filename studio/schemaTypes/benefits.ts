@@ -13,14 +13,6 @@ export const benefits = defineType({
 	icon: TrendUpwardIcon,
 	fields: [
 		defineField({
-			name: "img",
-			type: "image",
-			options: {
-				hotspot: true,
-			},
-			title: "Картинка",
-		}),
-		defineField({
 			name: "benefit_content_ua",
 			title: "Зміст переваги",
 			type: "object",

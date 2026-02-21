@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/all";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { RefObject } from "react";
 
 const useParallax = <T extends HTMLElement>(

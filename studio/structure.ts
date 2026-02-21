@@ -5,6 +5,7 @@ import {
 	BugIcon,
 	BulbFilledIcon,
 	CogIcon,
+	EnvelopeIcon,
 	FeedbackIcon,
 	HighlightIcon,
 	ImageIcon,
@@ -101,6 +102,7 @@ export const structure: StructureResolver = (S) =>
 								.title("Посилання"),
 						]),
 				),
+
 			S.listItem()
 				.title("Відгуки")
 				.icon(FeedbackIcon)
@@ -109,7 +111,22 @@ export const structure: StructureResolver = (S) =>
 				.title("Питання")
 				.icon(SparklesIcon)
 				.child(() => S.documentTypeList("faq").title("Питання")),
+			S.listItem()
+				.title("Контактна інформація - Головна Сторінка")
+				.icon(EnvelopeIcon)
+				.child(
+					S.list()
+						.title("Розділи")
+						.items([
+							S.documentListItem().schemaType("contact").id("contact"),
+							S.divider(),
 
+							S.documentListItem()
+								.schemaType("img")
+								.id("contact_img")
+								.title("Картинка"),
+						]),
+				),
 			S.listItem()
 				.title("Загальне Посилання")
 				.icon(LinkIcon)

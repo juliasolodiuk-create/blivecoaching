@@ -48,7 +48,7 @@ export const useSvgDraw = ({
 
 				gsap.set(svgPath, {
 					strokeDasharray: length,
-					strokeDashoffset: -length,
+					strokeDashoffset: length,
 					fill: "transparent",
 					stroke: strokeColor,
 					strokeWidth: strokeWidth,

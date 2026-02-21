@@ -10,7 +10,7 @@ import TextEffect from "@/shared/ui/animations/TextEffect";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { ImageBackground } from "@/shared/ui/components/images/ImageBackground/ImageBackground";
 import type { HeroWithUrls } from "../../../entities/home/model/home.types";
-import { HeroTitle } from "./ui/HeroTitle";
+import { HeroTitle } from "./ui";
 
 interface HeroSectionProps {
 	data: HeroWithUrls;

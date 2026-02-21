@@ -127,3 +127,22 @@ export interface HighlightWithUrls {
 	highlight: BlogWithUrl | null;
 	subhighlights: BlogWithUrl[];
 }
+
+export interface ContactContentData {
+	content: {
+		email: string;
+		phone: string;
+	};
+}
+export interface ContactData {
+	items?: ContactContentData;
+	imageSelected?: {
+		img?: ImageAsset;
+	};
+}
+
+export type ContactWithUrls = Omit<ContactData, "imageSelected"> & {
+	imageSelected: {
+		imageUrl: string | null;
+	};
+};

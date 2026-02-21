@@ -2,7 +2,7 @@ import * as mappers from "../model/home.mappers";
 import * as api from "./home.api";
 
 export const fetchHomeData = async () => {
-	const [hero, problems, benefits, banner, feedbacks, faq, highlight] =
+	const [hero, problems, benefits, banner, feedbacks, faq, highlight, contact] =
 		await Promise.all([
 			api.getHero(),
 			api.getProblems(),
@@ -11,6 +11,7 @@ export const fetchHomeData = async () => {
 			api.getFeedbacks(),
 			api.getFAQ(),
 			api.getHighlights(),
+			api.getContacts(),
 		]);
 
 	return {
@@ -21,5 +22,6 @@ export const fetchHomeData = async () => {
 		feedbacks: mappers.mapFeedbackWithUrls(feedbacks),
 		faq,
 		highlights: mappers.mapHighlightsWithUrls(highlight),
+		contact: mappers.mapContactsWithUrl(contact),
 	};
 };

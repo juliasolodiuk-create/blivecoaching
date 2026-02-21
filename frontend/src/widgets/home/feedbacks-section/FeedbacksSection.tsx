@@ -57,7 +57,7 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 					prev();
 				}
 			},
-			tolerance: 160,
+			tolerance: 50,
 			preventDefault: false,
 		});
 
@@ -67,25 +67,27 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 		<section
 			id="feedbacks"
 			ref={wrapperRef}
-			className="h-full bg-[#ffffff] py-28 px-16 relative "
+			className="h-full bg-[#ffffff] py-20 px-0 relative overflow-hidden "
 		>
 			<div
 				ref={containerRef}
 				className="slider-inner"
-				style={{ display: "flex" }}
+				style={{ display: "flex", width: "100%" }}
 			>
 				{data.map((item, i) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <пояснення, чому тут index>
-					<FeedbackItem key={i} data={item} />
+					<div key={i} className=" shrink-0">
+						<FeedbackItem data={item} />
+					</div>
 				))}
 			</div>
-			<div className=" flex justify-between w-[95vw] mt-8 absolute top-[30%] -translate-1/2 left-[50%]">
+			<div className=" pointer-events-none absolute top-10 inset-0 flex items-start justify-between px-4 md:px-10 w-screen ">
 				<div className="w-12 h-12">
 					{index > 0 && (
 						<button
 							type="button"
 							onClick={prev}
-							className="px-4 py-2 text-[#242424] cursor-pointer pointer-events-auto"
+							className="px-0 py-2 text-[#D3C3E0] cursor-pointer pointer-events-auto"
 						>
 							<CircleArrowLeft size={36} />
 						</button>
@@ -96,7 +98,7 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 						<button
 							type="button"
 							onClick={next}
-							className="px-4 py-2 text-[#242424] cursor-pointer pointer-events-auto"
+							className="px-4 py-2 text-[#D3C3E0] cursor-pointer pointer-events-auto"
 						>
 							<CircleArrowRight size={36} />
 						</button>

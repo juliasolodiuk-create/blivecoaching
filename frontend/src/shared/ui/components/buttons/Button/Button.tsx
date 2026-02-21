@@ -46,7 +46,7 @@ export const Button = ({
 				{title}
 			</div>
 			<div
-				className={`${iconBgColor} flex justify-center items-center w-10 h-9 rounded-lg text-[#242424]`}
+				className={`${iconBgColor} flex justify-center items-center min-w-10 h-9 rounded-lg text-[#242424]`}
 			>
 				{children}
 			</div>

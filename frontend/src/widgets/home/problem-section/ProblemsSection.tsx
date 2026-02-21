@@ -41,6 +41,7 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
 				<Button
 					title={buttonContent}
 					secondary={true}
+					width="max-w-90"
 					link="/about-be-live-coach"
 				>
 					<ChevronRight size={20} />

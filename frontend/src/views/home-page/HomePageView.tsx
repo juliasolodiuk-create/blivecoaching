@@ -25,7 +25,7 @@ export default async function HomePageView() {
 			<FeedbacksSection data={data.feedbacks} />
 			<FAQSection data={data.faq} />
 			<BlogSection data={data.highlights} />
-			<ContactSection />
+			<ContactSection data={data.contact} />
 			<Footer />
 		</>
 	);

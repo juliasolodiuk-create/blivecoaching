@@ -1,0 +1,34 @@
+{
+	"problems": {
+		"title": "Is This Your Current Reality?",
+		"subTitle": "If you recognize yourself in these challenges, the BLive Coaching method is your path to clarity and growth."
+	},
+	"benefits": {
+		"benefit_one": {
+			"image": "/benefits/1.PNG",
+			"title": "Presence and Self-Awareness",
+			"description": "The coaching fosters a sense of presence and self-awareness, offering a space for observation and reflection on feelings. This allows for the emergence of new understanding and insights."
+		},
+		"benefit_two": {
+			"image": "/benefits/2.PNG",
+			"title": "Deeper Engagement and Possibility",
+			"description": "The approach encourages a shift from operating on autopilot to experiencing the present more deeply and exploring beyond familiar boundaries. This is an invitation to move from routine into possibility and consider future potential."
+		},
+
+		"benefit_three": {
+			"image": "/benefits/3.PNG",
+			"title": "Cultivating Resilience and Finding Solutions",
+			"description": "The philosophy is built on a fundamental trust in the client's inner strength and capacity for growth. This helps clients cultivate resilience and discover new pathways through adversity."
+		},
+
+		"benefit_four": {
+			"image": "/benefits/4.PNG",
+			"title": "Tailored Approach and Diverse Tools",
+			"description": "The coaching is tailored to the unique needs of the client, regardless of their prior experience. It utilizes diverse, dynamic, and creative tools (coaching cards, reflection circles, drawing) to spark breakthrough conversations and meaningful transformation."
+		},
+		"link": {
+			"title": "See How the Process Works",
+			"link": ""
+		}
+	}
+}

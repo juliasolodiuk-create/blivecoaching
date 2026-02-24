@@ -1,0 +1,31 @@
+{
+	"Homepage": {
+		"title": "Welcome to the homepage",
+		"content": "This is the homepage content"
+	},
+	"problems": {
+		"title": "Is This Your Current Reality?",
+		"subTitle": "If you recognize yourself in these challenges, the BLive Coaching method is your path to clarity and growth."
+	},
+	"faq": {
+		"title": "FAQ",
+		"subTitle": "Common questions about coaching and how it works",
+		"bottomTitle": "Have more questions?",
+		"bottomSubTitle": "Reach out and let's talk about your specific situation.",
+		"link": "Contact"
+	},
+	"aboutMe": {
+		"title": "About me"
+	},
+	"myWhy": {
+		"title": "My Why",
+		"subTitle": "Why I desiced became coach"
+	},
+	"howToChooseCoach": {
+		"title": "How To Choose Coach?",
+		"link": "Scroll to read more"
+	},
+	"howItWorks": {
+		"title": "How It Works?"
+	}
+}

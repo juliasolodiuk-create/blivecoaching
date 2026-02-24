@@ -1,9 +1,9 @@
 import { groq } from "next-sanity";
 import { client } from "../client";
-import { HighlightData } from "../types/blog.types";
+import type { HighlightData } from "../types/blog.types";
 
 export async function getHighlights(): Promise<HighlightData> {
-  const query = groq`*[_type == "highlight"][0]{
+	const query = groq`*[_type == "highlight"][0]{
     "highlight": highlight->{
       img,
       blog_ua,
@@ -17,5 +17,5 @@ export async function getHighlights(): Promise<HighlightData> {
       blog_de
     }
   }`;
-  return await client.fetch(query, {}, { next: { revalidate: 0 } });
+	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }

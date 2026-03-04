@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { client } from "../../../../lib/client";
+import { client } from "@/shared/lib/client";
 import type {
 	BenefitData,
 	ContactData,

@@ -20,12 +20,7 @@ interface BenefitItemProps {
 	onToggle: () => void;
 }
 
-export const BenefitItem = ({
-	data,
-	position = { bottom: "0", right: "0", top: "0", left: "0" },
-	isActive,
-	onToggle,
-}: BenefitItemProps) => {
+export const BenefitItem = ({ data, isActive, onToggle }: BenefitItemProps) => {
 	const boxRef = useRef<HTMLButtonElement>(null);
 	const textRef = useRef<HTMLParagraphElement>(null);
 	const mainTextRef = useRef<HTMLHeadingElement>(null);

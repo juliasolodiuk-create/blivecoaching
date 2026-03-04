@@ -6,11 +6,17 @@ import { useState } from "react";
 import LocaleSwitcher from "@/features/locale-switcher/LocaleSwitcher";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
+import type { PageType } from "../footer/model/navigation.data";
 import { MenuPopUp } from "./ui";
 
-export const Header = () => {
+interface HeaderProps {
+	type?: PageType;
+}
+
+export const Header = ({ type }: HeaderProps) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
 	return (
 		<section className="z-9999">
 			<div className="p-4 md:py-4 md:px-29 fixed w-screen top-0 h-20   flex justify-between max-w-[1920px]">
@@ -26,10 +32,13 @@ export const Header = () => {
 						/>
 					</div>
 					<div className=" items-center rounded-xl overflow-hidden bg-white h-full hidden lg:flex">
-						<MenuButton title="Home" />
-						<MenuButton title="About" />
+						<MenuButton title="Home" href="/" />
+						<MenuButton title="About" href="/about-me" />
 						<MenuButton title="Blog" />
-						<MenuButton title="How To Choose Coach?" />
+						<MenuButton
+							title="How To Choose Coach?"
+							href="/how-to-choose-coach"
+						/>
 						<MenuButton title="Be Live Coaching" />
 					</div>
 				</div>
@@ -50,7 +59,11 @@ export const Header = () => {
 					</div>
 				</div>
 			</div>
-			<MenuPopUp isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+			<MenuPopUp
+				type={type}
+				isOpen={isMenuOpen}
+				onClose={() => setIsMenuOpen(false)}
+			/>
 		</section>
 	);
 };

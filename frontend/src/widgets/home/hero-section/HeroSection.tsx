@@ -66,7 +66,6 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
 
 			<ImageBackground
 				objectPosition="object-right"
-				inset="inset-0"
 				ref={imgRef}
 				image={data.imageUrl}
 				alt="Hero Background"

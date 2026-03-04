@@ -2,7 +2,6 @@ import Image from "next/image";
 import { forwardRef } from "react";
 
 interface ImageBackgroundProps {
-	inset?: string;
 	objectPosition: string;
 	rounded?: string;
 	image: string;
@@ -11,7 +10,7 @@ interface ImageBackgroundProps {
 }
 
 export const ImageBackground = forwardRef<HTMLDivElement, ImageBackgroundProps>(
-	({ image, alt = "", position, objectPosition, inset, rounded }, ref) => {
+	({ image, alt = "", position, objectPosition, rounded }, ref) => {
 		return (
 			<div
 				className={`${position} top-0 -z-1 overflow-hidden aspect-[4/5] sm:aspect-auto w-full h-full sm:flex ${rounded}`}

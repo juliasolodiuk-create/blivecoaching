@@ -6,15 +6,22 @@ import { MessagesSquare } from "lucide-react";
 import { useRef } from "react";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
+import {
+	footerNavData,
+	type PageType,
+} from "@/widgets/footer/model/navigation.data";
 
 interface Props {
 	isOpen: boolean;
 	onClose: () => void;
+	type?: PageType;
 }
 
-export const MenuPopUp = ({ isOpen, onClose }: Props) => {
+export const MenuPopUp = ({ isOpen, onClose, type = "home" }: Props) => {
 	const container = useRef<HTMLDivElement>(null);
 	const tl = useRef<gsap.core.Timeline | null>(null);
+	const currentData = footerNavData[type] || footerNavData.home;
+	const { siteMap, pageLinks } = currentData;
 
 	useGSAP(
 		() => {
@@ -58,21 +65,30 @@ export const MenuPopUp = ({ isOpen, onClose }: Props) => {
 			<div className="flex  justify-center h-full flex-col w-full gap-4 ">
 				<div className="border-b border-[#D3C3E0]/30 pb-4">
 					<div className="flex flex-wrap">
-						<MenuButton title="Home" onClick={onClose} href="#hero" />
-						<MenuButton title="Problems" onClick={onClose} href="#problems" />
-						<MenuButton title="Benefits" onClick={onClose} href="#benefits" />
-						<MenuButton title="Feedbacks" onClick={onClose} href="#feedbacks" />
-						<MenuButton title="FAQ" onClick={onClose} href="#faq" />
-						<MenuButton
-							title="Highlights"
-							onClick={onClose}
-							href="#highlights"
-						/>
-
-						<MenuButton title="Contacts" onClick={onClose} href="#contacts" />
+						{pageLinks?.map((item) => (
+							<MenuButton
+								key={item.title}
+								title={item.title}
+								onClick={onClose}
+								href={item.href}
+							/>
+						))}
 					</div>
 				</div>
-				<div className="border-b border-[#D3C3E0]/30 pb-4">
+
+				{siteMap?.map((item) => (
+					<div key={item.title} className="border-b border-[#D3C3E0]/30 pb-4">
+						<div className="flex justify-start">
+							<MenuButton
+								title={item.title}
+								href={item.href}
+								onClick={onClose}
+							/>
+						</div>
+					</div>
+				))}
+
+				{/* <div className="border-b border-[#D3C3E0]/30 pb-4">
 					<MenuButton title="About" onClick={onClose} />
 				</div>
 
@@ -86,7 +102,7 @@ export const MenuPopUp = ({ isOpen, onClose }: Props) => {
 
 				<div className="border-b border-[#D3C3E0]/30 pb-4">
 					<MenuButton title="Be Live Coaching" onClick={onClose} />
-				</div>
+				</div> */}
 				<div className="block sm:hidden">
 					<Button title="Connect" primary={true}>
 						<MessagesSquare size={20} />

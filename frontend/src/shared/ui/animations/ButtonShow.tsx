@@ -45,7 +45,7 @@ const ButtonShow = ({
 				scrollTrigger: animateOnScroll
 					? {
 							trigger: containerRef.current,
-							start: "top 95%",
+							start: start,
 							once: true,
 						}
 					: null,

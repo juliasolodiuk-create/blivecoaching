@@ -23,7 +23,6 @@ export const ContactSection = ({ data }: ContactProps) => {
 	});
 
 	useParallax(imgRef, 15, "30%");
-	console.log(data);
 
 	return (
 		<section

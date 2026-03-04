@@ -1,4 +1,5 @@
-import { urlForImage } from "../../../../lib/urlForImage";
+import type { ImageAsset } from "@/shared/lib/types/base.types";
+import { urlForImage } from "@/shared/lib/urlForImage";
 import type {
 	BenefitData,
 	BenefitWithUrls,
@@ -6,7 +7,6 @@ import type {
 	ContactData,
 	ContactWithUrls,
 	FeedbackData,
-	FeedbacksSectionData,
 	FeedbackWithUrls,
 	HeroData,
 	HeroWithUrls,
@@ -16,57 +16,47 @@ import type {
 	ProblemWithUrls,
 } from "../model/home.types";
 
+const getImageUrl = (
+	img: ImageAsset | null | undefined,
+	width = 1440,
+	quality = 85,
+) =>
+	img
+		? urlForImage(img).width(width).quality(quality).format("webp").url()
+		: null;
+
 export const mapHeroWithUrls = (hero: HeroData): HeroWithUrls => ({
 	...hero,
-	imageUrl: hero.img
-		? (urlForImage(hero.img)?.width(1440).quality(85).format("webp").url() ??
-			null)
-		: null,
+	imageUrl: getImageUrl(hero.img),
 });
 
 export const mapProblemsWithUrl = (problems: ProblemData): ProblemWithUrls => ({
 	...problems,
-
 	items: (problems.items || []).map((item) => ({
 		...item,
-		imageUrl: item.img
-			? urlForImage(item.img).width(500).quality(80).format("webp").url()
-			: null,
+		imageUrl: getImageUrl(item.img, 500, 80),
 	})),
 });
 
 export const mapBenefitsWithUrl = (benefits: BenefitData): BenefitWithUrls => ({
 	...benefits,
-
 	imageSelected: {
 		...benefits.imageSelected,
-		imageUrl: benefits.imageSelected?.img
-			? urlForImage(benefits.imageSelected.img)
-					.width(900)
-					.quality(85)
-					.format("webp")
-					.url()
-			: null,
+		imageUrl: getImageUrl(benefits.imageSelected?.img, 900),
 	},
-
 	items: (benefits.items || []).map((item) => ({
 		...item,
-		imageUrl: item.img
-			? urlForImage(item.img).width(300).quality(80).format("webp").url()
-			: null,
+		imageUrl: getImageUrl(item.img, 300, 80),
 	})),
 });
 
 export const mapFeedbackWithUrls = (
 	feedbacks: FeedbackData[],
-): FeedbackWithUrls[] => {
-	return (feedbacks || []).map((item) => ({
+): FeedbackWithUrls[] =>
+	(feedbacks || []).map((item) => ({
 		...item,
-		imageUrl: item.img
-			? urlForImage(item.img).width(300).quality(80).format("webp").url()
-			: null,
+		imageUrl: getImageUrl(item.img, 300, 80),
 	}));
-};
 
 export const mapHighlightsWithUrls = (
 	highlight: HighlightData,
@@ -74,33 +64,22 @@ export const mapHighlightsWithUrls = (
 	highlight: highlight?.highlight
 		? {
 				...highlight.highlight,
-				imageUrl: highlight.highlight.img
-					? urlForImage(highlight.highlight.img).width(1200).quality(90).url()
-					: null,
+				imageUrl: getImageUrl(highlight.highlight.img, 1200, 90),
 			}
 		: null,
-
-	subhighlights: (highlight?.subhighlights || []).map((item) => {
-		return {
-			...item,
-			imageUrl: item?.img
-				? urlForImage(item.img).width(600).quality(85).url()
-				: null,
-		} as BlogWithUrl;
-	}),
+	subhighlights: (highlight?.subhighlights || []).map(
+		(item) =>
+			({
+				...item,
+				imageUrl: getImageUrl(item.img, 600),
+			}) as BlogWithUrl,
+	),
 });
 
 export const mapContactsWithUrl = (contact: ContactData): ContactWithUrls => ({
 	...contact,
-
 	imageSelected: {
 		...contact.imageSelected,
-		imageUrl: contact.imageSelected?.img
-			? urlForImage(contact.imageSelected.img)
-					.width(1440)
-					.quality(85)
-					.format("webp")
-					.url()
-			: null,
+		imageUrl: getImageUrl(contact.imageSelected?.img),
 	},
 });

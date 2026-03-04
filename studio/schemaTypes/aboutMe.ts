@@ -77,8 +77,7 @@ export const aboutMe = defineType({
 		select: {
 			title: "desc_ua",
 		},
-		prepare(selection) {
-			const { title } = selection;
+		prepare() {
 			return {
 				title: "Про Мене",
 			};

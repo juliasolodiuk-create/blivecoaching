@@ -1,11 +1,11 @@
 import { groq } from "next-sanity";
-import { client } from "../client";
+import { client } from "@/shared/lib/client";
 import type {
 	AboutData,
 	HeroData,
 	HowItWorksData,
 	PhotoData,
-} from "../types/aboutBLC.types";
+} from "../model/aboutBLC.types";
 
 export async function getHero(): Promise<HeroData> {
 	const query = groq`*[_id == "beLiveCoaching_heroTitleScroll"][0] { 

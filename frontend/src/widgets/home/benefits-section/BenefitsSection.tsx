@@ -2,7 +2,7 @@
 
 import { ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { getButtonContent } from "@/entities/home/helper/button-utils";
 import useParallax from "@/shared/hooks/useParallax";
 import { useSvgDraw } from "@/shared/hooks/useSvgDraw";

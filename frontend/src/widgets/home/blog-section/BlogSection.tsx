@@ -13,7 +13,7 @@ interface BlogSectionProps {
 export const BlogSection = ({ data }: BlogSectionProps) => {
 	return (
 		<section
-			id="highlights"
+			id="blog"
 			className="min-h-screen bg-white text-[#242424] p-4 md:py-28 md:px-16 flex flex-col gap-20 items-center"
 		>
 			<SectionTitle

@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { client } from "../client";
+import { client } from "@/shared/lib/client";
 import type { HighlightData } from "../types/blog.types";
 
 export async function getHighlights(): Promise<HighlightData> {

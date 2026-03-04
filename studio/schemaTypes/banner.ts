@@ -13,13 +13,6 @@ export const banner = defineType({
 	icon: PresentationIcon,
 	fields: [
 		defineField({
-			name: "icon",
-			title: "Іконка",
-			type: "reference",
-			to: { type: "icons" },
-			group: ["ua", "en", "de"],
-		}),
-		defineField({
 			name: "banner_content_ua",
 			title: "Контент",
 			type: "object",

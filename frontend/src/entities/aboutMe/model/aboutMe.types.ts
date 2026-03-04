@@ -3,7 +3,7 @@ import type {
 	Content,
 	ImageAsset,
 	SharedLink,
-} from "../../src/shared/lib/types/base.types";
+} from "@/shared/lib/types/base.types";
 
 export interface AboutMeData {
 	desc_ua?: string[];
@@ -12,7 +12,7 @@ export interface AboutMeData {
 	img_selected?: ImageAsset | null;
 }
 
-export type AboutMeWithUrls = Omit<AboutMeData, "img_selected"> & {
+export type AboutMeWithUrls = Omit<AboutMeData, "img"> & {
 	imageUrl: string | null;
 };
 

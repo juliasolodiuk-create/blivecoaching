@@ -2,7 +2,6 @@ import { ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import { getBannerContent } from "@/entities/home/helper/banner-utils";
 import { getButtonContent } from "@/entities/home/helper/button-utils";
-import { useButtonShow } from "@/shared/hooks/useButtonShow";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";

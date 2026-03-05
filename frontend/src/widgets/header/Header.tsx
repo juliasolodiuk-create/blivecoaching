@@ -39,7 +39,7 @@ export const Header = ({ type }: HeaderProps) => {
 							title="How To Choose Coach?"
 							href="/how-to-choose-coach"
 						/>
-						<MenuButton title="Be Live Coaching" />
+						<MenuButton title="Be Live Coaching" href="/about-blc" />
 					</div>
 				</div>
 

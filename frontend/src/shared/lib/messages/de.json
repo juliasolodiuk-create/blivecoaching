@@ -27,5 +27,11 @@
 	},
 	"howItWorks": {
 		"title": "Wie funktioniert es?"
+	},
+	"signUpSession": {
+		"title": "Für eine Sitzung anmelden",
+		"placeholder": "Ihre E-Mail-Adresse",
+		"button": "Anmelden",
+		"description": "Wir respektieren Ihre Privatsphäre. Sie können sich jederzeit von unserem Newsletter abmelden."
 	}
 }

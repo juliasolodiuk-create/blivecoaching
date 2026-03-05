@@ -30,5 +30,5 @@ export const mapAboutBLCWithUrls = ({
 	...rest
 }: AboutData): AboutWithUrls => ({
 	...rest,
-	imageUrl: getImageUrl(imageSelected?.img, 900),
+	imageUrl: getImageUrl(imageSelected?.img, 1200),
 });

@@ -1,4 +1,4 @@
-import AboutPageView from "@/views/about-page/AboutPageView";
+import AboutPageView from "@/views/aboutMe-page/AboutMeView";
 
 export default async function Page() {
 	return <AboutPageView />;

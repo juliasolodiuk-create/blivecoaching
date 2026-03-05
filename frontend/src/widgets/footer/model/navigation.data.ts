@@ -7,7 +7,7 @@ export const footerNavData = {
 			{ title: "Benefits", href: "#benefits" },
 			{ title: "Feedbacks", href: "#feedbacks" },
 			{ title: "FAQ", href: "#faq" },
-			{ title: "Highlighs", href: "#highlights" },
+			{ title: "Blog", href: "#blog" },
 			{ title: "Contacts", href: "#contacts" },
 		],
 		siteMap: [
@@ -27,6 +27,20 @@ export const footerNavData = {
 			{ title: "Blog", href: "/blog" },
 			// { title: "How To Choose Coach?", href: "/how-to-choose-coach" },
 			{ title: "Be Live Coaching", href: "/about-blc" },
+		],
+	},
+	aboutBLC: {
+		title: "ABOUT BE LIVE COACHING PAGE",
+		pageLinks: [
+			{ title: "About", href: "#about" },
+			{ title: "How It Works", href: "#howItWorks" },
+		],
+		siteMap: [
+			{ title: "Home", href: "/" },
+			{ title: "About", href: "/about-me" },
+			{ title: "Blog", href: "/blog" },
+			{ title: "How To Choose Coach?", href: "/how-to-choose-coach" },
+			// { title: "Be Live Coaching", href: "/about-blc" },
 		],
 	},
 };

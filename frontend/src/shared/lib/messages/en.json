@@ -27,5 +27,11 @@
 	},
 	"howItWorks": {
 		"title": "How It Works?"
+	},
+	"signUpSession": {
+		"title": "Sign up for a session",
+		"placeholder": "Your email address",
+		"button": "Sign up",
+		"description": "We respect your privacy. Unsubscribe anytime from our mailing list."
 	}
 }

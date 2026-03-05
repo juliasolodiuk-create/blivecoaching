@@ -43,6 +43,22 @@ export const footerNavData = {
 			// { title: "Be Live Coaching", href: "/about-blc" },
 		],
 	},
+	aboutMe: {
+		title: "ABOUT ME PAGE",
+		pageLinks: [
+			{ title: "About", href: "#about" },
+			{ title: "My Why", href: "#myWhy" },
+			{ title: "Certificate", href: "#certificate" },
+			{ title: "About ICA", href: "#aboutICA" },
+		],
+		siteMap: [
+			{ title: "Home", href: "/" },
+			// { title: "About", href: "/about-me" },
+			{ title: "Blog", href: "/blog" },
+			{ title: "How To Choose Coach?", href: "/how-to-choose-coach" },
+			{ title: "Be Live Coaching", href: "/about-blc" },
+		],
+	},
 };
 
 export type PageType = keyof typeof footerNavData;

@@ -8,6 +8,7 @@ interface ImageContainerProps {
 	image: string;
 	alt?: string;
 	position?: string;
+	className?: string;
 }
 
 export const ImageContainer = forwardRef<HTMLDivElement, ImageContainerProps>(
@@ -19,12 +20,13 @@ export const ImageContainer = forwardRef<HTMLDivElement, ImageContainerProps>(
 			objectPosition,
 			inset = "",
 			rounded = "rounded-xl",
+			className = "aspect-4/5 sm:h-[600px]",
 		},
 		ref,
 	) => {
 		return (
 			<div
-				className={`overflow-hidden w-full flex items-end ${rounded} ${position} relative aspect-4/5 sm:aspect-auto sm:h-[600px]`}
+				className={`overflow-hidden w-full flex items-end ${rounded} ${position} relative sm:aspect-auto ${className}`}
 			>
 				<div ref={ref} className="relative w-full h-full ">
 					{image && (

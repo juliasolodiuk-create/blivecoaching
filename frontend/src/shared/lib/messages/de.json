@@ -33,5 +33,8 @@
 		"placeholder": "Ihre E-Mail-Adresse",
 		"button": "Anmelden",
 		"description": "Wir respektieren Ihre Privatsphäre. Sie können sich jederzeit von unserem Newsletter abmelden."
+	},
+	"aboutICA": {
+		"title": "Über die Internationale Trainerakademie"
 	}
 }

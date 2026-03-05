@@ -39,7 +39,7 @@ export async function getAboutBanner(): Promise<AboutBannerData> {
 }
 
 export async function getAboutICA(): Promise<AboutICAData[]> {
-	const query = groq`*[_type == "aboutICA"] {
+	const query = groq`*[_type == "aboutICA"] | order(_createdAt desc) {
        text_ua,
        text_en,
        text_de,

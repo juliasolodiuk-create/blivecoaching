@@ -33,5 +33,8 @@
 		"placeholder": "Your email address",
 		"button": "Sign up",
 		"description": "We respect your privacy. Unsubscribe anytime from our mailing list."
+	},
+	"aboutICA": {
+		"title": "About International Coach Academy"
 	}
 }

@@ -8,7 +8,7 @@
 		"start": "next start",
 		"lint:format": "biome check --write",
 		"typecheck": "tsc --noEmit",
-		"build:cf": "node scripts/setup-config.js && npx @opennextjs/cloudflare build"
+		"build:cf": "node scripts/setup-clouflare.ts && npx @opennextjs/cloudflare build"
 	},
 	"dependencies": {
 		"@gsap/react": "^2.1.2",

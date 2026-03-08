@@ -1,8 +1,7 @@
 "use client";
 
 import { ChevronRight } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
-import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import DivEffect from "@/shared/ui/animations/DivEffects";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
@@ -16,9 +15,7 @@ interface FAQSectionProps {
 }
 
 export const FAQSection = ({ data }: FAQSectionProps) => {
-	const _faqRefs = useRef<HTMLDivElement[]>([]);
 	const t = useTranslations("faq");
-	const _locale = useLocale();
 	return (
 		<section
 			id="faq"

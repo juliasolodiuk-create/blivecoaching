@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useRef } from "react";
-import {
-	getProblemContent,
-	getSolutionContent,
-} from "@/entities/home/helper/problem-utils";
 import { useDrawArrow } from "@/shared/hooks/useDrawArrow";
+import { getLocalizedContent } from "@/shared/lib/getLocalizedContent";
+import type { Content } from "@/shared/lib/types/base.types";
 import type { ProblemWithUrls } from "../../../../entities/home/model/home.types";
 import { TextBlock } from "./";
+
+type ProblemItem = ProblemWithUrls["items"][number];
 
 interface ProblemItemProps {
 	data?: ProblemWithUrls["items"][number];
@@ -17,8 +17,16 @@ export const ProblemCard = ({ data }: ProblemItemProps) => {
 	const cardRef = useRef<HTMLDivElement>(null);
 	const locale = useLocale();
 
-	const problemContent = getProblemContent(data, locale);
-	const solutionContent = getSolutionContent(data, locale);
+	const problemContent = getLocalizedContent<ProblemItem, Content>(
+		data,
+		"problem_content",
+		locale,
+	);
+	const solutionContent = getLocalizedContent<ProblemItem, Content>(
+		data,
+		"solution_content",
+		locale,
+	);
 
 	useDrawArrow({
 		scope: cardRef,

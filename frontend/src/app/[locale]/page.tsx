@@ -1,4 +1,4 @@
-import HomePageView from "@/views/home-page/HomePageView";
+import HomePageView from "@/views/home/HomePageView";
 
 export default async function Home() {
 	return <HomePageView />;

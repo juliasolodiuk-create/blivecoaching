@@ -1,5 +1,5 @@
-import HowToChooseCoachView from "@/views/howToChooseCoach-page/HowToChooseCoachView";
+import HowToChooseCoachPageView from "@/views/how-to-choose-coach/HowToChooseCoachPageView";
 
 export default async function Page() {
-	return <HowToChooseCoachView />;
+	return <HowToChooseCoachPageView />;
 }

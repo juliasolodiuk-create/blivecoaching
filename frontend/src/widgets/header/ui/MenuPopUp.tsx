@@ -4,12 +4,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { MessagesSquare } from "lucide-react";
 import { useRef } from "react";
+import { navData, type PageType } from "@/shared/lib/navigation.data";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
-import {
-	footerNavData,
-	type PageType,
-} from "@/widgets/footer/model/navigation.data";
 
 interface Props {
 	isOpen: boolean;
@@ -20,7 +17,7 @@ interface Props {
 export const MenuPopUp = ({ isOpen, onClose, type = "home" }: Props) => {
 	const container = useRef<HTMLDivElement>(null);
 	const tl = useRef<gsap.core.Timeline | null>(null);
-	const currentData = footerNavData[type] || footerNavData.home;
+	const currentData = navData[type] || navData.home;
 	const { siteMap, pageLinks } = currentData;
 
 	useGSAP(

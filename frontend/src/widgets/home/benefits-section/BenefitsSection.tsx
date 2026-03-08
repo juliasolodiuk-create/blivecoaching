@@ -3,9 +3,10 @@
 import { ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useRef, useState } from "react";
-import { getButtonContent } from "@/entities/home/helper/button-utils";
 import useParallax from "@/shared/hooks/useParallax";
 import { useSvgDraw } from "@/shared/hooks/useSvgDraw";
+import { getLocalizedContent } from "@/shared/lib/getLocalizedContent";
+import type { SharedLink } from "@/shared/lib/types/base.types";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import DivEffect from "@/shared/ui/animations/DivEffects";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
@@ -31,7 +32,11 @@ export const BenefitsSection = ({ data }: BenefitsSectionProps) => {
 		scope: sectionRef,
 	});
 
-	const buttonContent = getButtonContent<BenefitWithUrls>(data, locale);
+	const buttonContent = getLocalizedContent<SharedLink, string>(
+		data?.sharedLink,
+		"title",
+		locale,
+	);
 
 	return (
 		<section

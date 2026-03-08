@@ -2,7 +2,8 @@
 
 import { ChevronRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { getButtonContent } from "@/entities/home/helper/button-utils";
+import { getLocalizedContent } from "@/shared/lib/getLocalizedContent";
+import type { SharedLink } from "@/shared/lib/types/base.types";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
@@ -17,7 +18,11 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
 	const t = useTranslations("problems");
 	const locale = useLocale();
 
-	const buttonContent = getButtonContent<ProblemWithUrls>(data, locale);
+	const buttonContent = getLocalizedContent<SharedLink, string>(
+		data?.sharedLink,
+		"title",
+		locale,
+	);
 
 	return (
 		<section

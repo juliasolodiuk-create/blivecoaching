@@ -3,8 +3,8 @@
 import { MessagesSquare } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useRef } from "react";
-import { getHeroContent } from "@/entities/home/helper/hero-utils";
 import useParallax from "@/shared/hooks/useParallax";
+import { getLocalizedContent } from "@/shared/lib/getLocalizedContent";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import TextEffect from "@/shared/ui/animations/TextEffect";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
@@ -22,7 +22,11 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
 	const imgRef = useRef<HTMLDivElement>(null);
 	useParallax(imgRef, 15, "30%");
 
-	const heroContent = getHeroContent(data, locale);
+	const content = getLocalizedContent<HeroWithUrls, string>(
+		data,
+		"title",
+		locale,
+	);
 
 	if (!data?.imageUrl) {
 		return (
@@ -52,7 +56,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
         "
 				>
 					<TextEffect>
-						<HeroTitle>{heroContent}</HeroTitle>
+						<HeroTitle>{content}</HeroTitle>
 					</TextEffect>
 					<div>
 						<ButtonShow>

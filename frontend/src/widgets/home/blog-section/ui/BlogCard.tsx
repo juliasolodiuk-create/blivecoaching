@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useLocale } from "next-intl";
-import { getBlogContent } from "@/entities/home/helper/blog-utils";
+import type { BlogContentData } from "@/entities/home/model/home.types";
+import { getLocalizedContent } from "@/shared/lib/getLocalizedContent";
 import type { BlogWithUrl } from "../../../../../lib/types/blog.types";
 import { BlogCardContent } from "./";
 
@@ -12,11 +13,13 @@ interface BlogCardProps {
 export const BlogCard = ({ data, variant = "sub" }: BlogCardProps) => {
 	const locale = useLocale();
 
-	const blogContent = getBlogContent(data, locale);
+	const content = getLocalizedContent<BlogWithUrl, BlogContentData>(
+		data,
+		"blog",
+		locale,
+	);
 
-	if (!data || !blogContent) return null;
-
-	if (!data || !blogContent) return null;
+	if (!data || !content) return null;
 
 	const isMain = variant === "main";
 
@@ -39,7 +42,7 @@ export const BlogCard = ({ data, variant = "sub" }: BlogCardProps) => {
 			</div>
 
 			<BlogCardContent
-				content={blogContent}
+				content={content}
 				isMain={isMain}
 				paddingClassName={isMain ? "p-4 lg:p-12" : "p-4 lg:p-12 xl:p-6"}
 			/>

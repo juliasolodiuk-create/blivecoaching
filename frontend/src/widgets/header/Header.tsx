@@ -6,7 +6,7 @@ import { useState } from "react";
 import LocaleSwitcher from "@/features/locale-switcher/LocaleSwitcher";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
-import type { PageType } from "../footer/model/navigation.data";
+import type { PageType } from "../../shared/lib/navigation.data";
 import { MenuPopUp } from "./ui";
 
 interface HeaderProps {

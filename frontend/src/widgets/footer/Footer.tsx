@@ -2,7 +2,7 @@ import { MessagesSquare } from "lucide-react";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
-import { footerNavData, type PageType } from "./model/navigation.data";
+import { navData, type PageType } from "../../shared/lib/navigation.data";
 import { FooterAnimation } from "./ui/FooterAnimation";
 
 interface FooterProps {
@@ -10,7 +10,7 @@ interface FooterProps {
 }
 
 export const Footer = ({ type = "home" }: FooterProps) => {
-	const currentData = footerNavData[type] || footerNavData.home;
+	const currentData = navData[type] || navData.home;
 	const { pageLinks, title } = currentData;
 
 	return (

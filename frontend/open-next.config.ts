@@ -1,4 +1,6 @@
-const config = {
+import type { OpenNextConfig } from "@opennextjs/cloudflare";
+
+const config: OpenNextConfig = {
 	default: {
 		override: {
 			wrapper: "cloudflare-node",
@@ -23,4 +25,4 @@ const config = {
 	edgeExternals: ["node:crypto"],
 };
 
-module.exports = config;
+export default config;

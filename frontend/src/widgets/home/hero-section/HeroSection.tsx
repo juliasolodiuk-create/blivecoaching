@@ -72,7 +72,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
 			</div>
 
 			<ImageBackground
-				objectPosition="object-right"
+				objectPosition="[object-position:80%_center] sm:object-right"
 				ref={imgRef}
 				image={data.imageUrl}
 				alt="Hero Background"

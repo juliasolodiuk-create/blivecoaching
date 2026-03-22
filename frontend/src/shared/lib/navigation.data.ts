@@ -7,15 +7,15 @@ export const navData = {
 			{ title: "Benefits", href: "#benefits" },
 			{ title: "Feedbacks", href: "#feedbacks" },
 			{ title: "FAQ", href: "#faq" },
-			{ title: "Blog", href: "#blog" },
+			// { title: "Blog", href: "#blog" },
 			{ title: "Contacts", href: "#contacts" },
 		],
 		siteMap: [
 			// { title: "Home", href: "/" },
 			{ title: "About", href: "/about-me" },
-			{ title: "Blog", href: "/blog" },
+			// { title: "Blog", href: "/blog" },
 			{ title: "How To Choose Coach?", href: "/how-to-choose-coach" },
-			{ title: "Be Live Coaching", href: "/about-blc" },
+			{ title: "BLive Coaching", href: "/about-blc" },
 		],
 	},
 	howToChooseCoach: {
@@ -24,9 +24,9 @@ export const navData = {
 		siteMap: [
 			{ title: "Home", href: "/" },
 			{ title: "About", href: "/about-me" },
-			{ title: "Blog", href: "/blog" },
+			// { title: "Blog", href: "/blog" },
 			// { title: "How To Choose Coach?", href: "/how-to-choose-coach" },
-			{ title: "Be Live Coaching", href: "/about-blc" },
+			{ title: "BLive Coaching", href: "/about-blc" },
 		],
 	},
 	aboutBLC: {
@@ -38,7 +38,7 @@ export const navData = {
 		siteMap: [
 			{ title: "Home", href: "/" },
 			{ title: "About", href: "/about-me" },
-			{ title: "Blog", href: "/blog" },
+			// { title: "Blog", href: "/blog" },
 			{ title: "How To Choose Coach?", href: "/how-to-choose-coach" },
 			// { title: "Be Live Coaching", href: "/about-blc" },
 		],
@@ -53,9 +53,9 @@ export const navData = {
 		],
 		siteMap: [
 			{ title: "Home", href: "/" },
-			{ title: "Blog", href: "/blog" },
+			// { title: "Blog", href: "/blog" },
 			{ title: "How To Choose Coach?", href: "/how-to-choose-coach" },
-			{ title: "Be Live Coaching", href: "/about-blc" },
+			{ title: "BLive Coaching", href: "/about-blc" },
 		],
 	},
 };

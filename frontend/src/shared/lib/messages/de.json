@@ -1,8 +1,8 @@
 {
-	"Homepage": {
-		"title": "Willkommen auf der Startseite",
-		"content": "Dies ist der Inhalt der Startseite"
+	"hero": {
+		"button": "Dienstleistungen und Pakete"
 	},
+
 	"problems": {
 		"title": "Ist das Ihre aktuelle Realität?",
 		"subTitle": "Wenn Sie sich in diesen Herausforderungen wiedererkennen, ist die BLive Coaching-Methode Ihr Weg zu Klarheit und persönlichem Wachstum."

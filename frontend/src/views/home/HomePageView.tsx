@@ -1,4 +1,6 @@
 import { fetchHomeData } from "@/entities/home/api/home.fetch";
+import AdminNotification from "@/features/emails/templates/AdminNotification";
+import ApplicationNotification from "@/features/emails/templates/ApplicationNotification";
 import { Footer } from "@/widgets/footer";
 import { Header } from "@/widgets/header";
 import {
@@ -9,6 +11,7 @@ import {
 	FeedbacksSection,
 	HeroSection,
 	HowToChooseCoachSection,
+	PlanSection,
 	ProblemsSection,
 } from "@/widgets/home";
 
@@ -24,8 +27,10 @@ export default async function HomePageView() {
 			<HowToChooseCoachSection data={data.banner} />
 			<FeedbacksSection data={data.feedbacks} />
 			<FAQSection data={data.faq} />
-			<BlogSection data={data.highlights} />
+			<PlanSection data={data.plans} />
+			{/* <BlogSection data={data.highlights} /> */}
 			<ContactSection data={data.contact} />
+
 			<Footer type="home" />
 		</>
 	);

@@ -5,4 +5,5 @@ export { FAQSection } from "./faq-section/FAQSection";
 export { FeedbacksSection } from "./feedbacks-section/FeedbacksSection";
 export { HeroSection } from "./hero-section/HeroSection";
 export { HowToChooseCoachSection } from "./how-to-choose-coach-section/HowToChooseCoachSection";
+export { PlanSection } from "./plan-section/PlanSection";
 export { ProblemsSection } from "./problem-section/ProblemsSection";

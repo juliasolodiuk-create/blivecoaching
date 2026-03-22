@@ -83,7 +83,7 @@ export const BenefitsSection = ({ data }: BenefitsSectionProps) => {
 							secondary={true}
 							border={true}
 							width="max-w-90"
-							link="/about-be-live-coach"
+							link="/about-blc"
 						>
 							<ChevronRight size={20} />
 						</Button>

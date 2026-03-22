@@ -2,17 +2,27 @@ import * as mappers from "../model/home.mappers";
 import * as api from "./home.api";
 
 export const fetchHomeData = async () => {
-	const [hero, problems, benefits, banner, feedbacks, faq, highlight, contact] =
-		await Promise.all([
-			api.getHero(),
-			api.getProblems(),
-			api.getBenefits(),
-			api.getBannerHowToChooseCoach(),
-			api.getFeedbacks(),
-			api.getFAQ(),
-			api.getHighlights(),
-			api.getContacts(),
-		]);
+	const [
+		hero,
+		problems,
+		benefits,
+		banner,
+		feedbacks,
+		faq,
+		highlight,
+		contact,
+		plans,
+	] = await Promise.all([
+		api.getHero(),
+		api.getProblems(),
+		api.getBenefits(),
+		api.getBannerHowToChooseCoach(),
+		api.getFeedbacks(),
+		api.getFAQ(),
+		api.getHighlights(),
+		api.getContacts(),
+		api.getPlans(),
+	]);
 
 	return {
 		hero: mappers.mapHeroWithUrls(hero),
@@ -23,5 +33,6 @@ export const fetchHomeData = async () => {
 		faq,
 		highlights: mappers.mapHighlightsWithUrls(highlight),
 		contact: mappers.mapContactsWithUrl(contact),
+		plans,
 	};
 };

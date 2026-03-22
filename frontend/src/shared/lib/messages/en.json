@@ -1,7 +1,6 @@
 {
-	"Homepage": {
-		"title": "Welcome to the homepage",
-		"content": "This is the homepage content"
+	"hero": {
+		"button": "Services and plans"
 	},
 	"problems": {
 		"title": "Is This Your Current Reality?",

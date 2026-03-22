@@ -13,6 +13,7 @@ interface DivEffectProps {
 	delay?: number;
 	start?: string;
 	className?: string;
+	rotate?: number;
 }
 
 const DivEffect = ({
@@ -21,6 +22,7 @@ const DivEffect = ({
 	delay = 0,
 	start = "top bottom",
 	className = "",
+	rotate = 0,
 }: DivEffectProps) => {
 	const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -33,6 +35,7 @@ const DivEffect = ({
 
 				{
 					y: 150,
+					rotate,
 					opacity: 0.4,
 					duration: 1,
 					delay,
@@ -42,7 +45,6 @@ const DivEffect = ({
 								trigger: containerRef.current,
 								start: start,
 								once: true,
-								// markers: true,
 							}
 						: null,
 				},

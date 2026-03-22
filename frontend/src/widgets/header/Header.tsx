@@ -31,15 +31,15 @@ export const Header = ({ type }: HeaderProps) => {
 							sizes="48px"
 						/>
 					</div>
-					<div className=" items-center rounded-xl overflow-hidden bg-white h-full hidden lg:flex">
+					<div className="px-1 items-center rounded-xl overflow-hidden bg-white h-full hidden lg:flex">
 						<MenuButton title="Home" href="/" />
 						<MenuButton title="About" href="/about-me" />
-						<MenuButton title="Blog" />
+						{/* <MenuButton title="Blog" /> */}
 						<MenuButton
 							title="How To Choose Coach?"
 							href="/how-to-choose-coach"
 						/>
-						<MenuButton title="Be Live Coaching" href="/about-blc" />
+						<MenuButton title="BLive Coaching" href="/about-blc" />
 					</div>
 				</div>
 

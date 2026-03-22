@@ -6,11 +6,13 @@ import {
 	BulbFilledIcon,
 	CogIcon,
 	EnvelopeIcon,
+	FaceHappyIcon,
 	FeedbackIcon,
 	HighlightIcon,
 	ImageIcon,
 	LinkIcon,
 	ListIcon,
+	PackageIcon,
 	PresentationIcon,
 	RocketIcon,
 	SparklesIcon,
@@ -133,6 +135,16 @@ export const structure: StructureResolver = (S) =>
 				.child(
 					S.document().schemaType("link").id("main_link").title("Посилання"),
 				),
+
+			S.divider(),
+			S.listItem()
+				.title("Пакети Послуг")
+				.icon(PackageIcon)
+				.child(() => S.documentTypeList("plan").title("План")),
+			S.listItem()
+				.title("Заявки від клієнтів")
+				.icon(FaceHappyIcon)
+				.child(() => S.documentTypeList("application").title("Заявка")),
 
 			S.divider(),
 			S.listItem()

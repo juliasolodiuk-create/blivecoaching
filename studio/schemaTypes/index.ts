@@ -1,22 +1,24 @@
-import { aboutBLC } from "./aboutBLC";
-import { aboutICA } from "./aboutICA";
-import { aboutMe } from "./aboutMe";
+import { aboutBLC } from "./about-blc/aboutBLC";
+import { heroTitleScroll } from "./about-blc/heroTitleScroll";
+import { howItWorks } from "./about-blc/howItWorks";
+import { aboutICA } from "./about-me/aboutICA";
+import { aboutMe } from "./about-me/aboutMe";
+import { myWhy } from "./about-me/myWhy";
 import { banner } from "./banner";
-import { benefits } from "./benefits";
 import { blog } from "./blog";
-import { contact } from "./contact";
-import { faq } from "./faq";
-import { feedbacks } from "./feedbacks";
-import { guide } from "./guide";
 import { hero } from "./hero";
-import { heroTitleScroll } from "./heroTitleScroll";
-import { highlight } from "./highlight";
-import { howItWorks } from "./howItWorks";
+import { benefits } from "./home/benefits";
+import { contact } from "./home/contact";
+import { faq } from "./home/faq";
+import { feedbacks } from "./home/feedbacks";
+import { highlight } from "./home/highlight";
+import { problems } from "./home/problems";
+import { guide } from "./how-to-choose-coach/guide";
 import { icons } from "./icons";
 import { img } from "./img";
 import { link } from "./link";
-import { myWhy } from "./myWhy";
-import { problems } from "./problems";
+import { application } from "./plans/application";
+import { plan } from "./plans/plan";
 import { seo } from "./seo";
 
 export const schemaTypes = [
@@ -40,4 +42,6 @@ export const schemaTypes = [
 	highlight,
 	heroTitleScroll,
 	contact,
+	plan,
+	application,
 ];

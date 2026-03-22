@@ -34,14 +34,14 @@ export const Footer = ({ type = "home" }: FooterProps) => {
 							<p className="text-[#D3C3E0] font-semibold">SITE MAP</p>
 							<MenuButton title="Home" href="/" fontSize="14px" />
 							<MenuButton title="About" href="/about-me" fontSize="14px" />
-							<MenuButton title="Blog" href="/blog" fontSize="14px" />
+							{/* <MenuButton title="Blog" href="/blog" fontSize="14px" /> */}
 							<MenuButton
 								title="How To Choose Coach?"
 								href="/how-to-choose-coach"
 								fontSize="14px"
 							/>
 							<MenuButton
-								title="Be Live Coaching"
+								title="BLive Coaching"
 								href="/about-blc"
 								fontSize="14px"
 							/>
@@ -63,13 +63,19 @@ export const Footer = ({ type = "home" }: FooterProps) => {
 					</div>
 				</div>
 			</div>
+			<div className="flex flex-col w-full items-center sm:items-start p-10 xl:p-24 gap-4">
+				<div className="flex-col sm:flex-row flex gap-1 sm:gap-4 text-[12px] items-center">
+					<p className="text-black">( Privacy Policy )</p>
+					<p className="text-black">( Terms and Conditions )</p>
+					<p className="text-black">( Cookie Policy )</p>
+				</div>
+				<div className="text-black text-[12px] text-center sm:text-left">
+					<p>
+						Copyright © 2026 <b>Pavlo Tishynin</b>. All rights reserved.
+					</p>
+				</div>
+			</div>
 
-			{/* <div
-				ref={setContainerRef}
-				className="absolute inset-0 z-0 flex -left-60 -bottom-20 items-center justify-center p-10 [&>svg]:max-w-full [&>svg]:max-h-full [&>svg]:w-auto [&>svg]:h-auto opacity-20"
-			>
-				
-			</div> */}
 			<div className="absolute bottom-0">
 				<FooterAnimation />
 			</div>

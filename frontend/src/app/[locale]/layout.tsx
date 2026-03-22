@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { NuqsAdapter } from "nuqs/adapters/next";
 
 export const metadata: Metadata = {
 	title: "Be Live Coaching",
@@ -11,7 +12,6 @@ export const metadata: Metadata = {
 interface RootLayoutProps {
 	children: React.ReactNode;
 	params: Promise<{ locale: string }>;
-	// params: { locale: string };
 }
 
 export default async function RootLayout({
@@ -21,23 +21,13 @@ export default async function RootLayout({
 	const { locale } = await params;
 	if (locale === "favicon.ico") return null;
 
-	// let messages = {};
-	// try {
-	// 	messages = (await import(`../../shared/lib/messages/${locale}.json`))
-	// 		.default;
-	// } catch (error: unknown) {
-	// 	console.error(`No messages for locale "${locale}"`, error);
-
-	// 	messages = {};
-	// }
-
 	const messages = await getMessages();
 
 	return (
 		<html lang={locale}>
 			<body className={`antialiased`}>
 				<NextIntlClientProvider locale={locale} messages={messages}>
-					{children}
+					<NuqsAdapter>{children}</NuqsAdapter>
 				</NextIntlClientProvider>
 			</body>
 		</html>

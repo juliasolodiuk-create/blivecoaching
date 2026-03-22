@@ -10,6 +10,8 @@ interface MenuButtonProps {
 	onClick?: () => void;
 	href?: string;
 	fontSize?: string;
+	disabled?: boolean;
+	type?: "button" | "submit" | "reset";
 }
 
 export const MenuButton = ({
@@ -17,6 +19,8 @@ export const MenuButton = ({
 	onClick,
 	href,
 	fontSize = "16px",
+	type = "button",
+	disabled = false,
 }: MenuButtonProps) => {
 	const container = useRef<HTMLElement>(null);
 	const tl = useRef<gsap.core.Timeline | null>(null);
@@ -71,7 +75,7 @@ export const MenuButton = ({
 
 	return (
 		<button
-			type="button"
+			type={type}
 			ref={container as React.RefObject<HTMLButtonElement>}
 			onMouseEnter={() => toggleMenu(true)}
 			onMouseLeave={() => toggleMenu(false)}
@@ -79,6 +83,7 @@ export const MenuButton = ({
 			onBlur={() => toggleMenu(false)}
 			onClick={onClick}
 			className={className}
+			disabled={disabled}
 		>
 			<Content title={title} fontSize={fontSize} />
 		</button>
@@ -89,18 +94,18 @@ const Content = ({ title, fontSize }: { title: string; fontSize: string }) => (
 	<>
 		<span
 			style={{ fontSize }}
-			className="relative z-10 flex h-full items-center justify-center text-[#242424] font-montserrat font-semibold"
+			className="relative z-10 flex h-full items-center justify-center  font-montserrat font-semibold"
 		>
 			{title}
 		</span>
-		<div className="layer-top absolute inset-0 py-px px-1 h-full w-full flex items-center justify-center z-20 pointer-events-none">
-			<div className="bg-[#D3C3E0] h-full w-full rounded-lg"></div>
+		<div className="layer-top absolute inset-0 py-1 px-1 h-full w-full flex items-center justify-center z-20 pointer-events-none">
+			<div className="bg-primary h-full w-full rounded-lg"></div>
 		</div>
 
-		<div className="layer-bottom absolute inset-0 py-px px-1 h-full w-full z-30 pointer-events-none">
+		<div className="layer-bottom absolute inset-0 py-1 px-1 h-full w-full z-30 pointer-events-none">
 			<span
 				style={{ fontSize }}
-				className="h-full w-full bg-[#E7EBFA] text-[#242424] font-montserrat font-semibold rounded-lg flex items-center justify-center"
+				className="h-full w-full bg-secondary  font-montserrat font-semibold rounded-lg flex items-center justify-center "
 			>
 				{title}
 			</span>

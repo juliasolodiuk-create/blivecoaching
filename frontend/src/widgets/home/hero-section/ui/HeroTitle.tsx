@@ -12,6 +12,7 @@ export const HeroTitle = ({ children }: HeroTitleProps) => {
             sm:text-[80px] 
             md:text-[100px]
             lg:text-left
+			text-background
             "
 		>
 			{children}

@@ -8,8 +8,6 @@ export const TextContent = ({ data }: TextContentProps) => {
 	return (
 		<div className=" flex flex-col gap-8">
 			{data?.map((item, index) => {
-				// Создаем ключ, который выглядит как строка,
-				// но гарантированно уникален за счет индекса
 				const uniqueKey = `text-${index}-${item.slice(0, 10)}`;
 
 				return (

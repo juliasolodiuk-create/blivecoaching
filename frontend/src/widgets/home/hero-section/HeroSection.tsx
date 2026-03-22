@@ -1,7 +1,7 @@
 "use client";
 
-import { MessagesSquare } from "lucide-react";
-import { useLocale } from "next-intl";
+import { ChevronRight, MessagesSquare } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { useRef } from "react";
 import useParallax from "@/shared/hooks/useParallax";
 import { getLocalizedContent } from "@/shared/lib/getLocalizedContent";
@@ -19,6 +19,7 @@ interface HeroSectionProps {
 
 export const HeroSection = ({ data }: HeroSectionProps) => {
 	const locale = useLocale();
+	const t = useTranslations("hero");
 	const imgRef = useRef<HTMLDivElement>(null);
 	useParallax(imgRef, 15, "30%");
 
@@ -60,8 +61,10 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
 					</TextEffect>
 					<div>
 						<ButtonShow>
-							<Button title="Connect" primary={true}>
-								<MessagesSquare size={20} />
+							<Button title={t("button")} primary={true} link="#plans">
+								<div className="rotate-90">
+									<ChevronRight size={20} />
+								</div>
 							</Button>
 						</ButtonShow>
 					</div>

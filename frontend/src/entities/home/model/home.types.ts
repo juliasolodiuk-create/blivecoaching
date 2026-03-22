@@ -128,6 +128,19 @@ export interface HighlightWithUrls {
 	subhighlights: BlogWithUrl[];
 }
 
+export interface PlanContent {
+	description: string[];
+}
+
+export interface Plans {
+	isMostPopular: boolean;
+	content_ua: PlanContent;
+	content_en: PlanContent;
+	content_de: PlanContent;
+	title: string;
+	isNonActive: boolean;
+}
+
 export interface ContactContentData {
 	content: {
 		email: string;

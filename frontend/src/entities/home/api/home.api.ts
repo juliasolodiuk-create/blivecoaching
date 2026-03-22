@@ -8,6 +8,7 @@ import type {
 	HeroData,
 	HighlightData,
 	HomeBannerData,
+	Plans,
 	ProblemData,
 } from "../model/home.types";
 
@@ -101,6 +102,18 @@ export async function getHighlights(): Promise<HighlightData> {
       blog_en,
       blog_de
     }
+  }`;
+	return await client.fetch(query, {}, { next: { revalidate: 0 } });
+}
+
+export async function getPlans(): Promise<Plans[]> {
+	const query = groq`*[_type == "plan"]{
+  isMostPopular,
+  content_en, 
+  content_ua, 
+  content_de,
+  title,
+  isNonActive
   }`;
 	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }

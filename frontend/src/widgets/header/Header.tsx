@@ -18,7 +18,7 @@ export const Header = ({ type }: HeaderProps) => {
 	const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
 	return (
-		<section className="z-9999">
+		<section className="relative z-9999">
 			<div className="p-4 md:py-4 md:px-29 fixed w-screen top-0 h-20   flex justify-between max-w-[1920px]">
 				<div className="flex gap-2">
 					<div className="relative w-12 h-12 overflow-hidden rounded-xl ">

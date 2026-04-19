@@ -1,6 +1,7 @@
 import { MessagesSquare } from "lucide-react";
 import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
+import { LinkButton } from "@/shared/ui/components/buttons/LinkButton/LinkButton";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
 import { navData, type PageType } from "../../shared/lib/navigation.data";
 import { FooterAnimation } from "./ui/FooterAnimation";
@@ -9,9 +10,10 @@ interface FooterProps {
 	type?: PageType; // 'home' или 'about'
 }
 
-export const Footer = ({ type = "home" }: FooterProps) => {
-	const currentData = navData[type] || navData.home;
-	const { pageLinks, title } = currentData;
+export const Footer = ({ type }: FooterProps) => {
+	const currentData = type ? navData[type] : null;
+	const pageLinks = currentData?.pageLinks;
+	const title = currentData?.title;
 
 	return (
 		<section className="relative h-full min-h-screen w-screen bg-white overflow-clip p-4 md:p-16">
@@ -28,7 +30,7 @@ export const Footer = ({ type = "home" }: FooterProps) => {
 						</ButtonShow>
 					</div>
 				</div>
-				<div className="flex flex-col sm:flex-row gap-16">
+				<div className="flex flex-col sm:flex-row gap-16 ">
 					<div>
 						<div className="flex flex-col items-center">
 							<p className="text-[#D3C3E0] font-semibold">SITE MAP</p>
@@ -51,23 +53,53 @@ export const Footer = ({ type = "home" }: FooterProps) => {
 						<div className="flex flex-col items-center">
 							<p className="text-[#D3C3E0] font-semibold">{title}</p>
 
-							{pageLinks?.map((item) => (
-								<MenuButton
-									key={item.title}
-									title={item.title}
-									href={item.href}
-									fontSize="14px"
-								/>
-							))}
+							{type && pageLinks && (
+								<div>
+									<div className="flex flex-col items-center">
+										{pageLinks.map((item) => (
+											<MenuButton
+												key={item.title}
+												title={item.title}
+												href={item.href}
+												fontSize="14px"
+											/>
+										))}
+									</div>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="flex flex-col w-full items-center sm:items-start p-10 xl:p-24 gap-4">
-				<div className="flex-col sm:flex-row flex gap-1 sm:gap-4 text-[12px] items-center">
-					<p className="text-black">( Privacy Policy )</p>
-					<p className="text-black">( Terms and Conditions )</p>
-					<p className="text-black">( Cookie Policy )</p>
+			<div className="flex flex-col w-full items-center sm:items-start p-10 xl:p-24 gap-1">
+				<div className="flex-col sm:flex-row flex sm:gap-4 text-[12px] items-center">
+					<span className="flex justify-center items-center">
+						(
+						<LinkButton
+							title="Privacy Policy "
+							fontSize="12px"
+							href="/privacy-policy"
+						/>
+						)
+					</span>
+					<span className="flex justify-center items-center">
+						(
+						<LinkButton
+							title="Terms and Conditions "
+							fontSize="12px"
+							href="/terms-and-conditions"
+						/>
+						)
+					</span>
+					<span className="flex justify-center items-center">
+						(
+						<LinkButton
+							title="Cookie Policy "
+							fontSize="12px"
+							href="/cookie-policy"
+						/>
+						)
+					</span>
 				</div>
 				<div className="text-black text-[12px] text-center sm:text-left">
 					<p>

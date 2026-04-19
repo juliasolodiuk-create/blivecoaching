@@ -8,13 +8,14 @@ import { banner } from "./banner";
 import { blog } from "./blog";
 import { hero } from "./hero";
 import { benefits } from "./home/benefits";
+import { callbackRequest } from "./home/callbackRequest";
 import { contact } from "./home/contact";
 import { faq } from "./home/faq";
+import { faqRequest } from "./home/faqRequest";
 import { feedbacks } from "./home/feedbacks";
 import { highlight } from "./home/highlight";
 import { problems } from "./home/problems";
 import { guide } from "./how-to-choose-coach/guide";
-import { icons } from "./icons";
 import { img } from "./img";
 import { link } from "./link";
 import { application } from "./plans/application";
@@ -24,7 +25,6 @@ import { seo } from "./seo";
 export const schemaTypes = [
 	hero,
 	seo,
-	icons,
 	faq,
 	problems,
 	link,
@@ -44,4 +44,6 @@ export const schemaTypes = [
 	contact,
 	plan,
 	application,
+	faqRequest,
+	callbackRequest,
 ];

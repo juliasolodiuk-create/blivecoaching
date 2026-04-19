@@ -23,24 +23,7 @@ export const problems = defineType({
 			validation: (Rule) =>
 				Rule.required().error("Виберіть фотографію, це поле є обов’язковим"),
 		}),
-		defineField({
-			name: "problemIcon",
-			title: "Іконка Проблеми",
-			type: "reference",
-			to: { type: "icons" },
-			group: ["ua", "en", "de"],
-			validation: (Rule) =>
-				Rule.required().error("Виберіть іконку, це поле є обов’язковим"),
-		}),
-		defineField({
-			name: "arrowIcon",
-			title: "Іконка Стрілки",
-			type: "reference",
-			to: { type: "icons" },
-			group: ["ua", "en", "de"],
-			validation: (Rule) =>
-				Rule.required().error("Виберіть іконку, це поле є обов’язковим"),
-		}),
+
 		defineField({
 			name: "problem_content_ua",
 			title: "Зміст проблеми",

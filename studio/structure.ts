@@ -113,6 +113,12 @@ export const structure: StructureResolver = (S) =>
 				.title("Питання")
 				.icon(SparklesIcon)
 				.child(() => S.documentTypeList("faq").title("Питання")),
+
+			S.listItem()
+				.title("Запитання від клієнтів")
+				.icon(FaceHappyIcon)
+				.child(() => S.documentTypeList("faqRequest").title("Заявка")),
+
 			S.listItem()
 				.title("Контактна інформація - Головна Сторінка")
 				.icon(EnvelopeIcon)
@@ -129,6 +135,11 @@ export const structure: StructureResolver = (S) =>
 								.title("Картинка"),
 						]),
 				),
+			S.listItem()
+				.title("Зворотній звʼязок")
+				.icon(FaceHappyIcon)
+				.child(() => S.documentTypeList("callbackRequest").title("Заявка")),
+
 			S.listItem()
 				.title("Загальне Посилання")
 				.icon(LinkIcon)
@@ -241,10 +252,7 @@ export const structure: StructureResolver = (S) =>
 						]),
 				),
 			S.divider(),
-			S.listItem()
-				.title("Іконки")
-				.icon(AsteriskIcon)
-				.child(() => S.documentTypeList("icons").title("Іконки")),
+
 			S.listItem()
 				.title("SEO Налаштування")
 				.icon(CogIcon)

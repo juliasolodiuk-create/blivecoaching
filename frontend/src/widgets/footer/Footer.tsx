@@ -24,7 +24,11 @@ export const Footer = ({ type }: FooterProps) => {
 					</div>
 					<div className="py-4">
 						<ButtonShow>
-							<Button title="Connect" primary={true}>
+							<Button
+								title="Connect"
+								primary={true}
+								link="mailto:juliasolodiuk@gmail.com"
+							>
 								<MessagesSquare size={20} />
 							</Button>
 						</ButtonShow>

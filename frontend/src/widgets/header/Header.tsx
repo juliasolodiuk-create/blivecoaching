@@ -53,7 +53,11 @@ export const Header = ({ type }: HeaderProps) => {
 						</div>
 					</div>
 					<div className="hidden sm:block">
-						<Button title="Connect" primary={true}>
+						<Button
+							title="Connect"
+							primary={true}
+							link="mailto:juliasolodiuk@gmail.com"
+						>
 							<MessagesSquare size={20} />
 						</Button>
 					</div>

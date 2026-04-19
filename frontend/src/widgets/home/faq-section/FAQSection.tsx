@@ -1,14 +1,11 @@
 "use client";
 
-import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import ButtonShow from "@/shared/ui/animations/ButtonShow";
 import DivEffect from "@/shared/ui/animations/DivEffects";
-import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { SecondaryTitle } from "@/shared/ui/components/titles/SecondaryTItle/SecondaryTitle";
 import { SectionTitle } from "@/shared/ui/components/titles/SectionTitle/SectionTitle";
 import type { FAQData } from "../../../entities/home/model/home.types";
-import { FAQCard } from "./ui";
+import { FAQCard, FAQFooter, QuestionModal } from "./ui";
 
 interface FAQSectionProps {
 	data: FAQData[];
@@ -16,6 +13,7 @@ interface FAQSectionProps {
 
 export const FAQSection = ({ data }: FAQSectionProps) => {
 	const t = useTranslations("faq");
+
 	return (
 		<section
 			id="faq"
@@ -46,12 +44,9 @@ export const FAQSection = ({ data }: FAQSectionProps) => {
 					className="items-center text-center"
 				/>
 
-				<ButtonShow>
-					<Button title={t("link")} secondary={true}>
-						<ChevronRight size={20} />
-					</Button>
-				</ButtonShow>
+				<FAQFooter linkTitle={t("link")} />
 			</div>
+			<QuestionModal />
 		</section>
 	);
 };

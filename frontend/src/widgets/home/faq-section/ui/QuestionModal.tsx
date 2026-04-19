@@ -1,27 +1,26 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { parseAsString, useQueryState, useQueryStates } from "nuqs";
+import { parseAsString, useQueryState } from "nuqs";
 import { useActionState, useCallback, useEffect } from "react";
-import { SubmitApplication } from "@/features/submit-application/SubmitApplication";
+import { SubmitQuestionForm } from "@/features/submit-question/SubmitQuestion";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
 
-export const Modal = () => {
-	const t = useTranslations("planModal");
-	const [{ plan, modal }, setQueries] = useQueryStates({
-		plan: parseAsString,
-		modal: parseAsString,
-	});
+export const QuestionModal = () => {
+	const t = useTranslations("questionModal");
+	const [question, setQuestion] = useQueryState("question", parseAsString);
+
 	const [state, formAction, isPending] = useActionState(
-		SubmitApplication,
+		SubmitQuestionForm,
 		null,
 	);
 
-	const isOpen = modal === "open";
+	const isOpen = question === "open";
 
 	const handleClose = useCallback(() => {
-		setQueries({ plan: null, modal: null });
-	}, [setQueries]);
+		setQuestion(null, { shallow: true, history: "replace" });
+	}, [setQuestion]);
+
 	useEffect(() => {
 		if (state?.success) {
 			const timer = setTimeout(() => {
@@ -29,16 +28,14 @@ export const Modal = () => {
 			}, 2000);
 			return () => clearTimeout(timer);
 		}
-	}, [state, handleClose]);
+	}, [state?.success, handleClose]);
 
 	useEffect(() => {
 		const handleEsc = (e: KeyboardEvent) => {
-			if (e.key === "Escape") {
-				handleClose();
-			}
+			if (e.key === "Escape") handleClose();
 		};
 
-		if (plan) {
+		if (isOpen) {
 			document.body.style.overflow = "hidden";
 			window.addEventListener("keydown", handleEsc);
 		}
@@ -47,7 +44,7 @@ export const Modal = () => {
 			document.body.style.overflow = "unset";
 			window.removeEventListener("keydown", handleEsc);
 		};
-	}, [plan, handleClose]);
+	}, [isOpen, handleClose]);
 
 	if (!isOpen) return null;
 
@@ -57,19 +54,12 @@ export const Modal = () => {
 				type="button"
 				className="absolute inset-0 w-full h-full bg-black/50 backdrop-blur-sm cursor-default"
 				onClick={handleClose}
-				aria-label="Close modal"
 			/>
-			<div
-				className="bg-white w-full max-w-md rounded-2xl shadow-2xl p-8 relative border-2 border-[#D3C3E0]"
-				onClick={(e) => e.stopPropagation()}
-				onKeyDown={(e) => e.stopPropagation()}
-				role="document"
-			>
+			<div className="bg-white w-full max-w-md rounded-2xl shadow-2xl p-8 relative border-2 border-[#D3C3E0]">
 				<button
 					type="button"
 					className="absolute top-2 right-5 text-5xl text-gray-400 hover:text-black transition-colors cursor-pointer"
 					onClick={handleClose}
-					aria-label="Close modal"
 				>
 					&times;
 				</button>
@@ -80,37 +70,25 @@ export const Modal = () => {
 						<h3 className="text-2xl font-bold text-[#242424]">
 							{t("success")}
 						</h3>
-						<p className="text-gray-500 mt-2">{t("subSuccess")}</p>
+						<p className="text-gray-500 mt-2">{t("subSuccess")} </p>
 					</div>
 				) : (
 					<div className="text-center">
-						<h3 className="text-xl font-medium text-gray-500 uppercase tracking-wide">
+						<h3 className="text-xl font-bold text-[#242424] mb-2">
 							{t("title")}
 						</h3>
-						<div className="mt-2 mb-8 flex flex-col items-center gap-4">
-							<div className="text-4xl font-bold text-[#242424]">{plan}</div>
-							<p className="max-w-60 text-center text-[14px]">
-								{t("subTitle")}
-							</p>
-						</div>
+						<p className="text-gray-500 mb-6">{t("subTitle")}</p>
 
 						<form
 							action={formAction}
 							className="space-y-4 flex flex-col items-center"
 						>
-							<input type="hidden" name="planId" defaultValue={plan || ""} />
-							<input
-								name="fullName"
+							<textarea
+								name="message"
 								required
-								placeholder={t("fullName")}
-								className="w-full p-4 bg-gray-50 border rounded-xl"
-							/>
-							<input
-								name="email"
-								type="email"
-								required
-								placeholder={t("email")}
-								className="w-full p-4 bg-gray-50 border rounded-xl"
+								rows={4}
+								placeholder={t("message")}
+								className="w-full p-4 bg-gray-50 border rounded-xl outline-none focus:border-primary resize-none"
 							/>
 
 							<div>

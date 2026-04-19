@@ -12,7 +12,7 @@
 		"subTitle": "Häufig gestellte Fragen zum Coaching und seiner Funktionsweise",
 		"bottomTitle": "Haben Sie weitere Fragen?",
 		"bottomSubTitle": "Melden Sie sich, und wir besprechen Ihre konkrete Situation.",
-		"link": "Kontakt"
+		"link": "Eine Frage stellen"
 	},
 	"aboutMe": {
 		"title": "Über mich"
@@ -36,5 +36,44 @@
 	},
 	"aboutICA": {
 		"title": "Über die Internationale Trainerakademie"
+	},
+	"plan": {
+		"title": "Wählen Sie Ihren Tarif"
+	},
+	"contact": {
+		"title": "Kontakt aufnehmen",
+		"subTitle": "Kontakt",
+		"description": "Bereit für Ihre Reise? Melden Sie sich bei mir und lassen Sie uns sprechen.",
+		"button": "Kontakt aufnehmen"
+	},
+	"callbackModal": {
+		"success": "Erfolg",
+		"subSuccess": "Nachricht gesendet!",
+		"title": "Зворотний зв'язок",
+		"subTitle": "Hinterlassen Sie Ihre Kontaktdaten.",
+		"fullName": "Ihr Name",
+		"email": "Geben Sie Ihre E-Mail-Adresse ein",
+		"message": "Ihre Nachricht...",
+		"button": "Senden",
+		"pendingButton": "Wird gesendet..."
+	},
+	"planModal": {
+		"success": "Erfolg",
+		"subSuccess": "Ihre Anfrage gesendet!",
+		"title": "Ausgewählter Tarif",
+		"subTitle": "Hinterlassen Sie Ihre Daten und ich werde Sie kontaktieren, um die Details zu besprechen.",
+		"fullName": "Ihr Name",
+		"email": "Geben Sie Ihre E-Mail-Adresse ein",
+		"button": "Bestätigen und senden",
+		"pendingButton": "Wird gesendet..."
+	},
+	"questionModal": {
+		"success": "Erfolg",
+		"subSuccess": "Vielen Dank für Ihre Frage!",
+		"title": "Haben Sie eine Frage?",
+		"subTitle": "Stellen Sie Ihre Frage unten.",
+		"message": "Ihre Frage...",
+		"button": "Senden",
+		"pendingButton": "Wird gesendet..."
 	}
 }

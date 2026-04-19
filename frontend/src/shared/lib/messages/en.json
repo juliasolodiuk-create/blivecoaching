@@ -11,7 +11,7 @@
 		"subTitle": "Common questions about coaching and how it works",
 		"bottomTitle": "Have more questions?",
 		"bottomSubTitle": "Reach out and let's talk about your specific situation.",
-		"link": "Contact"
+		"link": "Ask a question"
 	},
 	"aboutMe": {
 		"title": "About me"
@@ -35,5 +35,45 @@
 	},
 	"aboutICA": {
 		"title": "About International Coach Academy"
+	},
+	"plan": {
+		"title": "Choose your Plan"
+	},
+	"contact": {
+		"title": "Get In Touch",
+		"subTitle": "Contact",
+		"description": "Ready to start your journey? Reach out and let's talk.",
+		"button": "Make contact"
+	},
+
+	"callbackModal": {
+		"success": "Success",
+		"subSuccess": "Message sent!",
+		"title": "Callback",
+		"subTitle": "Leave your contact details.",
+		"fullName": "Your name",
+		"email": "Enter your email",
+		"message": "Your message...",
+		"button": "Submit",
+		"pendingButton": "Submitting..."
+	},
+	"planModal": {
+		"success": "Success",
+		"subSuccess": "Your request sent!",
+		"title": "Selected plan",
+		"subTitle": "Leave your details and I will contact you to discuss the details.",
+		"fullName": "Your name",
+		"email": "Enter your email",
+		"button": "Confirm and send",
+		"pendingButton": "Submitting..."
+	},
+	"questionModal": {
+		"success": "Success",
+		"subSuccess": "Thank you for your question!",
+		"title": "Have a question?",
+		"subTitle": "Leave your question below.",
+		"message": "Your question...",
+		"button": "Submit",
+		"pendingButton": "Submitting..."
 	}
 }

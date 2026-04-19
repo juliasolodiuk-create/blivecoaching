@@ -19,7 +19,6 @@ export async function SubmitApplication(prevState: any, formData: FormData) {
 		if (!planDoc) {
 			return { success: false, message: "План с таким названием не найден" };
 		}
-		console.log("Creating Sanity document...");
 		await writeClient.create({
 			_type: "application",
 			fullName,
@@ -31,7 +30,6 @@ export async function SubmitApplication(prevState: any, formData: FormData) {
 			status: "new",
 			createdAt: new Date().toISOString(),
 		});
-		console.log("Calling sendEmail...");
 		await sendApplicantConfirmation({
 			applicantName: fullName,
 			applicantPlan: planName,
@@ -42,7 +40,7 @@ export async function SubmitApplication(prevState: any, formData: FormData) {
 			applicantPlan: planName,
 			applicantEmail: email,
 		});
-		console.log("All done!");
+
 		return { success: true };
 	} catch (error) {
 		console.error("Ошибка:", error);

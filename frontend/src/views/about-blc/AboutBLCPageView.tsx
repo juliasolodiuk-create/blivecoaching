@@ -19,7 +19,7 @@ export default async function AboutBLCPageView() {
 			<PhotoSection data={data.photo} />
 			<AboutSection data={data.about} />
 			<HowItWorksSection data={data.howItWorks} />
-			<FormSection />
+			{/* <FormSection /> */}
 			<Footer type="aboutBLC" />
 		</>
 	);

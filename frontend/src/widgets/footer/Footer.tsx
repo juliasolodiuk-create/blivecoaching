@@ -75,7 +75,7 @@ export const Footer = ({ type }: FooterProps) => {
 					</div>
 				</div>
 			</div>
-			<div className="flex flex-col w-full items-center sm:items-start p-10 xl:p-24 gap-1">
+			<div className="flex flex-col w-full items-center sm:items-start p-10 xl:p-24 gap-10 sm:gap-0">
 				<div className="flex-col sm:flex-row flex sm:gap-4 text-[12px] items-center">
 					<span className="flex justify-center items-center">
 						(
@@ -106,9 +106,17 @@ export const Footer = ({ type }: FooterProps) => {
 					</span>
 				</div>
 				<div className="text-black text-[12px] text-center sm:text-left">
-					<p>
-						Copyright © 2026 <b>Pavlo Tishynin</b>. All rights reserved.
-					</p>
+					<span className="flex flex-wrap justify-center items-center">
+						Copyright © 2026
+						<span className="font-bold flex items-center">
+							<LinkButton
+								title="Pavlo Tishynin."
+								fontSize="12px"
+								href="https://www.pavlotishynin.com/"
+							/>
+						</span>
+						All rights reserved.
+					</span>
 				</div>
 			</div>
 

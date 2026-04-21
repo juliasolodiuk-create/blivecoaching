@@ -4,7 +4,15 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./src/shared/lib/i18n/request.ts");
 
 const nextConfig: NextConfig = {
-	/* config options here */
+	async redirects() {
+		return [
+			{
+				source: "/studio",
+				destination: "https://blive-coaching.sanity.studio/",
+				permanent: true,
+			},
+		];
+	},
 	images: {
 		remotePatterns: [
 			{

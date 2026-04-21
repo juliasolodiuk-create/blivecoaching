@@ -5,13 +5,19 @@ export const seo = defineType({
 	name: "seo",
 	title: "SEO Налаштування",
 	type: "document",
+	icon: CogIcon,
 	groups: [
 		{ name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
 		{ name: "de", title: "Deutsch" },
 	],
-	icon: CogIcon,
 	fields: [
+		defineField({
+			name: "ogImage",
+			title: "Зображення для соцмереж (1200x630)",
+			type: "image",
+			options: { hotspot: true },
+		}),
 		defineField({
 			name: "metadata_ua",
 			title: "Metadata UA",
@@ -20,13 +26,13 @@ export const seo = defineType({
 			fields: [
 				defineField({
 					name: "title_ua",
-					title: "Title",
+					title: "Title (SEO)",
 					type: "string",
 				}),
 				defineField({
 					name: "desc_ua",
-					title: "Description",
-					type: "string",
+					title: "Description (SEO)",
+					type: "text",
 				}),
 			],
 		}),
@@ -38,13 +44,13 @@ export const seo = defineType({
 			fields: [
 				defineField({
 					name: "title_en",
-					title: "Title",
+					title: "Title (SEO)",
 					type: "string",
 				}),
 				defineField({
 					name: "desc_en",
-					title: "Description",
-					type: "string",
+					title: "Description (SEO)",
+					type: "text",
 				}),
 			],
 		}),
@@ -56,24 +62,22 @@ export const seo = defineType({
 			fields: [
 				defineField({
 					name: "title_de",
-					title: "Title",
+					title: "Title (SEO)",
 					type: "string",
 				}),
 				defineField({
 					name: "desc_de",
-					title: "Description",
-					type: "string",
+					title: "Description (SEO)",
+					type: "text",
 				}),
 			],
 		}),
 	],
 	preview: {
-		select: {
-			title: "metadata_ua.title",
-		},
 		prepare() {
 			return {
-				title: "SEO Налаштування",
+				title: "Глобальні SEO налаштування",
+				subtitle: "UA / EN / DE",
 			};
 		},
 	},

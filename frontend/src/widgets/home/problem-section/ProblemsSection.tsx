@@ -38,7 +38,7 @@ export const ProblemsSection = ({ data }: ProblemsSectionProps) => {
 			<div className="grid grid-cols-1 lg:grid-cols-3  gap-8 w-full mb-12 mt-16">
 				{data?.items?.map((item, index) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <>
-					<ProblemCard data={item} key={index} />
+					<ProblemCard data={item} key={index} index={index} />
 				))}
 			</div>
 

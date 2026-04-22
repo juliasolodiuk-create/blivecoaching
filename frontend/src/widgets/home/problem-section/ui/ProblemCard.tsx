@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useRef } from "react";
+import { PROBLEM_ARROWS } from "@/entities/home/constant/arrows";
 import { useDrawArrow } from "@/shared/hooks/useDrawArrow";
 import { getLocalizedContent } from "@/shared/lib/getLocalizedContent";
 import type { Content } from "@/shared/lib/types/base.types";
@@ -11,11 +12,13 @@ type ProblemItem = ProblemWithUrls["items"][number];
 
 interface ProblemItemProps {
 	data?: ProblemWithUrls["items"][number];
+	index: number;
 }
 
-export const ProblemCard = ({ data }: ProblemItemProps) => {
+export const ProblemCard = ({ data, index }: ProblemItemProps) => {
 	const cardRef = useRef<HTMLDivElement>(null);
 	const locale = useLocale();
+	const arrowPath = PROBLEM_ARROWS[index % PROBLEM_ARROWS.length];
 
 	const problemContent = getLocalizedContent<ProblemItem, Content>(
 		data,
@@ -69,7 +72,7 @@ export const ProblemCard = ({ data }: ProblemItemProps) => {
 					className="h-20 w-full fill-none stroke-[#D3C3E0] stroke-[40px] "
 				>
 					<title>Arrow decoration</title>
-					<path d={data?.arrowIcon?.svgPath} />
+					<path d={arrowPath} />
 				</svg>
 
 				<TextBlock

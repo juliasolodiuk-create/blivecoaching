@@ -47,7 +47,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
 						title={content?.link}
 						secondary={true}
 						width="max-w-90"
-						link="#guide"
+						link="#about"
 					>
 						<div className="rotate-90">
 							<ChevronRight size={20} />

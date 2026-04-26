@@ -66,7 +66,12 @@ export const Button = ({
 	}
 
 	return (
-		<button type={type} className={commonClassName} onClick={onClick}>
+		<button
+			type={type}
+			className={commonClassName}
+			onClick={onClick}
+			aria-label={title}
+		>
 			{content}
 		</button>
 	);

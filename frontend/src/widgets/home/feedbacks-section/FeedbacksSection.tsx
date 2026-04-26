@@ -88,6 +88,7 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 							type="button"
 							onClick={prev}
 							className="px-0 py-2 text-[#D3C3E0] cursor-pointer pointer-events-auto"
+							aria-label="arrow"
 						>
 							<CircleArrowLeft size={36} />
 						</button>
@@ -99,6 +100,7 @@ export const FeedbacksSection = ({ data = [] }: FeedbacksSectionProps) => {
 							type="button"
 							onClick={next}
 							className="px-4 py-2 text-[#D3C3E0] cursor-pointer pointer-events-auto"
+							aria-label="line"
 						>
 							<CircleArrowRight size={36} />
 						</button>

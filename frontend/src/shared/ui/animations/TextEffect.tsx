@@ -99,6 +99,7 @@ const TextEffect = ({
 			ref={containerRef}
 			className={className}
 			style={{ visibility: "visible", position: "relative" }}
+			aria-hidden="true"
 		>
 			{children}
 		</div>

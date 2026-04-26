@@ -90,6 +90,7 @@ export const BenefitItem = ({ data, isActive, onToggle }: BenefitItemProps) => {
 			type="button"
 			onClick={onToggle}
 			className="w-full text-left p-4 text-[#242424] font-montserrat bg-[#FFFFFF] max-w-133 rounded-xl border-[0.3px] border-[#E7EBFA] cursor-pointer overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-[#D3C3E0] block"
+			aria-label={`${benefitContent?.title}`}
 		>
 			<span className="flex flex-col w-full">
 				<span className="flex justify-between items-center gap-4 w-full">

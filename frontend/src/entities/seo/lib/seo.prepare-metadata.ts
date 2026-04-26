@@ -9,11 +9,14 @@ export async function constructMetadata(locale: string): Promise<Metadata> {
 	const description = seo?.description || "Default description";
 	const image = seo?.ogImage || "/default-og.png";
 
+	const currentPath = locale === "en" ? "" : `/${locale}`;
+	const canonicalUrl = `${baseUrl}${currentPath}`;
+
 	return {
 		title,
 		description,
 		alternates: {
-			canonical: `${baseUrl}/${locale}`,
+			canonical: canonicalUrl,
 			languages: {
 				uk: `${baseUrl}/ua`,
 				en: `${baseUrl}/en`,
@@ -24,8 +27,10 @@ export async function constructMetadata(locale: string): Promise<Metadata> {
 		openGraph: {
 			title,
 			description,
+			url: canonicalUrl,
 			images: [{ url: image }],
 			type: "website",
+			locale: locale === "ua" ? "uk_UA" : locale,
 		},
 		twitter: {
 			card: "summary_large_image",

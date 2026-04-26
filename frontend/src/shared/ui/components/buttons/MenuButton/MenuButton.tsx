@@ -84,6 +84,7 @@ export const MenuButton = ({
 			onClick={onClick}
 			className={className}
 			disabled={disabled}
+			aria-label={title}
 		>
 			<Content title={title} fontSize={fontSize} />
 		</button>

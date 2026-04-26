@@ -70,6 +70,7 @@ export const LinkButton = ({
 			ref={container as React.RefObject<HTMLButtonElement>}
 			disabled={disabled}
 			{...commonProps}
+			aria-label={title}
 		>
 			<Content title={title} fontSize={fontSize} />
 		</button>

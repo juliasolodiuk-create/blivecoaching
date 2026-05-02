@@ -49,7 +49,7 @@ export const ContactSection = ({ data }: ContactProps) => {
 					className="items-left text-left"
 				/>
 				<div className="w-full md:w-1/2 flex flex-col">
-					<ContactHeader linkTitle={t("button")} />
+					<ContactHeader linkTitle={t("button")} title={t("callback")} />
 				</div>
 			</div>
 			<div className="w-full block mt-8 sm:mt-16">

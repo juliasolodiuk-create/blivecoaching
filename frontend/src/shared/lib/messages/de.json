@@ -44,7 +44,8 @@
 		"title": "Kontakt aufnehmen",
 		"subTitle": "Kontakt",
 		"description": "Bereit für Ihre Reise? Melden Sie sich bei mir und lassen Sie uns sprechen.",
-		"button": "Kontakt aufnehmen"
+		"button": "Kontakt aufnehmen",
+		"callback": "Die Rückmeldung"
 	},
 	"callbackModal": {
 		"success": "Erfolg",

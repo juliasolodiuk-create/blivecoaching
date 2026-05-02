@@ -10,10 +10,10 @@ export const privacyPolicyDataUA = {
 			id: 1,
 			title: "1. Контролер даних",
 			content: [
-				"[Ваше повне ім'я / Назва бізнесу]",
-				"Freelance Coach (Коуч-фрилансер)",
-				"Адреса: [Ваша адреса в Німеччині]",
-				"Email: hello@belivecoaching.com",
+				"Горбенко Юлія Петрівна",
+				"Коуч-фрілансер ",
+				"Адреса: 91074 Herzogenaurach, Hans-Herold Straße 10",
+				"Email: blivecoaching@gmail.com",
 			],
 		},
 		{

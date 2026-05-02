@@ -8,7 +8,7 @@ export default async function PrivacyPolicyPageView() {
 
 	return (
 		<>
-			<Header />
+			<Header type="policy" />
 			<PolicySection />
 			<Footer />
 		</>

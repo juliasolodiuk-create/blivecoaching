@@ -58,6 +58,17 @@ export const navData = {
 			{ title: "BLive Coaching", href: "/about-blc" },
 		],
 	},
+	policy: {
+		title: "",
+		pageLinks: [],
+		siteMap: [
+			{ title: "Home", href: "/" },
+			{ title: "About", href: "/about-me" },
+			// { title: "Blog", href: "/blog" },
+			{ title: "How To Choose Coach?", href: "/how-to-choose-coach" },
+			{ title: "BLive Coaching", href: "/about-blc" },
+		],
+	},
 };
 
 export type PageType = keyof typeof navData;

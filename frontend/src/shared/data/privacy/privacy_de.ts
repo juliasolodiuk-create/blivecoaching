@@ -10,10 +10,10 @@ export const privacyPolicyDataDE = {
 			id: 1,
 			title: "1. Verantwortlicher",
 			content: [
-				"[Ihr Vor- und Nachname / Firmenname]",
+				"Yuliia Horbenko",
 				"Freelance Coach",
-				"Anschrift: [Ihre Adresse in Deutschland]",
-				"E-Mail: hello@belivecoaching.com",
+				"Anschrift: Hans-Herold-Straße 10, 91074 Herzogenaurach",
+				"E-Mail: blivecoaching@gmail.com",
 			],
 		},
 		{

@@ -43,7 +43,8 @@
 		"title": "Get In Touch",
 		"subTitle": "Contact",
 		"description": "Ready to start your journey? Reach out and let's talk.",
-		"button": "Make contact"
+		"button": "Contact us",
+		"callback": "Callback"
 	},
 
 	"callbackModal": {

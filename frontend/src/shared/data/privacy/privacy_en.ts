@@ -10,10 +10,10 @@ export const privacyPolicyDataEN = {
 			id: 1,
 			title: "1. Data Controller",
 			content: [
-				"[Your Full Name / Business Name]",
+				"Yuliia Horbenko",
 				"Freelance Coach",
-				"Address: [Your Address in Germany]",
-				"Email: hello@belivecoaching.com",
+				"Address: 10 Hans-Herold Straße, 91074 Herzogenaurach, Germany",
+				"Email: blivecoaching@gmail.com",
 			],
 		},
 		{

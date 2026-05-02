@@ -42,7 +42,7 @@ export const BenefitsSection = ({ data }: BenefitsSectionProps) => {
 		<section
 			ref={sectionRef}
 			id="benefits"
-			className="relative min-h-screen  p-4 md:p-16 bg-white "
+			className="relative min-h-screen  p-4 md:p-16 bg-white overflow-clip"
 		>
 			<div
 				ref={setContainerRef}

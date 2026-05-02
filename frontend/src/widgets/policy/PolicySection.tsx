@@ -21,14 +21,15 @@ export const PolicySection = () => {
 				className="flex flex-col items-center justify-center m-auto
         px-4 pt-29 
         sm:px-10
-        lg:px-16"
+        lg:px-16
+		py-10"
 			>
 				<SectionTitle
 					title={data.title}
-					className="items-center text-center sm:text-left sm:items-start"
+					className=" items-center text-center sm:text-left sm:items-start"
 				/>
 			</div>
-			<div className="max-w-200 mx-auto">
+			<div className="max-w-200 mx-auto flex flex-col gap-10">
 				<div
 					className="px-4 flex flex-col gap-4
         sm:px-10

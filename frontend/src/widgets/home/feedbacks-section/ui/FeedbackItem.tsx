@@ -1,5 +1,4 @@
 import { Star } from "lucide-react";
-import Image from "next/image";
 import { useLocale } from "next-intl";
 import { memo } from "react";
 import TextEffect from "@/shared/ui/animations/TextEffect";
@@ -35,25 +34,11 @@ export const FeedbackItem = memo(({ data }: FeedbackItemProps) => {
 						{feedbackContent?.text}
 					</p>
 				</TextEffect>
-				<div className="flex gap-5 items-center">
-					<div className="relative w-16 h-16 overflow-hidden rounded-full border border-gray-100">
-						{data.imageUrl && feedbackContent && (
-							<Image
-								src={data.imageUrl}
-								alt={feedbackContent?.name || "User feedback"}
-								fill
-								sizes="64px"
-								className="object-cover"
-							/>
-						)}
-					</div>
-
-					<div>
-						<h4 className="font-semibold leading-[90%]">
-							{feedbackContent?.name}
-						</h4>
-						<h4>{feedbackContent?.job}</h4>
-					</div>
+				<div className="text-center">
+					<h4 className="font-semibold leading-[90%]">
+						{feedbackContent?.name}
+					</h4>
+					<h4>{feedbackContent?.job}</h4>
 				</div>
 			</div>
 		</div>

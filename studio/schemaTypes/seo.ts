@@ -7,9 +7,9 @@ export const seo = defineType({
 	type: "document",
 	icon: CogIcon,
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	fields: [
 		defineField({
@@ -18,24 +18,24 @@ export const seo = defineType({
 			type: "image",
 			options: { hotspot: true },
 		}),
-		defineField({
-			name: "metadata_ua",
-			title: "Metadata UA",
-			type: "object",
-			group: "ua",
-			fields: [
-				defineField({
-					name: "title_ua",
-					title: "Title (SEO)",
-					type: "string",
-				}),
-				defineField({
-					name: "desc_ua",
-					title: "Description (SEO)",
-					type: "text",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "metadata_ua",
+		// title: "Metadata UA",
+		// type: "object",
+		// group: "ua",
+		// fields: [
+		// defineField({
+		// name: "title_ua",
+		// title: "Title (SEO)",
+		// type: "string",
+		// }),
+		// defineField({
+		// name: "desc_ua",
+		// title: "Description (SEO)",
+		// type: "text",
+		// }),
+		// ],
+		// }),
 		defineField({
 			name: "metadata_en",
 			title: "Metadata EN",
@@ -54,30 +54,30 @@ export const seo = defineType({
 				}),
 			],
 		}),
-		defineField({
-			name: "metadata_de",
-			title: "Metadata DE",
-			type: "object",
-			group: "de",
-			fields: [
-				defineField({
-					name: "title_de",
-					title: "Title (SEO)",
-					type: "string",
-				}),
-				defineField({
-					name: "desc_de",
-					title: "Description (SEO)",
-					type: "text",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "metadata_de",
+		// title: "Metadata DE",
+		// type: "object",
+		// group: "de",
+		// fields: [
+		// defineField({
+		// name: "title_de",
+		// title: "Title (SEO)",
+		// type: "string",
+		// }),
+		// defineField({
+		// name: "desc_de",
+		// title: "Description (SEO)",
+		// type: "text",
+		// }),
+		// ],
+		// }),
 	],
 	preview: {
 		prepare() {
 			return {
 				title: "Глобальні SEO налаштування",
-				subtitle: "UA / EN / DE",
+				subtitle: "EN",
 			};
 		},
 	},

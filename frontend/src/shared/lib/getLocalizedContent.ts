@@ -2,7 +2,7 @@ export function getLocalizedContent<T, R>(
 	data: T | null | undefined,
 	keyPrefix: string,
 	locale: string,
-	fallbackLocale = "ua",
+	fallbackLocale = "en",
 ): R | undefined {
 	if (!data) return undefined;
 	const key = `${keyPrefix}_${locale}` as keyof T;

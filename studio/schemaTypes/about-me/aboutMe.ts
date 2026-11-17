@@ -6,9 +6,9 @@ export const aboutMe = defineType({
 	title: "Про Мене",
 	type: "document",
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	icon: UserIcon,
 	fields: [
@@ -20,23 +20,23 @@ export const aboutMe = defineType({
 			},
 			title: "Картинка",
 		}),
-		defineField({
-			name: "desc_ua",
-			title: "Опис",
-			type: "array",
-			group: "ua",
-			validation: (Rule) =>
-				Rule.max(4).error("Можна додати не більше 4 описів"),
-			of: [
-				defineField({
-					name: "desc",
-					title: "Опис",
-					type: "text",
-					validation: (Rule) =>
-						Rule.max(450).error("Текст не може перевищувати 450 символів"),
-				}),
-			],
-		}),
+		// defineField({
+		// name: "desc_ua",
+		// title: "Опис",
+		// type: "array",
+		// group: "ua",
+		// validation: (Rule) =>
+		// Rule.max(4).error("Можна додати не більше 4 описів"),
+		// of: [
+		// defineField({
+		// name: "desc",
+		// title: "Опис",
+		// type: "text",
+		// validation: (Rule) =>
+		// Rule.max(450).error("Текст не може перевищувати 450 символів"),
+		// }),
+		// ],
+		// }),
 
 		defineField({
 			name: "desc_en",
@@ -55,27 +55,27 @@ export const aboutMe = defineType({
 				}),
 			],
 		}),
-		defineField({
-			name: "desc_de",
-			title: "Beschreibung",
-			type: "array",
-			group: "de",
-			validation: (Rule) =>
-				Rule.max(4).error("Можна додати не більше 4 описів"),
-			of: [
-				defineField({
-					name: "desc",
-					title: "Beschreibung",
-					type: "text",
-					validation: (Rule) =>
-						Rule.max(450).error("Текст не може перевищувати 450 символів"),
-				}),
-			],
-		}),
+		// defineField({
+		// name: "desc_de",
+		// title: "Beschreibung",
+		// type: "array",
+		// group: "de",
+		// validation: (Rule) =>
+		// Rule.max(4).error("Можна додати не більше 4 описів"),
+		// of: [
+		// defineField({
+		// name: "desc",
+		// title: "Beschreibung",
+		// type: "text",
+		// validation: (Rule) =>
+		// Rule.max(450).error("Текст не може перевищувати 450 символів"),
+		// }),
+		// ],
+		// }),
 	],
 	preview: {
 		select: {
-			title: "desc_ua",
+			title: "desc_en",
 		},
 		prepare() {
 			return {

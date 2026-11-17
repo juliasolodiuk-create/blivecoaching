@@ -73,8 +73,7 @@ export async function getFeedbacks(): Promise<FeedbackData[]> {
 	const query = groq`*[_type == "feedback"]{
     feedback_ua,
       feedback_en,
-      feedback_de,
-    img
+      feedback_de
   }`;
 	return await client.fetch(query, {}, { next: { revalidate: 0 } });
 }

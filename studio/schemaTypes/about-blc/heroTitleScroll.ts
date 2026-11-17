@@ -6,31 +6,31 @@ export const heroTitleScroll = defineType({
 	title: "Початкова секція з скролом",
 	type: "document",
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	icon: PresentationIcon,
 	fields: [
-		defineField({
-			name: "content_ua",
-			title: "Контент",
-			type: "object",
-			fields: [
-				defineField({
-					name: "title",
-					title: "Заголовок",
-					type: "string",
-				}),
-				defineField({
-					name: "link",
-					title: "Текст для Сролла",
-					type: "string",
-					validation: (Rule) => Rule.max(50).error("Текст занадто довгий"),
-				}),
-			],
-			group: "ua",
-		}),
+		// defineField({
+		// name: "content_ua",
+		// title: "Контент",
+		// type: "object",
+		// fields: [
+		// defineField({
+		// name: "title",
+		// title: "Заголовок",
+		// type: "string",
+		// }),
+		// defineField({
+		// name: "link",
+		// title: "Текст для Сролла",
+		// type: "string",
+		// validation: (Rule) => Rule.max(50).error("Текст занадто довгий"),
+		// }),
+		// ],
+		// group: "ua",
+		// }),
 
 		defineField({
 			name: "content_en",
@@ -51,29 +51,29 @@ export const heroTitleScroll = defineType({
 			],
 			group: "en",
 		}),
-		defineField({
-			name: "content_de",
-			title: "Inhalt",
-			type: "object",
-			fields: [
-				defineField({
-					name: "title",
-					title: "Titel",
-					type: "string",
-				}),
-				defineField({
-					name: "link",
-					title: "Text für Scrollen",
-					type: "string",
-					validation: (Rule) => Rule.max(50).error("Текст занадто довгий"),
-				}),
-			],
-			group: "de",
-		}),
+		// defineField({
+		// name: "content_de",
+		// title: "Inhalt",
+		// type: "object",
+		// fields: [
+		// defineField({
+		// name: "title",
+		// title: "Titel",
+		// type: "string",
+		// }),
+		// defineField({
+		// name: "link",
+		// title: "Text für Scrollen",
+		// type: "string",
+		// validation: (Rule) => Rule.max(50).error("Текст занадто довгий"),
+		// }),
+		// ],
+		// group: "de",
+		// }),
 	],
 	preview: {
 		select: {
-			title: "content_ua.title",
+			title: "content_en.title",
 		},
 		prepare(selection) {
 			const { title } = selection;

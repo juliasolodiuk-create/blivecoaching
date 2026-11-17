@@ -6,9 +6,9 @@ export const blog = defineType({
 	title: "Блог",
 	type: "document",
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	icon: ListIcon,
 	fields: [
@@ -20,30 +20,30 @@ export const blog = defineType({
 			},
 			title: "Картинка",
 		}),
-		defineField({
-			name: "blog_ua",
-			title: "Пост",
-			type: "object",
-			group: "ua",
-			fields: [
-				defineField({
-					name: "title",
-					title: "Заголовок",
-					type: "string",
-				}),
+		// defineField({
+		// name: "blog_ua",
+		// title: "Пост",
+		// type: "object",
+		// group: "ua",
+		// fields: [
+		// defineField({
+		// name: "title",
+		// title: "Заголовок",
+		// type: "string",
+		// }),
 
-				defineField({
-					name: "subTitle",
-					title: "Підзаголовк",
-					type: "string",
-				}),
-				defineField({
-					name: "text",
-					title: "Текст",
-					type: "text",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "subTitle",
+		// title: "Підзаголовк",
+		// type: "string",
+		// }),
+		// defineField({
+		// name: "text",
+		// title: "Текст",
+		// type: "text",
+		// }),
+		// ],
+		// }),
 
 		defineField({
 			name: "blog_en",
@@ -69,35 +69,35 @@ export const blog = defineType({
 				}),
 			],
 		}),
-		defineField({
-			name: "blog_de",
-			title: "Пост",
-			type: "object",
-			group: "de",
-			fields: [
-				defineField({
-					name: "title",
-					title: "Заголовок",
-					type: "string",
-				}),
+		// defineField({
+		// name: "blog_de",
+		// title: "Пост",
+		// type: "object",
+		// group: "de",
+		// fields: [
+		// defineField({
+		// name: "title",
+		// title: "Заголовок",
+		// type: "string",
+		// }),
 
-				defineField({
-					name: "subTitle",
-					title: "Підзаголовк",
-					type: "string",
-				}),
-				defineField({
-					name: "text",
-					title: "Текст",
-					type: "text",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "subTitle",
+		// title: "Підзаголовк",
+		// type: "string",
+		// }),
+		// defineField({
+		// name: "text",
+		// title: "Текст",
+		// type: "text",
+		// }),
+		// ],
+		// }),
 	],
 	preview: {
 		select: {
-			title: "blog_ua.title",
-			subtitle: "blog_ua.subTitle",
+			title: "blog_en.title",
+			subtitle: "blog_en.subTitle",
 			image: "img",
 		},
 		prepare(selection) {

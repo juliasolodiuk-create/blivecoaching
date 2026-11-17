@@ -1,21 +1,15 @@
 import type { Metadata } from "next";
 import { getSeo } from "../api/seo.api";
 
-const ogLocaleMap: Record<string, string> = {
-	ua: "uk_UA",
-	en: "en_US",
-	de: "de_DE",
-};
-
 export async function constructMetadata(locale: string): Promise<Metadata> {
-	const seo = await getSeo(locale);
+	const seo = await getSeo();
 	const baseUrl = "https://be-live-coaching.com";
 
 	const title = seo?.title || "Be Live Coaching";
 	const description = seo?.description || "Default description";
 	const image = seo?.ogImage || "/default-og.png";
 
-	const canonicalUrl = `${baseUrl}/${locale}`;
+	const canonicalUrl = baseUrl;
 
 	return {
 		metadataBase: new URL(baseUrl),
@@ -23,12 +17,6 @@ export async function constructMetadata(locale: string): Promise<Metadata> {
 		description,
 		alternates: {
 			canonical: canonicalUrl,
-			languages: {
-				uk: `${baseUrl}/ua`,
-				en: `${baseUrl}/en`,
-				de: `${baseUrl}/de`,
-				"x-default": `${baseUrl}/en`,
-			},
 		},
 		openGraph: {
 			title,
@@ -37,7 +25,7 @@ export async function constructMetadata(locale: string): Promise<Metadata> {
 			images: [{ url: image }],
 			type: "website",
 
-			locale: ogLocaleMap[locale] ?? "en_US",
+			locale: "en_US",
 		},
 		twitter: {
 			card: "summary_large_image",

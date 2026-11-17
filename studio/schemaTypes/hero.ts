@@ -6,9 +6,9 @@ export const hero = defineType({
 	title: "Початкова секція",
 	type: "document",
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	icon: PresentationIcon,
 	fields: [
@@ -20,13 +20,13 @@ export const hero = defineType({
 			},
 			title: "Картинка",
 		}),
-		defineField({
-			name: "title_ua",
-			title: "Заголовок",
-			type: "string",
-			validation: (Rule) => Rule.max(50).error("Заголовок занадто довгий"),
-			group: "ua",
-		}),
+		// defineField({
+		// name: "title_ua",
+		// title: "Заголовок",
+		// type: "string",
+		// validation: (Rule) => Rule.max(50).error("Заголовок занадто довгий"),
+		// group: "ua",
+		// }),
 		defineField({
 			name: "title_en",
 			title: "Title",
@@ -34,17 +34,17 @@ export const hero = defineType({
 			validation: (Rule) => Rule.max(50).error("Заголовок занадто довгий"),
 			group: "en",
 		}),
-		defineField({
-			name: "title_de",
-			title: "Titel",
-			type: "string",
-			validation: (Rule) => Rule.max(50).error("Заголовок занадто довгий"),
-			group: "de",
-		}),
+		// defineField({
+		// name: "title_de",
+		// title: "Titel",
+		// type: "string",
+		// validation: (Rule) => Rule.max(50).error("Заголовок занадто довгий"),
+		// group: "de",
+		// }),
 	],
 	preview: {
 		select: {
-			title: "title_ua",
+			title: "title_en",
 		},
 		prepare(selection) {
 			const { title } = selection;

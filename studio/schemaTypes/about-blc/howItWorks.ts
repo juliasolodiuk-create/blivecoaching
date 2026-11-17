@@ -6,25 +6,25 @@ export const howItWorks = defineType({
 	title: "Як це працює",
 	type: "document",
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	icon: RocketIcon,
 	fields: [
-		defineField({
-			name: "content_ua",
-			title: "Опис",
-			type: "array",
-			group: "ua",
-			of: [
-				defineField({
-					name: "desc",
-					title: "Опис",
-					type: "text",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "content_ua",
+		// title: "Опис",
+		// type: "array",
+		// group: "ua",
+		// of: [
+		// defineField({
+		// name: "desc",
+		// title: "Опис",
+		// type: "text",
+		// }),
+		// ],
+		// }),
 
 		defineField({
 			name: "content_en",
@@ -39,19 +39,19 @@ export const howItWorks = defineType({
 				}),
 			],
 		}),
-		defineField({
-			name: "content_de",
-			title: "Beschreibung",
-			type: "array",
-			group: "de",
-			of: [
-				defineField({
-					name: "desc",
-					title: "Beschreibung",
-					type: "text",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "content_de",
+		// title: "Beschreibung",
+		// type: "array",
+		// group: "de",
+		// of: [
+		// defineField({
+		// name: "desc",
+		// title: "Beschreibung",
+		// type: "text",
+		// }),
+		// ],
+		// }),
 	],
 	preview: {
 		prepare() {

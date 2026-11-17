@@ -23,10 +23,8 @@ export default async function RootLayout({
 
 	const messages = await getMessages();
 
-	const htmlLang = locale === "ua" ? "uk" : locale;
-
 	return (
-		<html lang={htmlLang}>
+		<html lang="en">
 			<body className={`antialiased`}>
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<NuqsAdapter>{children}</NuqsAdapter>

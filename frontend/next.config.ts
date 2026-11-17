@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
 				destination: "https://coaching-website.sanity.studio/",
 				permanent: false,
 			},
+			// Старі мовні версії → англійська
+			// (/en/... → /... next-intl перенаправляє сам)
+			{ source: "/ua", destination: "/", permanent: true },
+			{ source: "/ua/:path*", destination: "/:path*", permanent: true },
+			{ source: "/de", destination: "/", permanent: true },
+			{ source: "/de/:path*", destination: "/:path*", permanent: true },
 		];
 	},
 	images: {

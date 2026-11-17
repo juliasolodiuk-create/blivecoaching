@@ -47,7 +47,7 @@ export const PlanCard = ({
 			</div>
 
 			<div
-				className={`border-2  border-white  rounded-xl p-4 h-full flex flex-col justify-between`}
+				className={`border-2  border-white  rounded-xl p-4 h-full flex flex-col justify-between gap-6`}
 			>
 				<div>
 					{description?.map((item, index) => (

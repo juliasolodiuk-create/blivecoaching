@@ -6,9 +6,9 @@ export const problems = defineType({
 	title: "Проблема",
 	type: "document",
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	icon: BugIcon,
 	fields: [
@@ -19,54 +19,54 @@ export const problems = defineType({
 				hotspot: true,
 			},
 			title: "Картинка",
-			group: ["ua", "en", "de"],
+			group: "en",
 			validation: (Rule) =>
 				Rule.required().error("Виберіть фотографію, це поле є обов’язковим"),
 		}),
 
-		defineField({
-			name: "problem_content_ua",
-			title: "Зміст проблеми",
-			type: "object",
-			group: "ua",
-			fields: [
-				{
-					name: "title",
-					type: "string",
-					title: "Заголовок",
-					validation: (Rule) => Rule.max(30).error("Заголовок занадто довгий"),
-				},
-				{
-					name: "desc",
-					type: "text",
-					title: "Опис",
-					validation: (Rule) =>
-						Rule.max(200).error("Текст не може перевищувати 200 символів"),
-				},
-			],
-		}),
+		// defineField({
+		// name: "problem_content_ua",
+		// title: "Зміст проблеми",
+		// type: "object",
+		// group: "ua",
+		// fields: [
+		// {
+		// name: "title",
+		// type: "string",
+		// title: "Заголовок",
+		// validation: (Rule) => Rule.max(30).error("Заголовок занадто довгий"),
+		// },
+		// {
+		// name: "desc",
+		// type: "text",
+		// title: "Опис",
+		// validation: (Rule) =>
+		// Rule.max(200).error("Текст не може перевищувати 200 символів"),
+		// },
+		// ],
+		// }),
 
-		defineField({
-			name: "solution_content_ua",
-			title: "Вирішення проблеми",
-			type: "object",
-			group: "ua",
-			fields: [
-				{
-					name: "title",
-					type: "string",
-					title: "Заголовок",
-					validation: (Rule) => Rule.max(30).error("Заголовок занадто довгий"),
-				},
-				{
-					name: "desc",
-					type: "text",
-					title: "Опис",
-					validation: (Rule) =>
-						Rule.max(200).error("Текст не може перевищувати 200 символів"),
-				},
-			],
-		}),
+		// defineField({
+		// name: "solution_content_ua",
+		// title: "Вирішення проблеми",
+		// type: "object",
+		// group: "ua",
+		// fields: [
+		// {
+		// name: "title",
+		// type: "string",
+		// title: "Заголовок",
+		// validation: (Rule) => Rule.max(30).error("Заголовок занадто довгий"),
+		// },
+		// {
+		// name: "desc",
+		// type: "text",
+		// title: "Опис",
+		// validation: (Rule) =>
+		// Rule.max(200).error("Текст не може перевищувати 200 символів"),
+		// },
+		// ],
+		// }),
 		defineField({
 			name: "problem_content_en",
 			title: "The content of the problem",
@@ -109,52 +109,52 @@ export const problems = defineType({
 				},
 			],
 		}),
-		defineField({
-			name: "problem_content_de",
-			title: "Probleminhalt",
-			type: "object",
-			group: "de",
-			fields: [
-				{
-					name: "title",
-					type: "string",
-					title: "Titel",
-					validation: (Rule) => Rule.max(30).error("Заголовок занадто довгий"),
-				},
-				{
-					name: "desc",
-					type: "text",
-					title: "Beschreibung",
-					validation: (Rule) =>
-						Rule.max(200).error("Текст не може перевищувати 200 символів"),
-				},
-			],
-		}),
-		defineField({
-			name: "solution_content_de",
-			title: "Problemlösung",
-			type: "object",
-			group: "de",
-			fields: [
-				{
-					name: "title",
-					type: "string",
-					title: "Titel",
-					validation: (Rule) => Rule.max(30).error("Заголовок занадто довгий"),
-				},
-				{
-					name: "desc",
-					type: "text",
-					title: "Beschreibung",
-					validation: (Rule) =>
-						Rule.max(200).error("Текст не може перевищувати 200 символів"),
-				},
-			],
-		}),
+		// defineField({
+		// name: "problem_content_de",
+		// title: "Probleminhalt",
+		// type: "object",
+		// group: "de",
+		// fields: [
+		// {
+		// name: "title",
+		// type: "string",
+		// title: "Titel",
+		// validation: (Rule) => Rule.max(30).error("Заголовок занадто довгий"),
+		// },
+		// {
+		// name: "desc",
+		// type: "text",
+		// title: "Beschreibung",
+		// validation: (Rule) =>
+		// Rule.max(200).error("Текст не може перевищувати 200 символів"),
+		// },
+		// ],
+		// }),
+		// defineField({
+		// name: "solution_content_de",
+		// title: "Problemlösung",
+		// type: "object",
+		// group: "de",
+		// fields: [
+		// {
+		// name: "title",
+		// type: "string",
+		// title: "Titel",
+		// validation: (Rule) => Rule.max(30).error("Заголовок занадто довгий"),
+		// },
+		// {
+		// name: "desc",
+		// type: "text",
+		// title: "Beschreibung",
+		// validation: (Rule) =>
+		// Rule.max(200).error("Текст не може перевищувати 200 символів"),
+		// },
+		// ],
+		// }),
 	],
 	preview: {
 		select: {
-			title: "problem_content_ua.title",
+			title: "problem_content_en.title",
 		},
 
 		prepare(selection) {

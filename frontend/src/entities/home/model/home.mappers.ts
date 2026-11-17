@@ -52,11 +52,7 @@ export const mapBenefitsWithUrl = (benefits: BenefitData): BenefitWithUrls => ({
 
 export const mapFeedbackWithUrls = (
 	feedbacks: FeedbackData[],
-): FeedbackWithUrls[] =>
-	(feedbacks || []).map((item) => ({
-		...item,
-		imageUrl: getImageUrl(item.img, 300, 80),
-	}));
+): FeedbackWithUrls[] => feedbacks || [];
 
 export const mapHighlightsWithUrls = (
 	highlight: HighlightData,

@@ -7,9 +7,9 @@ export const plan = defineType({
 	type: "document",
 	icon: PackageIcon,
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	fields: [
 		defineField({
@@ -39,28 +39,28 @@ export const plan = defineType({
 			validation: (Rule) => Rule.required(),
 		}),
 
-		defineField({
-			name: "content_ua",
-			title: "Контент",
-			type: "object",
-			group: "ua",
-			fields: [
-				defineField({
-					name: "description",
-					title: "Опис",
-					type: "array",
-					of: [
-						defineField({
-							name: "desc",
-							title: "Опис",
-							type: "text",
-							validation: (Rule) =>
-								Rule.max(450).error("Текст не може перевищувати 450 символів"),
-						}),
-					],
-				}),
-			],
-		}),
+		// defineField({
+		// name: "content_ua",
+		// title: "Контент",
+		// type: "object",
+		// group: "ua",
+		// fields: [
+		// defineField({
+		// name: "description",
+		// title: "Опис",
+		// type: "array",
+		// of: [
+		// defineField({
+		// name: "desc",
+		// title: "Опис",
+		// type: "text",
+		// validation: (Rule) =>
+		// Rule.max(450).error("Текст не може перевищувати 450 символів"),
+		// }),
+		// ],
+		// }),
+		// ],
+		// }),
 		defineField({
 			name: "content_en",
 			title: "Content",
@@ -83,28 +83,28 @@ export const plan = defineType({
 				}),
 			],
 		}),
-		defineField({
-			name: "content_de",
-			title: "Контент",
-			type: "object",
-			group: "de",
-			fields: [
-				defineField({
-					name: "description",
-					title: "Beschreibung",
-					type: "array",
-					of: [
-						defineField({
-							name: "desc",
-							title: "Beschreibung",
-							type: "text",
-							validation: (Rule) =>
-								Rule.max(450).error("Текст не може перевищувати 450 символів"),
-						}),
-					],
-				}),
-			],
-		}),
+		// defineField({
+		// name: "content_de",
+		// title: "Контент",
+		// type: "object",
+		// group: "de",
+		// fields: [
+		// defineField({
+		// name: "description",
+		// title: "Beschreibung",
+		// type: "array",
+		// of: [
+		// defineField({
+		// name: "desc",
+		// title: "Beschreibung",
+		// type: "text",
+		// validation: (Rule) =>
+		// Rule.max(450).error("Текст не може перевищувати 450 символів"),
+		// }),
+		// ],
+		// }),
+		// ],
+		// }),
 	],
 	preview: {
 		select: {

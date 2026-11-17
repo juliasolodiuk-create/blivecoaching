@@ -72,15 +72,12 @@ export interface FeedbackContentData {
 }
 
 export interface FeedbackData {
-	img: ImageAsset;
 	feedback_ua?: FeedbackContentData;
 	feedback_en?: FeedbackContentData;
 	feedback_de?: FeedbackContentData;
 }
 
-export type FeedbackWithUrls = Omit<FeedbackData, "img"> & {
-	imageUrl: string | null;
-};
+export type FeedbackWithUrls = FeedbackData;
 
 export interface FeedbacksSectionData {
 	items: FeedbackWithUrls[];

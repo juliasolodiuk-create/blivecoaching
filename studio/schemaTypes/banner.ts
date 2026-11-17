@@ -6,30 +6,30 @@ export const banner = defineType({
 	title: "Баннер",
 	type: "document",
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	icon: PresentationIcon,
 	fields: [
-		defineField({
-			name: "banner_content_ua",
-			title: "Контент",
-			type: "object",
-			group: "ua",
-			fields: [
-				defineField({
-					name: "title",
-					title: "Заголовок",
-					type: "string",
-				}),
-				defineField({
-					name: "subTitle",
-					title: "Підзаголовок",
-					type: "string",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "banner_content_ua",
+		// title: "Контент",
+		// type: "object",
+		// group: "ua",
+		// fields: [
+		// defineField({
+		// name: "title",
+		// title: "Заголовок",
+		// type: "string",
+		// }),
+		// defineField({
+		// name: "subTitle",
+		// title: "Підзаголовок",
+		// type: "string",
+		// }),
+		// ],
+		// }),
 		defineField({
 			name: "banner_content_en",
 			title: "Content",
@@ -48,28 +48,28 @@ export const banner = defineType({
 				}),
 			],
 		}),
-		defineField({
-			name: "banner_content_de",
-			title: "Inhalt",
-			type: "object",
-			group: "de",
-			fields: [
-				defineField({
-					name: "title",
-					title: "Titel",
-					type: "string",
-				}),
-				defineField({
-					name: "subTitle",
-					title: "Untertitel",
-					type: "string",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "banner_content_de",
+		// title: "Inhalt",
+		// type: "object",
+		// group: "de",
+		// fields: [
+		// defineField({
+		// name: "title",
+		// title: "Titel",
+		// type: "string",
+		// }),
+		// defineField({
+		// name: "subTitle",
+		// title: "Untertitel",
+		// type: "string",
+		// }),
+		// ],
+		// }),
 	],
 	preview: {
 		select: {
-			title: "title_ua",
+			title: "title_en",
 		},
 		prepare(selection) {
 			const { title } = selection;

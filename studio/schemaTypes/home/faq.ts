@@ -6,31 +6,31 @@ export const faq = defineType({
 	title: "Запитання",
 	type: "document",
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	icon: SparkleIcon,
 	fields: [
-		defineField({
-			name: "question_ua",
-			title: "Запитання",
-			type: "object",
-			group: "ua",
-			fields: [
-				defineField({
-					name: "question",
-					title: "Запитання",
-					type: "string",
-				}),
+		// defineField({
+		// name: "question_ua",
+		// title: "Запитання",
+		// type: "object",
+		// group: "ua",
+		// fields: [
+		// defineField({
+		// name: "question",
+		// title: "Запитання",
+		// type: "string",
+		// }),
 
-				defineField({
-					name: "answer",
-					title: "Відповідь",
-					type: "text",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "answer",
+		// title: "Відповідь",
+		// type: "text",
+		// }),
+		// ],
+		// }),
 
 		defineField({
 			name: "question_en",
@@ -52,30 +52,30 @@ export const faq = defineType({
 			],
 		}),
 
-		defineField({
-			name: "question_de",
-			title: "Frage",
-			type: "object",
-			group: "de",
-			fields: [
-				defineField({
-					name: "question",
-					title: "Frage",
-					type: "string",
-				}),
+		// defineField({
+		// name: "question_de",
+		// title: "Frage",
+		// type: "object",
+		// group: "de",
+		// fields: [
+		// defineField({
+		// name: "question",
+		// title: "Frage",
+		// type: "string",
+		// }),
 
-				defineField({
-					name: "answer",
-					title: "Antwort",
-					type: "text",
-				}),
-			],
-		}),
+		// defineField({
+		// name: "answer",
+		// title: "Antwort",
+		// type: "text",
+		// }),
+		// ],
+		// }),
 	],
 	preview: {
 		select: {
-			question: "question_ua.question",
-			subtitle: "question_ua.answer",
+			question: "question_en.question",
+			subtitle: "question_en.answer",
 		},
 		prepare(selection) {
 			const { question, subtitle } = selection;

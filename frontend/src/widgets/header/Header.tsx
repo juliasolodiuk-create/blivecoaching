@@ -3,7 +3,6 @@
 import { MessagesSquare } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import LocaleSwitcher from "@/features/locale-switcher/LocaleSwitcher";
 import { Button } from "@/shared/ui/components/buttons/Button/Button";
 import { MenuButton } from "@/shared/ui/components/buttons/MenuButton/MenuButton";
 import type { PageType } from "../../shared/lib/navigation.data";
@@ -44,10 +43,7 @@ export const Header = ({ type }: HeaderProps) => {
 				</div>
 
 				<div className="flex items-center gap-2">
-					<div className="flex items-center justify-center overflow-clip h-12 py-2 rounded-xl bg-white ">
-						<div className="  bg-white text-[#242424] font-montserrat font-semibold flex items-center px-2">
-							<LocaleSwitcher />
-						</div>
+					<div className="flex items-center justify-center overflow-clip h-12 py-2 rounded-xl bg-white lg:hidden">
 						<div className=" bg-white text-[#242424] font-montserrat font-semibold lg:hidden">
 							<MenuButton title="Menu" onClick={toggleMenu} />
 						</div>

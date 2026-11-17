@@ -6,32 +6,32 @@ export const aboutICA = defineType({
 	title: "Про ICA",
 	type: "document",
 	groups: [
-		{ name: "ua", title: "Українська" },
+		// { name: "ua", title: "Українська" },
 		{ name: "en", title: "English" },
-		{ name: "de", title: "Deutsch" },
+		// { name: "de", title: "Deutsch" },
 	],
 	icon: BookIcon,
 	fields: [
-		defineField({
-			name: "text_ua",
-			title: "Текст",
-			type: "object",
-			group: "ua",
-			fields: [
-				{
-					name: "title",
-					type: "string",
-					title: "Заголовок",
-				},
-				{
-					name: "desc",
-					title: "Опис",
-					type: "text",
-					validation: (Rule) =>
-						Rule.max(700).error("Текст не може перевищувати 700 символів"),
-				},
-			],
-		}),
+		// defineField({
+		// name: "text_ua",
+		// title: "Текст",
+		// type: "object",
+		// group: "ua",
+		// fields: [
+		// {
+		// name: "title",
+		// type: "string",
+		// title: "Заголовок",
+		// },
+		// {
+		// name: "desc",
+		// title: "Опис",
+		// type: "text",
+		// validation: (Rule) =>
+		// Rule.max(700).error("Текст не може перевищувати 700 символів"),
+		// },
+		// ],
+		// }),
 
 		defineField({
 			name: "text_en",
@@ -53,31 +53,31 @@ export const aboutICA = defineType({
 				},
 			],
 		}),
-		defineField({
-			name: "text_de",
-			title: "Text",
-			type: "object",
-			group: "de",
-			fields: [
-				{
-					name: "title",
-					type: "string",
-					title: "Titel",
-				},
-				{
-					name: "desc",
-					title: "Опис",
-					type: "text",
-					validation: (Rule) =>
-						Rule.max(700).error("Текст не може перевищувати 700 символів"),
-				},
-			],
-		}),
+		// defineField({
+		// name: "text_de",
+		// title: "Text",
+		// type: "object",
+		// group: "de",
+		// fields: [
+		// {
+		// name: "title",
+		// type: "string",
+		// title: "Titel",
+		// },
+		// {
+		// name: "desc",
+		// title: "Опис",
+		// type: "text",
+		// validation: (Rule) =>
+		// Rule.max(700).error("Текст не може перевищувати 700 символів"),
+		// },
+		// ],
+		// }),
 	],
 	preview: {
 		select: {
-			title: "text_ua.title",
-			subTitle: "text_ua.desc",
+			title: "text_en.title",
+			subTitle: "text_en.desc",
 		},
 		prepare(selection) {
 			const { title, subTitle } = selection;
